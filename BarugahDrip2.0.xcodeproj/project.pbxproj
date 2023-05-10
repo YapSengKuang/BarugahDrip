@@ -14,6 +14,12 @@
 		A70990E82A0B35080053943D /* BarugahDrip2_0.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A70990E62A0B35080053943D /* BarugahDrip2_0.xcdatamodeld */; };
 		A70990EA2A0B35080053943D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A70990E92A0B35080053943D /* Assets.xcassets */; };
 		A70990ED2A0B35080053943D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A70990EB2A0B35080053943D /* LaunchScreen.storyboard */; };
+		A70990FC2A0B376D0053943D /* Outfit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70990F62A0B376D0053943D /* Outfit+CoreDataClass.swift */; };
+		A70990FD2A0B376D0053943D /* Outfit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70990F72A0B376D0053943D /* Outfit+CoreDataProperties.swift */; };
+		A70990FE2A0B376D0053943D /* Garment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70990F82A0B376D0053943D /* Garment+CoreDataClass.swift */; };
+		A70990FF2A0B376D0053943D /* Garment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70990F92A0B376D0053943D /* Garment+CoreDataProperties.swift */; };
+		A70991002A0B376D0053943D /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70990FA2A0B376D0053943D /* User+CoreDataClass.swift */; };
+		A70991012A0B376D0053943D /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70990FB2A0B376D0053943D /* User+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,12 @@
 		A70990E92A0B35080053943D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A70990EC2A0B35080053943D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A70990EE2A0B35080053943D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A70990F62A0B376D0053943D /* Outfit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Outfit+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A70990F72A0B376D0053943D /* Outfit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Outfit+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A70990F82A0B376D0053943D /* Garment+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Garment+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A70990F92A0B376D0053943D /* Garment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Garment+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A70990FA2A0B376D0053943D /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A70990FB2A0B376D0053943D /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,8 @@
 		A70990DC2A0B35080053943D /* BarugahDrip2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				A70990F52A0B37510053943D /* Database */,
+				A70990F42A0B37480053943D /* Classes */,
 				A70990DD2A0B35080053943D /* AppDelegate.swift */,
 				A70990DF2A0B35080053943D /* SceneDelegate.swift */,
 				A70990E12A0B35080053943D /* ViewController.swift */,
@@ -65,9 +79,29 @@
 				A70990E92A0B35080053943D /* Assets.xcassets */,
 				A70990EB2A0B35080053943D /* LaunchScreen.storyboard */,
 				A70990EE2A0B35080053943D /* Info.plist */,
-				A70990E62A0B35080053943D /* BarugahDrip2_0.xcdatamodeld */,
 			);
 			path = BarugahDrip2.0;
+			sourceTree = "<group>";
+		};
+		A70990F42A0B37480053943D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A70990F62A0B376D0053943D /* Outfit+CoreDataClass.swift */,
+				A70990F72A0B376D0053943D /* Outfit+CoreDataProperties.swift */,
+				A70990F82A0B376D0053943D /* Garment+CoreDataClass.swift */,
+				A70990F92A0B376D0053943D /* Garment+CoreDataProperties.swift */,
+				A70990FA2A0B376D0053943D /* User+CoreDataClass.swift */,
+				A70990FB2A0B376D0053943D /* User+CoreDataProperties.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A70990F52A0B37510053943D /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				A70990E62A0B35080053943D /* BarugahDrip2_0.xcdatamodeld */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,9 +175,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A70990FF2A0B376D0053943D /* Garment+CoreDataProperties.swift in Sources */,
+				A70990FE2A0B376D0053943D /* Garment+CoreDataClass.swift in Sources */,
 				A70990E22A0B35080053943D /* ViewController.swift in Sources */,
 				A70990E82A0B35080053943D /* BarugahDrip2_0.xcdatamodeld in Sources */,
+				A70990FC2A0B376D0053943D /* Outfit+CoreDataClass.swift in Sources */,
+				A70991002A0B376D0053943D /* User+CoreDataClass.swift in Sources */,
 				A70990DE2A0B35080053943D /* AppDelegate.swift in Sources */,
+				A70990FD2A0B376D0053943D /* Outfit+CoreDataProperties.swift in Sources */,
+				A70991012A0B376D0053943D /* User+CoreDataProperties.swift in Sources */,
 				A70990E02A0B35080053943D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
