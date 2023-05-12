@@ -2,7 +2,7 @@
 //  Garment+CoreDataProperties.swift
 //  BarugahDrip2.0
 //
-//  Created by Eskay Yap on 10/5/2023.
+//  Created by Eskay Yap on 12/5/2023.
 //
 //
 
@@ -16,13 +16,13 @@ extension Garment {
         return NSFetchRequest<Garment>(entityName: "Garment")
     }
 
-    @NSManaged public var name: String?
-    @NSManaged public var price: Double
     @NSManaged public var brand: String?
-    @NSManaged public var size: String?
-    @NSManaged public var numberOfWears: Int32
     @NSManaged public var dateBought: Date?
-    @NSManaged public var imageRef: String?
+    @NSManaged public var imageRef: Data?
+    @NSManaged public var name: String?
+    @NSManaged public var numberOfWears: Int32
+    @NSManaged public var price: Double
+    @NSManaged public var size: String?
     @NSManaged public var outfits: NSSet?
 
 }

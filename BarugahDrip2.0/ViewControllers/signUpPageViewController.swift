@@ -7,23 +7,42 @@
 
 import UIKit
 
-class signUpPageViewController: UIViewController {
-
+class signUpPageViewController: UIViewController, DatabaseListener {
+    var listenerType: ListenerType = .all
+    
+    weak var databaseController: DatabaseProtocol?
+    @IBOutlet weak var nameLabel: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        databaseController = appDelegate?.databaseController
+        
+        if databaseController?.currentUser != nil{
+            performSegue(withIdentifier: "signup", sender: self)
+        }
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func continueButton(_ sender: Any) {
+        
+        guard let name = nameLabel.text, name != "" else {
+            return
+        }
+        
+        databaseController?.addUser(name: name)
+        performSegue(withIdentifier: "signup", sender: self)
+        databaseController?.cleanup()
     }
-    */
-
+    
+    func onGarmentChange(change: DatabaseChange, garments: [Garment]) {
+        //Nothing
+    }
+    
+    func onOutfitsChange(change: DatabaseChange, outfits: [Outfit]) {
+        //Nothing
+    }
+    
+    func onOutfitGarmentsChange(change: DatabaseChange, garments: [Garment]) {
+        //Nothing
+    }
 }

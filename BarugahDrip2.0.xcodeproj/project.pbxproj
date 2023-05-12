@@ -13,10 +13,6 @@
 		A70990E82A0B35080053943D /* BarugahDrip2_0.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A70990E62A0B35080053943D /* BarugahDrip2_0.xcdatamodeld */; };
 		A70990EA2A0B35080053943D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A70990E92A0B35080053943D /* Assets.xcassets */; };
 		A70990ED2A0B35080053943D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A70990EB2A0B35080053943D /* LaunchScreen.storyboard */; };
-		A70991082A0B39B80053943D /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70991022A0B39B80053943D /* User+CoreDataClass.swift */; };
-		A70991092A0B39B80053943D /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70991032A0B39B80053943D /* User+CoreDataProperties.swift */; };
-		A709910A2A0B39B80053943D /* Garment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70991042A0B39B80053943D /* Garment+CoreDataClass.swift */; };
-		A709910B2A0B39B80053943D /* Garment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70991052A0B39B80053943D /* Garment+CoreDataProperties.swift */; };
 		A709911B2A0B3A910053943D /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709911A2A0B3A910053943D /* MulticastDelegate.swift */; };
 		A709911D2A0B3AC50053943D /* DatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709911C2A0B3AC50053943D /* DatabaseProtocol.swift */; };
 		A709911F2A0B3AD30053943D /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709911E2A0B3AD30053943D /* CoreDataController.swift */; };
@@ -25,8 +21,14 @@
 		A70991252A0B3B700053943D /* tabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70991242A0B3B700053943D /* tabBarViewController.swift */; };
 		A70991272A0B3B910053943D /* garmentCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70991262A0B3B910053943D /* garmentCollectionViewController.swift */; };
 		A70991292A0B3BAA0053943D /* outfitCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70991282A0B3BAA0053943D /* outfitCollectionViewController.swift */; };
-		A709912E2A0B4DAE0053943D /* Outfit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709912C2A0B4DAE0053943D /* Outfit+CoreDataClass.swift */; };
-		A709912F2A0B4DAE0053943D /* Outfit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709912D2A0B4DAE0053943D /* Outfit+CoreDataProperties.swift */; };
+		A77FD9602A0DD7750013E2F5 /* garmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77FD95E2A0DD7750013E2F5 /* garmentCollectionViewCell.swift */; };
+		A77FD9612A0DD7750013E2F5 /* garmentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A77FD95F2A0DD7750013E2F5 /* garmentCollectionViewCell.xib */; };
+		A77FD9692A0DE4170013E2F5 /* Garment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77FD9632A0DE4170013E2F5 /* Garment+CoreDataClass.swift */; };
+		A77FD96A2A0DE4170013E2F5 /* Garment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77FD9642A0DE4170013E2F5 /* Garment+CoreDataProperties.swift */; };
+		A77FD96B2A0DE4170013E2F5 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77FD9652A0DE4170013E2F5 /* User+CoreDataClass.swift */; };
+		A77FD96C2A0DE4170013E2F5 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77FD9662A0DE4170013E2F5 /* User+CoreDataProperties.swift */; };
+		A77FD96D2A0DE4170013E2F5 /* Outfit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77FD9672A0DE4170013E2F5 /* Outfit+CoreDataClass.swift */; };
+		A77FD96E2A0DE4170013E2F5 /* Outfit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77FD9682A0DE4170013E2F5 /* Outfit+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,10 +40,6 @@
 		A70990E92A0B35080053943D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A70990EC2A0B35080053943D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A70990EE2A0B35080053943D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A70991022A0B39B80053943D /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A70991032A0B39B80053943D /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A70991042A0B39B80053943D /* Garment+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Garment+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A70991052A0B39B80053943D /* Garment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Garment+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A709911A2A0B3A910053943D /* MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
 		A709911C2A0B3AC50053943D /* DatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProtocol.swift; sourceTree = "<group>"; };
 		A709911E2A0B3AD30053943D /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
@@ -50,8 +48,14 @@
 		A70991242A0B3B700053943D /* tabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabBarViewController.swift; sourceTree = "<group>"; };
 		A70991262A0B3B910053943D /* garmentCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = garmentCollectionViewController.swift; sourceTree = "<group>"; };
 		A70991282A0B3BAA0053943D /* outfitCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = outfitCollectionViewController.swift; sourceTree = "<group>"; };
-		A709912C2A0B4DAE0053943D /* Outfit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Outfit+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A709912D2A0B4DAE0053943D /* Outfit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Outfit+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A77FD95E2A0DD7750013E2F5 /* garmentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = garmentCollectionViewCell.swift; sourceTree = "<group>"; };
+		A77FD95F2A0DD7750013E2F5 /* garmentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = garmentCollectionViewCell.xib; sourceTree = "<group>"; };
+		A77FD9632A0DE4170013E2F5 /* Garment+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Garment+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A77FD9642A0DE4170013E2F5 /* Garment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Garment+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A77FD9652A0DE4170013E2F5 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A77FD9662A0DE4170013E2F5 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A77FD9672A0DE4170013E2F5 /* Outfit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Outfit+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A77FD9682A0DE4170013E2F5 /* Outfit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Outfit+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +104,12 @@
 		A70990F42A0B37480053943D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				A70991022A0B39B80053943D /* User+CoreDataClass.swift */,
-				A70991032A0B39B80053943D /* User+CoreDataProperties.swift */,
-				A709912C2A0B4DAE0053943D /* Outfit+CoreDataClass.swift */,
-				A709912D2A0B4DAE0053943D /* Outfit+CoreDataProperties.swift */,
-				A70991042A0B39B80053943D /* Garment+CoreDataClass.swift */,
-				A70991052A0B39B80053943D /* Garment+CoreDataProperties.swift */,
+				A77FD9632A0DE4170013E2F5 /* Garment+CoreDataClass.swift */,
+				A77FD9642A0DE4170013E2F5 /* Garment+CoreDataProperties.swift */,
+				A77FD9652A0DE4170013E2F5 /* User+CoreDataClass.swift */,
+				A77FD9662A0DE4170013E2F5 /* User+CoreDataProperties.swift */,
+				A77FD9672A0DE4170013E2F5 /* Outfit+CoreDataClass.swift */,
+				A77FD9682A0DE4170013E2F5 /* Outfit+CoreDataProperties.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -124,13 +128,23 @@
 		A709912B2A0B3BB70053943D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A77FD9622A0DD9570013E2F5 /* Garment */,
 				A70991282A0B3BAA0053943D /* outfitCollectionViewController.swift */,
 				A70991202A0B3B400053943D /* signUpPageViewController.swift */,
 				A70991222A0B3B580053943D /* MainMenuViewController.swift */,
-				A70991262A0B3B910053943D /* garmentCollectionViewController.swift */,
 				A70991242A0B3B700053943D /* tabBarViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A77FD9622A0DD9570013E2F5 /* Garment */ = {
+			isa = PBXGroup;
+			children = (
+				A77FD95E2A0DD7750013E2F5 /* garmentCollectionViewCell.swift */,
+				A77FD95F2A0DD7750013E2F5 /* garmentCollectionViewCell.xib */,
+				A70991262A0B3B910053943D /* garmentCollectionViewController.swift */,
+			);
+			path = Garment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +208,7 @@
 				A70990ED2A0B35080053943D /* LaunchScreen.storyboard in Resources */,
 				A70990EA2A0B35080053943D /* Assets.xcassets in Resources */,
 				A70990E52A0B35080053943D /* Main.storyboard in Resources */,
+				A77FD9612A0DD7750013E2F5 /* garmentCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,22 +220,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				A70991252A0B3B700053943D /* tabBarViewController.swift in Sources */,
-				A709910B2A0B39B80053943D /* Garment+CoreDataProperties.swift in Sources */,
 				A70991212A0B3B400053943D /* signUpPageViewController.swift in Sources */,
-				A709912F2A0B4DAE0053943D /* Outfit+CoreDataProperties.swift in Sources */,
-				A709910A2A0B39B80053943D /* Garment+CoreDataClass.swift in Sources */,
-				A709912E2A0B4DAE0053943D /* Outfit+CoreDataClass.swift in Sources */,
+				A77FD96D2A0DE4170013E2F5 /* Outfit+CoreDataClass.swift in Sources */,
+				A77FD96C2A0DE4170013E2F5 /* User+CoreDataProperties.swift in Sources */,
+				A77FD96E2A0DE4170013E2F5 /* Outfit+CoreDataProperties.swift in Sources */,
 				A70991292A0B3BAA0053943D /* outfitCollectionViewController.swift in Sources */,
 				A70991232A0B3B580053943D /* MainMenuViewController.swift in Sources */,
 				A70990E82A0B35080053943D /* BarugahDrip2_0.xcdatamodeld in Sources */,
-				A70991092A0B39B80053943D /* User+CoreDataProperties.swift in Sources */,
 				A70990DE2A0B35080053943D /* AppDelegate.swift in Sources */,
+				A77FD96A2A0DE4170013E2F5 /* Garment+CoreDataProperties.swift in Sources */,
 				A709911F2A0B3AD30053943D /* CoreDataController.swift in Sources */,
+				A77FD9692A0DE4170013E2F5 /* Garment+CoreDataClass.swift in Sources */,
 				A709911D2A0B3AC50053943D /* DatabaseProtocol.swift in Sources */,
 				A709911B2A0B3A910053943D /* MulticastDelegate.swift in Sources */,
 				A70990E02A0B35080053943D /* SceneDelegate.swift in Sources */,
-				A70991082A0B39B80053943D /* User+CoreDataClass.swift in Sources */,
 				A70991272A0B3B910053943D /* garmentCollectionViewController.swift in Sources */,
+				A77FD9602A0DD7750013E2F5 /* garmentCollectionViewCell.swift in Sources */,
+				A77FD96B2A0DE4170013E2F5 /* User+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

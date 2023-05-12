@@ -2,7 +2,7 @@
 //  Outfit+CoreDataProperties.swift
 //  BarugahDrip2.0
 //
-//  Created by Eskay Yap on 10/5/2023.
+//  Created by Eskay Yap on 12/5/2023.
 //
 //
 
@@ -17,8 +17,9 @@ extension Outfit {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var price: Double
     @NSManaged public var numberOfWears: Int32
+    @NSManaged public var price: Double
+    @NSManaged public var imageRef: Data?
     @NSManaged public var garments: NSSet?
 
 }

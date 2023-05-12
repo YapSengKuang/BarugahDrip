@@ -44,6 +44,7 @@ protocol DatabaseListener: AnyObject {
 protocol DatabaseProtocol: AnyObject {
     
     var currentOutfit: Outfit? {get set}
+    var currentUser: User? {get set}
     
     func addGarment(name: String, price: Double, brand: String, size: String, numberOfWears: Int, datePurchased: Date) -> Garment
     func deleteGarment(garment: Garment)

@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 
 class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsControllerDelegate {
+    
+    var currentUser: User?
     var currentOutfit: Outfit?
     var outfitGarmentsFetchedResultsController: NSFetchedResultsController<Garment>?
     var allOutfitsFetchedResultsController: NSFetchedResultsController<Outfit>?
@@ -21,6 +23,7 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         // Initialise persistentContainer
         persistentContainer = NSPersistentContainer(name: "BarugahDrip2_0")
         
+        
         // Load Core data and provide closure for error handling
         
         persistentContainer.loadPersistentStores() { (description,error) in
@@ -30,6 +33,12 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         }
         
         super.init()
+        
+        if fetchAllGarments().count == 0{
+            addDefaultGarments()
+        }
+        
+        
     }
     
     func addGarment(name: String, price: Double, brand: String, size: String, numberOfWears: Int, datePurchased: Date) -> Garment {
@@ -231,6 +240,8 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
          */
         let user = NSEntityDescription.insertNewObject(forEntityName: "User", into: persistentContainer.viewContext) as! User
         user.name = name
+        
+        currentUser = user
     }
     
     func deleteUser(user: User) {
@@ -238,6 +249,7 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
          Deletes a user from CoreData
          */
         persistentContainer.viewContext.delete(user)
+        currentUser = nil
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
@@ -267,6 +279,19 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         }
     }
     
+    func addDefaultGarments(){
+        let _ = addGarment(name: "Jeans", price: 79.99, brand: "Denim Co.", size: "32", numberOfWears: 10, datePurchased: Date())
+
+        let _ = addGarment(name: "Dress", price: 59.99, brand: "Fashionista", size: "S", numberOfWears: 3, datePurchased: Date())
+
+        let _ = addGarment(name: "Sneakers", price: 99.99, brand: "Sportify", size: "US 8", numberOfWears: 2, datePurchased: Date())
+
+        let _ = addGarment(name: "Blouse", price: 39.99, brand: "ChicStyle", size: "L", numberOfWears: 7, datePurchased: Date())
+
+        let _ = addGarment(name: "Shorts", price: 24.99, brand: "Summer Vibes", size: "M", numberOfWears: 4, datePurchased: Date())
+
+        cleanup()
+    }
 }
 
 

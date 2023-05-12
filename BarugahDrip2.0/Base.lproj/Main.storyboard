@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ij1-Xg-gbd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yYt-SK-REf">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--outfit-->
         <scene sceneID="97O-UA-zVw">
             <objects>
-                <collectionViewController id="SPB-dv-vJR" sceneMemberID="viewController">
+                <collectionViewController title="outfit" id="SPB-dv-vJR" customClass="outfitCollectionViewController" customModule="BarugahDrip2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="MIJ-tn-3nC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Background"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4PI-4r-uxm">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -38,20 +38,21 @@
                             <outlet property="delegate" destination="SPB-dv-vJR" id="RCC-RJ-by5"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Item" id="mcw-u7-YIB"/>
+                    <tabBarItem key="tabBarItem" title="Outfits" image="tshirt" catalog="system" selectedImage="tshirt.fill" id="W7B-XY-dDi" customClass="ga"/>
+                    <navigationItem key="navigationItem" id="6oe-z7-mnm"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JYk-g0-9Bx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1025" y="842"/>
+            <point key="canvasLocation" x="-798" y="842"/>
         </scene>
-        <!--Item-->
+        <!--Garments-->
         <scene sceneID="8hF-m7-zZy">
             <objects>
-                <collectionViewController id="fmb-Gw-TSr" sceneMemberID="viewController">
+                <collectionViewController id="fmb-Gw-TSr" customClass="garmentCollectionViewController" customModule="BarugahDrip2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="lkD-Ez-Xsc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Background"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dwD-Bc-7cw">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -73,43 +74,74 @@
                             <outlet property="delegate" destination="fmb-Gw-TSr" id="4qK-O6-PXd"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Item" id="mc5-N3-kZf"/>
+                    <tabBarItem key="tabBarItem" title="Garments" image="rectangle.split.2x1" catalog="system" selectedImage="rectangle.split.2x1.fill" id="mc5-N3-kZf"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DSi-it-sgV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117" y="842"/>
+            <point key="canvasLocation" x="1043.5114503816794" y="841.54929577464793"/>
         </scene>
         <!--Let's get started-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BarugahDrip2_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="signUpPageViewController" customModule="BarugahDrip2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVr-Uo-gM7">
+                                <rect key="frame" x="30" y="668" width="333" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="VeO-Al-Xtr"/>
+                                </constraints>
+                                <color key="tintColor" name="AccentColour2"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Continue" cornerStyle="large"/>
+                                <connections>
+                                    <action selector="continueButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="txQ-wj-fY9"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your name..." textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="czp-hA-ru7">
+                                <rect key="frame" x="30" y="355" width="333" height="18.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="czp-hA-ru7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="0qE-Yk-oWc"/>
+                            <constraint firstItem="czp-hA-ru7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="4Oa-5t-vee"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LVr-Uo-gM7" secondAttribute="bottom" constant="100" id="BAx-OU-8wr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LVr-Uo-gM7" secondAttribute="trailing" constant="30" id="Kl1-0W-KUD"/>
+                            <constraint firstItem="LVr-Uo-gM7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="PtI-Fd-BfV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="czp-hA-ru7" secondAttribute="trailing" constant="30" id="QqI-Ze-iNP"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Let's get started" id="R8I-3y-Knb"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="czp-hA-ru7" id="pig-PD-icr"/>
+                        <segue destination="yYt-SK-REf" kind="presentation" identifier="signup" modalPresentationStyle="fullScreen" id="Lg1-31-mzb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117" y="-612"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="lxP-pM-U0m">
             <objects>
-                <viewController id="Ubo-pb-sXU" sceneMemberID="viewController">
+                <viewController id="Ubo-pb-sXU" customClass="MainMenuViewController" customModule="BarugahDrip2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S73-GR-qLH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="OSd-Yn-g6P"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Background"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="mXT-cz-hVI"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house.circle" id="mXT-cz-hVI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="575-jk-hWj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1282" y="842"/>
+            <point key="canvasLocation" x="117" y="842"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="V4t-gp-Yyz">
@@ -129,19 +161,21 @@
             </objects>
             <point key="canvasLocation" x="-1611" y="-612"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar-->
         <scene sceneID="y01-a0-qPf">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="yYt-SK-REf" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="yYt-SK-REf" customClass="tabBar" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EgG-fv-Z9R">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" name="Background"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Ubo-pb-sXU" kind="relationship" relationship="viewControllers" id="0pi-Gb-2wV"/>
-                        <segue destination="SPB-dv-vJR" kind="relationship" relationship="viewControllers" id="dQd-YX-F9L"/>
                         <segue destination="fmb-Gw-TSr" kind="relationship" relationship="viewControllers" id="SGO-Zm-srm"/>
+                        <segue destination="Ubo-pb-sXU" kind="relationship" relationship="viewControllers" id="0pi-Gb-2wV"/>
+                        <segue destination="SPB-dv-vJR" kind="relationship" relationship="viewControllers" id="jNS-LY-OGo"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BfA-lw-XY3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -149,9 +183,19 @@
             <point key="canvasLocation" x="117" y="105"/>
         </scene>
     </scenes>
+    <color key="tintColor" name="AccentColour2"/>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="house" catalog="system" width="128" height="104"/>
+        <image name="house.circle" catalog="system" width="128" height="123"/>
+        <image name="rectangle.split.2x1" catalog="system" width="128" height="93"/>
+        <image name="rectangle.split.2x1.fill" catalog="system" width="128" height="93"/>
+        <image name="tshirt" catalog="system" width="128" height="98"/>
+        <image name="tshirt.fill" catalog="system" width="128" height="98"/>
+        <namedColor name="AccentColour2">
+            <color red="0.13300000131130219" green="0.20000000298023224" blue="0.23100000619888306" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Background">
+            <color red="0.94900000095367432" green="0.9570000171661377" blue="0.95300000905990601" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
