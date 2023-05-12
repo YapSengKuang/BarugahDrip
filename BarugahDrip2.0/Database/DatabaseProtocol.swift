@@ -45,7 +45,7 @@ protocol DatabaseProtocol: AnyObject {
     
     var currentOutfit: Outfit? {get set}
     
-    func addGarment(name: String, price: Double, brand: String, size: String, numberOfWears: Int, datePurchased: String) -> Garment
+    func addGarment(name: String, price: Double, brand: String, size: String, numberOfWears: Int, datePurchased: Date) -> Garment
     func deleteGarment(garment: Garment)
     
     func addOutfit(price: Double, wears: Int, outfitName: String)
@@ -56,8 +56,10 @@ protocol DatabaseProtocol: AnyObject {
     
     func cleanup()
     
-    func addListener(Listener: DatabaseListener)
-    func removeListener(Listener: DatabaseListener)
+    func addListener(listener: DatabaseListener)
+    func removeListener(listener: DatabaseListener)
     
     func addUser(name: String)
+    
+    func deleteUser(user: User)
 }

@@ -20,7 +20,7 @@ extension Garment {
     @NSManaged public var price: Double
     @NSManaged public var brand: String?
     @NSManaged public var size: String?
-    @NSManaged public var numberOfWears: Int16
+    @NSManaged public var numberOfWears: Int32
     @NSManaged public var dateBought: Date?
     @NSManaged public var imageRef: String?
     @NSManaged public var outfits: NSSet?

@@ -17,8 +17,6 @@
 		A70991092A0B39B80053943D /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70991032A0B39B80053943D /* User+CoreDataProperties.swift */; };
 		A709910A2A0B39B80053943D /* Garment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70991042A0B39B80053943D /* Garment+CoreDataClass.swift */; };
 		A709910B2A0B39B80053943D /* Garment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70991052A0B39B80053943D /* Garment+CoreDataProperties.swift */; };
-		A709910C2A0B39B80053943D /* Outfit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70991062A0B39B80053943D /* Outfit+CoreDataClass.swift */; };
-		A709910D2A0B39B80053943D /* Outfit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70991072A0B39B80053943D /* Outfit+CoreDataProperties.swift */; };
 		A709911B2A0B3A910053943D /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709911A2A0B3A910053943D /* MulticastDelegate.swift */; };
 		A709911D2A0B3AC50053943D /* DatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709911C2A0B3AC50053943D /* DatabaseProtocol.swift */; };
 		A709911F2A0B3AD30053943D /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709911E2A0B3AD30053943D /* CoreDataController.swift */; };
@@ -27,6 +25,8 @@
 		A70991252A0B3B700053943D /* tabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70991242A0B3B700053943D /* tabBarViewController.swift */; };
 		A70991272A0B3B910053943D /* garmentCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70991262A0B3B910053943D /* garmentCollectionViewController.swift */; };
 		A70991292A0B3BAA0053943D /* outfitCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70991282A0B3BAA0053943D /* outfitCollectionViewController.swift */; };
+		A709912E2A0B4DAE0053943D /* Outfit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709912C2A0B4DAE0053943D /* Outfit+CoreDataClass.swift */; };
+		A709912F2A0B4DAE0053943D /* Outfit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709912D2A0B4DAE0053943D /* Outfit+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,8 +42,6 @@
 		A70991032A0B39B80053943D /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A70991042A0B39B80053943D /* Garment+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Garment+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A70991052A0B39B80053943D /* Garment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Garment+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A70991062A0B39B80053943D /* Outfit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Outfit+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A70991072A0B39B80053943D /* Outfit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Outfit+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A709911A2A0B3A910053943D /* MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
 		A709911C2A0B3AC50053943D /* DatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProtocol.swift; sourceTree = "<group>"; };
 		A709911E2A0B3AD30053943D /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
@@ -52,6 +50,8 @@
 		A70991242A0B3B700053943D /* tabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabBarViewController.swift; sourceTree = "<group>"; };
 		A70991262A0B3B910053943D /* garmentCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = garmentCollectionViewController.swift; sourceTree = "<group>"; };
 		A70991282A0B3BAA0053943D /* outfitCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = outfitCollectionViewController.swift; sourceTree = "<group>"; };
+		A709912C2A0B4DAE0053943D /* Outfit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Outfit+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A709912D2A0B4DAE0053943D /* Outfit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Outfit+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,10 +102,10 @@
 			children = (
 				A70991022A0B39B80053943D /* User+CoreDataClass.swift */,
 				A70991032A0B39B80053943D /* User+CoreDataProperties.swift */,
+				A709912C2A0B4DAE0053943D /* Outfit+CoreDataClass.swift */,
+				A709912D2A0B4DAE0053943D /* Outfit+CoreDataProperties.swift */,
 				A70991042A0B39B80053943D /* Garment+CoreDataClass.swift */,
 				A70991052A0B39B80053943D /* Garment+CoreDataProperties.swift */,
-				A70991062A0B39B80053943D /* Outfit+CoreDataClass.swift */,
-				A70991072A0B39B80053943D /* Outfit+CoreDataProperties.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -206,10 +206,10 @@
 			files = (
 				A70991252A0B3B700053943D /* tabBarViewController.swift in Sources */,
 				A709910B2A0B39B80053943D /* Garment+CoreDataProperties.swift in Sources */,
-				A709910C2A0B39B80053943D /* Outfit+CoreDataClass.swift in Sources */,
-				A709910D2A0B39B80053943D /* Outfit+CoreDataProperties.swift in Sources */,
 				A70991212A0B3B400053943D /* signUpPageViewController.swift in Sources */,
+				A709912F2A0B4DAE0053943D /* Outfit+CoreDataProperties.swift in Sources */,
 				A709910A2A0B39B80053943D /* Garment+CoreDataClass.swift in Sources */,
+				A709912E2A0B4DAE0053943D /* Outfit+CoreDataClass.swift in Sources */,
 				A70991292A0B3BAA0053943D /* outfitCollectionViewController.swift in Sources */,
 				A70991232A0B3B580053943D /* MainMenuViewController.swift in Sources */,
 				A70990E82A0B35080053943D /* BarugahDrip2_0.xcdatamodeld in Sources */,
