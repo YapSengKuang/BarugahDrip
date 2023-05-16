@@ -1,29 +1,28 @@
 //
-//  garmentCollectionViewController.swift
+//  outfitsViewController.swift
 //  BarugahDrip2.0
 //
-//  Created by Eskay Yap on 10/5/2023.
+//  Created by Eskay Yap on 12/5/2023.
 //
-
 import UIKit
 
-class garmentCollectionViewController: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource, DatabaseListener, UICollectionViewDelegateFlowLayout {
-    var listenerType: ListenerType = .garment
-    var allGarments: [Garment] = []
+import Foundation
+
+class OutfitsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, DatabaseListener {
+    var listenerType: ListenerType = .outfits
+    var allOutfits: [Outfit] = []
     weak var databaseController: DatabaseProtocol?
     
     @IBOutlet weak var collectionView: UICollectionView!
-    override func viewDidLoad() {
+    override func viewDidLoad(){
         super.viewDidLoad()
-
+        
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         databaseController = appDelegate?.databaseController
         
-        collectionView.register(garmentCollectionViewCell.nib(), forCellWithReuseIdentifier: garmentCollectionViewCell.identifier)
+        collectionView.register(outfitsCollectionViewCell.nib(), forCellWithReuseIdentifier: outfitsCollectionViewCell.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
-
-        // Do any additional setup after loading the view.
         
         let screenSize = UIScreen.main.bounds
         let screenWidth = screenSize.width
@@ -35,18 +34,17 @@ class garmentCollectionViewController: UIViewController,UICollectionViewDelegate
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         collectionView!.collectionViewLayout = layout
+        
     }
     
-    // MARK: UICollectionViewDataSource
-
+    // MARK: Collection View methods
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return allGarments.count
+        return allOutfits.count
         
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: garmentCollectionViewCell.identifier, for: indexPath) as! garmentCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: outfitsCollectionViewCell.identifier, for: indexPath) as! outfitsCollectionViewCell
     
         cell.configure(with: UIImage(named: "Outfit1")!)
         
@@ -55,13 +53,12 @@ class garmentCollectionViewController: UIViewController,UICollectionViewDelegate
         return cell
     }
     
-    // MARK: UICollectionViewDelegate
-
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         print("tapped \(indexPath)")
         
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         /*
@@ -83,16 +80,18 @@ class garmentCollectionViewController: UIViewController,UICollectionViewDelegate
         let width = UIScreen.main.bounds.width
         return CGSize(width: width/3, height: width/3)
     }
-
+    
     func onGarmentChange(change: DatabaseChange, garments: [Garment]) {
-        allGarments = garments
+        //nothing
     }
     
     func onOutfitsChange(change: DatabaseChange, outfits: [Outfit]) {
-        //nothing
+        allOutfits = outfits
     }
     
     func onOutfitGarmentsChange(change: DatabaseChange, garments: [Garment]) {
         //nothing
     }
+    
+    
 }
