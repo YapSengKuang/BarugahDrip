@@ -109,63 +109,59 @@
             <point key="canvasLocation" x="-896" y="2341"/>
         </scene>
         <!--Garments-->
-        <scene sceneID="meU-5I-jt8">
+        <scene sceneID="EUF-jx-hnV">
             <objects>
-                <viewController id="WCW-AA-bl5" customClass="garmentCollectionViewController" customModule="BarugahDrip2_0" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="EfI-Nb-zj6">
+                <collectionViewController id="5YF-hD-WXX" customClass="GarmentCollectionViewController" customModule="BarugahDrip2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Sp9-F3-kjs">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="S1g-dP-tGX">
-                                <rect key="frame" x="0.0" y="184" width="393" height="565"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fgi-Rf-mrr">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="o5k-3B-dsw">
-                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZSg-JZ-w5n">
-                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Cgz-iB-Xpp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Cgz-iB-Xpp" firstAttribute="bottom" secondItem="S1g-dP-tGX" secondAttribute="bottom" constant="20" id="Fep-nl-m5y"/>
-                            <constraint firstItem="Cgz-iB-Xpp" firstAttribute="trailing" secondItem="S1g-dP-tGX" secondAttribute="trailing" id="cZL-Xl-WMG"/>
-                            <constraint firstItem="S1g-dP-tGX" firstAttribute="leading" secondItem="Cgz-iB-Xpp" secondAttribute="leading" id="nBO-rY-4to"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Garments" id="XJi-aY-zFu">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="ZTJ-zB-A2B">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Jl1-sh-uaz">
-                                <rect key="frame" x="330" y="4.6666666666666679" width="47" height="35"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="M39-H3-oMU">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="DFb-fE-9fP" customClass="GarmentCollectionViewCell" customModule="BarugahDrip2_0" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system" title=""/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jzW-Ke-z49">
+                                    <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rib-WM-45C">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="rib-WM-45C" secondAttribute="trailing" id="5HG-JH-YqV"/>
+                                        <constraint firstItem="rib-WM-45C" firstAttribute="leading" secondItem="jzW-Ke-z49" secondAttribute="leading" id="CAJ-Ju-Cxh"/>
+                                        <constraint firstItem="rib-WM-45C" firstAttribute="top" secondItem="jzW-Ke-z49" secondAttribute="top" id="LqX-TI-2v4"/>
+                                        <constraint firstAttribute="bottom" secondItem="rib-WM-45C" secondAttribute="bottom" id="TMG-kE-ttF"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
                                 <connections>
-                                    <segue destination="axi-oB-0wD" kind="show" id="m0W-nL-Y5q"/>
+                                    <outlet property="imageView" destination="rib-WM-45C" id="BYp-Xy-WuM"/>
                                 </connections>
-                            </button>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="5YF-hD-WXX" id="Jml-Ce-uWV"/>
+                            <outlet property="delegate" destination="5YF-hD-WXX" id="oGu-aI-dQY"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Garments" id="p4j-ew-oxc">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="MAk-Mz-Lj4">
+                            <connections>
+                                <segue destination="axi-oB-0wD" kind="show" id="3kf-8J-i18"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="collectionView" destination="S1g-dP-tGX" id="nhz-uR-194"/>
-                        <segue destination="wxH-dM-6Vs" kind="presentation" modalPresentationStyle="fullScreen" id="aZw-zA-DPf"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BBT-3o-BRm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Fn-Mj-GaV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2808.3969465648852" y="841.54929577464793"/>
+            <point key="canvasLocation" x="4126" y="801"/>
         </scene>
         <!--Pick Image-->
         <scene sceneID="VTF-U0-GWj">
@@ -176,16 +172,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Pt-p5-Vco">
-                                <rect key="frame" x="0.0" y="103" width="393" height="44"/>
+                                <rect key="frame" x="0.0" y="96" width="393" height="44"/>
                             </navigationBar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="424-Ac-JJ9">
-                                <rect key="frame" x="30" y="177" width="333" height="400"/>
+                                <rect key="frame" x="30" y="170" width="333" height="400"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="400" id="bvH-qb-WEO"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKK-Rw-FjE">
-                                <rect key="frame" x="20" y="597" width="353" height="35"/>
+                                <rect key="frame" x="20" y="590" width="353" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Pick a photo"/>
                                 <connections>
@@ -221,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eaR-5t-fWb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3816.030534351145" y="841.54929577464793"/>
+            <point key="canvasLocation" x="5146" y="802"/>
         </scene>
         <!--view garment-->
         <scene sceneID="ZHh-SW-j2F">
@@ -403,7 +399,7 @@
                     <connections>
                         <segue destination="e1G-db-byT" kind="relationship" relationship="viewControllers" id="fmM-Xw-QUf"/>
                         <segue destination="Ubo-pb-sXU" kind="relationship" relationship="viewControllers" id="0pi-Gb-2wV"/>
-                        <segue destination="CJ8-7x-TD6" kind="relationship" relationship="viewControllers" id="IXC-Zr-17Q"/>
+                        <segue destination="P0a-y6-rUi" kind="relationship" relationship="viewControllers" id="MqB-Nz-5Xn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BfA-lw-XY3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -419,31 +415,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HNV-ZN-YEL">
-                                <rect key="frame" x="0.0" y="103" width="393" height="44"/>
+                                <rect key="frame" x="0.0" y="96" width="393" height="44"/>
                             </navigationBar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kxc-uq-Mbz">
-                                <rect key="frame" x="20" y="157" width="353" height="150"/>
+                                <rect key="frame" x="20" y="150" width="353" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="7Ht-t2-Gwc"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Garment Name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pFr-vJ-Uym">
-                                <rect key="frame" x="20" y="337" width="353" height="18.666666666666686"/>
+                                <rect key="frame" x="20" y="330" width="353" height="18.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Garment Brand..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OQO-Gf-wTp">
-                                <rect key="frame" x="20" y="385.66666666666669" width="353" height="18.666666666666686"/>
+                                <rect key="frame" x="20" y="378.66666666666669" width="353" height="18.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Garment Size..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d3C-ea-Fir">
-                                <rect key="frame" x="20" y="434.33333333333331" width="353" height="18.666666666666686"/>
+                                <rect key="frame" x="20" y="427.33333333333331" width="353" height="18.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Garment Price..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MpY-zZ-mDo">
-                                <rect key="frame" x="20" y="483" width="353" height="18.666666666666686"/>
+                                <rect key="frame" x="20" y="476" width="353" height="18.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
@@ -488,7 +484,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZT1-WK-eGS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4987.0229007633588" y="841.54929577464793"/>
+            <point key="canvasLocation" x="5146" y="1751"/>
         </scene>
         <!--view garment details-->
         <scene sceneID="ls4-Cl-iLr">
@@ -588,29 +584,29 @@
             </objects>
             <point key="canvasLocation" x="-854.19847328244271" y="841.54929577464793"/>
         </scene>
-        <!--Garments-->
-        <scene sceneID="3je-z7-wup">
+        <!--Garment-->
+        <scene sceneID="xNe-bO-jZr">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CJ8-7x-TD6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Garments" image="rectangle.split.2x1" catalog="system" selectedImage="rectangle.split.2x1.fill" id="2dM-Ot-uoL"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P0a-y6-rUi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Garment" image="rectangle.split.2x1" catalog="system" selectedImage="rectangle.split.2x1.fill" id="pvH-CY-alc"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OyQ-b8-eG9">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="E5R-Ce-KLp">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="WCW-AA-bl5" kind="relationship" relationship="rootViewController" id="MGa-sg-a4r"/>
+                        <segue destination="5YF-hD-WXX" kind="relationship" relationship="rootViewController" id="oH3-N0-ziM"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hql-cU-msu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V0S-kP-GP1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1881.679389312977" y="841.54929577464793"/>
+            <point key="canvasLocation" x="3011" y="801"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="AQU-Sv-DGX"/>
         <segue reference="zg6-4B-maV"/>
-        <segue reference="aZw-zA-DPf"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chevron.down" catalog="system" width="128" height="70"/>

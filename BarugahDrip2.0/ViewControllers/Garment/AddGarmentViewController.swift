@@ -76,6 +76,8 @@ class AddGarmentViewController: UIViewController {
         } catch {
             displayMessage(title: "Error", message: "\(error)")
         }
+        
+        navigationController?.popToRootViewController(animated: true)
     }
     
     /*
