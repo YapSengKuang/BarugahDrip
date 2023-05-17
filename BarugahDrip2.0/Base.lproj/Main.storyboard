@@ -166,7 +166,7 @@
         <!--Pick Image-->
         <scene sceneID="VTF-U0-GWj">
             <objects>
-                <viewController id="axi-oB-0wD" customClass="AddGarmentPhotoViewController" customModule="BarugahDrip2_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="axi-oB-0wD" customClass="AddGarmentPhotoVer2ViewController" customModule="BarugahDrip2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0u2-0u-HWi">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -185,7 +185,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Pick a photo"/>
                                 <connections>
-                                    <action selector="pickPhotoButton:" destination="axi-oB-0wD" eventType="touchUpInside" id="V5g-oF-VcF"/>
+                                    <action selector="pickPhotoButton:" destination="axi-oB-0wD" eventType="touchUpInside" id="bYY-5d-NVX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -211,7 +211,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageView" destination="424-Ac-JJ9" id="8Jz-OE-fnE"/>
+                        <outlet property="imageView" destination="424-Ac-JJ9" id="bBb-AO-ub3"/>
                         <segue destination="cos-bc-xvx" kind="show" identifier="addGarmentDetails" animates="NO" id="auk-7N-3yL"/>
                     </connections>
                 </viewController>
