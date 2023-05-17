@@ -97,6 +97,10 @@ class GarmentVer2CollectionViewController: UICollectionViewController, DatabaseL
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+    
     func onGarmentChange(change: DatabaseChange, garments: [Garment]) {
         allGarments = garments
     }

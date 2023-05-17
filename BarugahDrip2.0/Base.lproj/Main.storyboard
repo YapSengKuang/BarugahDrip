@@ -345,14 +345,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Brand name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odd-SN-LP4">
-                                <rect key="frame" x="30" y="590" width="333" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brand name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odd-SN-LP4">
+                                <rect key="frame" x="30" y="440" width="333" height="41"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Garment Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJx-Pw-6Bq">
-                                <rect key="frame" x="30" y="661" width="333" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Garment Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJx-Pw-6Bq">
+                                <rect key="frame" x="30" y="511" width="333" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -362,8 +362,8 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="chevron.down" catalog="system" title=""/>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eXc-Sk-ShI">
-                                <rect key="frame" x="30" y="63" width="333" height="400"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eXc-Sk-ShI">
+                                <rect key="frame" x="30" y="10" width="333" height="400"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="400" id="4Zt-YK-77d"/>
                                 </constraints>
@@ -378,6 +378,7 @@
                             <constraint firstItem="zkO-5a-HeQ" firstAttribute="bottom" secondItem="Hf1-Qh-2cY" secondAttribute="bottom" constant="40" id="F7J-kC-4p4"/>
                             <constraint firstItem="JJx-Pw-6Bq" firstAttribute="top" secondItem="odd-SN-LP4" secondAttribute="bottom" constant="30" id="JqH-97-Ju6"/>
                             <constraint firstItem="odd-SN-LP4" firstAttribute="top" secondItem="eXc-Sk-ShI" secondAttribute="bottom" constant="30" id="Rmx-L5-Wwn"/>
+                            <constraint firstItem="eXc-Sk-ShI" firstAttribute="top" secondItem="Nxt-pN-fPQ" secondAttribute="top" constant="10" id="UIR-Je-n1I"/>
                             <constraint firstItem="zkO-5a-HeQ" firstAttribute="trailing" secondItem="eXc-Sk-ShI" secondAttribute="trailing" constant="30" id="e2f-JS-Oew"/>
                             <constraint firstItem="zkO-5a-HeQ" firstAttribute="trailing" secondItem="Hf1-Qh-2cY" secondAttribute="trailing" constant="20" id="ez9-bU-Ghl"/>
                             <constraint firstItem="zkO-5a-HeQ" firstAttribute="trailing" secondItem="odd-SN-LP4" secondAttribute="trailing" constant="30" id="g1G-sY-vyZ"/>
