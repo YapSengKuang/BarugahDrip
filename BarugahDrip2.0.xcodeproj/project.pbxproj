@@ -32,6 +32,7 @@
 		A76B48BE2A1485CD00A213FC /* AddGarmentPhotoVer2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B48BD2A1485CD00A213FC /* AddGarmentPhotoVer2ViewController.swift */; };
 		A76B48C02A1485DC00A213FC /* AddGarmentVer2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B48BF2A1485DC00A213FC /* AddGarmentVer2ViewController.swift */; };
 		A76B48C42A14862B00A213FC /* GarmentVer2CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B48C32A14862B00A213FC /* GarmentVer2CollectionViewController.swift */; };
+		A76B48C62A14879300A213FC /* DisplayMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B48C52A14879300A213FC /* DisplayMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		A76B48BD2A1485CD00A213FC /* AddGarmentPhotoVer2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGarmentPhotoVer2ViewController.swift; sourceTree = "<group>"; };
 		A76B48BF2A1485DC00A213FC /* AddGarmentVer2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGarmentVer2ViewController.swift; sourceTree = "<group>"; };
 		A76B48C32A14862B00A213FC /* GarmentVer2CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentVer2CollectionViewController.swift; sourceTree = "<group>"; };
+		A76B48C52A14879300A213FC /* DisplayMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				A70991202A0B3B400053943D /* signUpPageViewController.swift */,
 				A70991222A0B3B580053943D /* MainMenuViewController.swift */,
 				A70991242A0B3B700053943D /* tabBarViewController.swift */,
+				A76B48C52A14879300A213FC /* DisplayMessage.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			files = (
 				A76B48BE2A1485CD00A213FC /* AddGarmentPhotoVer2ViewController.swift in Sources */,
 				A70991252A0B3B700053943D /* tabBarViewController.swift in Sources */,
+				A76B48C62A14879300A213FC /* DisplayMessage.swift in Sources */,
 				A76B48C02A1485DC00A213FC /* AddGarmentVer2ViewController.swift in Sources */,
 				A70991212A0B3B400053943D /* signUpPageViewController.swift in Sources */,
 				A70991232A0B3B580053943D /* MainMenuViewController.swift in Sources */,

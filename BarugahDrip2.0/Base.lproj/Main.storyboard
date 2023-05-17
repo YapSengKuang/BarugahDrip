@@ -402,7 +402,7 @@
         <!--Add Garment-->
         <scene sceneID="UAl-kH-HPa">
             <objects>
-                <viewController id="cos-bc-xvx" customClass="AddGarmentViewController" customModule="BarugahDrip2_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cos-bc-xvx" customClass="AddGarmentVer2ViewController" customModule="BarugahDrip2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pj9-Kb-Hl3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -468,11 +468,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="garmentBrandOutlet" destination="OQO-Gf-wTp" id="9QC-z8-LqF"/>
-                        <outlet property="garmentNameOutlet" destination="pFr-vJ-Uym" id="J3d-ZP-P9h"/>
-                        <outlet property="garmentPriceOutlet" destination="MpY-zZ-mDo" id="6X3-MT-e0H"/>
-                        <outlet property="garmentSizeOutlet" destination="d3C-ea-Fir" id="NJS-dh-mPe"/>
-                        <outlet property="imageView" destination="kxc-uq-Mbz" id="WY6-8J-ShJ"/>
+                        <outlet property="garmentBrandOutlet" destination="OQO-Gf-wTp" id="iLx-Fs-i8F"/>
+                        <outlet property="garmentNameOutlet" destination="pFr-vJ-Uym" id="RiK-3C-vnG"/>
+                        <outlet property="garmentPriceOutlet" destination="MpY-zZ-mDo" id="Ih8-0W-Q0N"/>
+                        <outlet property="garmentSizeOutlet" destination="d3C-ea-Fir" id="q5k-M9-Tpd"/>
+                        <outlet property="imageView" destination="kxc-uq-Mbz" id="Hux-jR-qDr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZT1-WK-eGS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
