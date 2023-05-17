@@ -31,7 +31,7 @@
 		A76B48BC2A1485B400A213FC /* GarmentsVer2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B48BB2A1485B400A213FC /* GarmentsVer2CollectionViewCell.swift */; };
 		A76B48BE2A1485CD00A213FC /* AddGarmentPhotoVer2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B48BD2A1485CD00A213FC /* AddGarmentPhotoVer2ViewController.swift */; };
 		A76B48C02A1485DC00A213FC /* AddGarmentVer2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B48BF2A1485DC00A213FC /* AddGarmentVer2ViewController.swift */; };
-		A76B48C22A1485F800A213FC /* GarmentVer2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B48C12A1485F800A213FC /* GarmentVer2CollectionViewCell.swift */; };
+		A76B48C42A14862B00A213FC /* GarmentVer2CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B48C32A14862B00A213FC /* GarmentVer2CollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,7 +61,7 @@
 		A76B48BB2A1485B400A213FC /* GarmentsVer2CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentsVer2CollectionViewCell.swift; sourceTree = "<group>"; };
 		A76B48BD2A1485CD00A213FC /* AddGarmentPhotoVer2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGarmentPhotoVer2ViewController.swift; sourceTree = "<group>"; };
 		A76B48BF2A1485DC00A213FC /* AddGarmentVer2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGarmentVer2ViewController.swift; sourceTree = "<group>"; };
-		A76B48C12A1485F800A213FC /* GarmentVer2CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentVer2CollectionViewCell.swift; sourceTree = "<group>"; };
+		A76B48C32A14862B00A213FC /* GarmentVer2CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentVer2CollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +159,7 @@
 				A76B48BB2A1485B400A213FC /* GarmentsVer2CollectionViewCell.swift */,
 				A76B48BD2A1485CD00A213FC /* AddGarmentPhotoVer2ViewController.swift */,
 				A76B48BF2A1485DC00A213FC /* AddGarmentVer2ViewController.swift */,
-				A76B48C12A1485F800A213FC /* GarmentVer2CollectionViewCell.swift */,
+				A76B48C32A14862B00A213FC /* GarmentVer2CollectionViewController.swift */,
 			);
 			path = Garment;
 			sourceTree = "<group>";
@@ -238,13 +238,13 @@
 			files = (
 				A76B48BE2A1485CD00A213FC /* AddGarmentPhotoVer2ViewController.swift in Sources */,
 				A70991252A0B3B700053943D /* tabBarViewController.swift in Sources */,
-				A76B48C22A1485F800A213FC /* GarmentVer2CollectionViewCell.swift in Sources */,
 				A76B48C02A1485DC00A213FC /* AddGarmentVer2ViewController.swift in Sources */,
 				A70991212A0B3B400053943D /* signUpPageViewController.swift in Sources */,
 				A70991232A0B3B580053943D /* MainMenuViewController.swift in Sources */,
 				A707FDF42A146B5300942499 /* Outfit+CoreDataProperties.swift in Sources */,
 				A70990E82A0B35080053943D /* BarugahDrip2_0.xcdatamodeld in Sources */,
 				A707FDF32A146B5300942499 /* Outfit+CoreDataClass.swift in Sources */,
+				A76B48C42A14862B00A213FC /* GarmentVer2CollectionViewController.swift in Sources */,
 				A70990DE2A0B35080053943D /* AppDelegate.swift in Sources */,
 				A707FDF72A146B5300942499 /* Garment+CoreDataClass.swift in Sources */,
 				A709911F2A0B3AD30053943D /* CoreDataController.swift in Sources */,
