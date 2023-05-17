@@ -33,6 +33,7 @@
 		A76B48C02A1485DC00A213FC /* AddGarmentVer2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B48BF2A1485DC00A213FC /* AddGarmentVer2ViewController.swift */; };
 		A76B48C42A14862B00A213FC /* GarmentVer2CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B48C32A14862B00A213FC /* GarmentVer2CollectionViewController.swift */; };
 		A76B48C62A14879300A213FC /* DisplayMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B48C52A14879300A213FC /* DisplayMessage.swift */; };
+		A76B48C82A14964900A213FC /* SoloGarmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B48C72A14964900A213FC /* SoloGarmentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		A76B48BF2A1485DC00A213FC /* AddGarmentVer2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGarmentVer2ViewController.swift; sourceTree = "<group>"; };
 		A76B48C32A14862B00A213FC /* GarmentVer2CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentVer2CollectionViewController.swift; sourceTree = "<group>"; };
 		A76B48C52A14879300A213FC /* DisplayMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayMessage.swift; sourceTree = "<group>"; };
+		A76B48C72A14964900A213FC /* SoloGarmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoloGarmentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				A76B48BD2A1485CD00A213FC /* AddGarmentPhotoVer2ViewController.swift */,
 				A76B48BF2A1485DC00A213FC /* AddGarmentVer2ViewController.swift */,
 				A76B48C32A14862B00A213FC /* GarmentVer2CollectionViewController.swift */,
+				A76B48C72A14964900A213FC /* SoloGarmentViewController.swift */,
 			);
 			path = Garment;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				A76B48C02A1485DC00A213FC /* AddGarmentVer2ViewController.swift in Sources */,
 				A70991212A0B3B400053943D /* signUpPageViewController.swift in Sources */,
 				A70991232A0B3B580053943D /* MainMenuViewController.swift in Sources */,
+				A76B48C82A14964900A213FC /* SoloGarmentViewController.swift in Sources */,
 				A707FDF42A146B5300942499 /* Outfit+CoreDataProperties.swift in Sources */,
 				A70990E82A0B35080053943D /* BarugahDrip2_0.xcdatamodeld in Sources */,
 				A707FDF32A146B5300942499 /* Outfit+CoreDataClass.swift in Sources */,

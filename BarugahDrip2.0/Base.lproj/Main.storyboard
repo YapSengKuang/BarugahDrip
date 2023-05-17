@@ -158,10 +158,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="wxH-dM-6Vs" kind="show" identifier="showGarment" id="OBY-4m-bzi"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Fn-Mj-GaV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4126" y="801"/>
+            <point key="canvasLocation" x="4160" y="801"/>
         </scene>
         <!--Pick Image-->
         <scene sceneID="VTF-U0-GWj">
@@ -337,37 +340,29 @@
         <!--view garment-->
         <scene sceneID="ZHh-SW-j2F">
             <objects>
-                <viewController title="view garment" id="wxH-dM-6Vs" sceneMemberID="viewController">
+                <viewController title="view garment" id="wxH-dM-6Vs" customClass="SoloGarmentViewController" customModule="BarugahDrip2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nxt-pN-fPQ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brand name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odd-SN-LP4">
-                                <rect key="frame" x="30" y="553" width="333" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Brand name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odd-SN-LP4">
+                                <rect key="frame" x="30" y="590" width="333" height="41"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Garment Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJx-Pw-6Bq">
-                                <rect key="frame" x="30" y="624" width="333" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Garment Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJx-Pw-6Bq">
+                                <rect key="frame" x="30" y="661" width="333" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hf1-Qh-2cY">
-                                <rect key="frame" x="20" y="743" width="353" height="35"/>
+                                <rect key="frame" x="20" y="728" width="353" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="chevron.down" catalog="system" title=""/>
                             </button>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uia-iT-KzV">
-                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                                <items>
-                                    <navigationItem title="View Garment" id="Zum-oe-1K4">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="xmark" catalog="system" id="gjg-sa-DEo"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eXc-Sk-ShI">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eXc-Sk-ShI">
                                 <rect key="frame" x="30" y="63" width="333" height="400"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="400" id="4Zt-YK-77d"/>
@@ -377,23 +372,20 @@
                         <viewLayoutGuide key="safeArea" id="zkO-5a-HeQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="uia-iT-KzV" firstAttribute="top" secondItem="zkO-5a-HeQ" secondAttribute="top" id="0mW-X4-5OY"/>
-                            <constraint firstItem="uia-iT-KzV" firstAttribute="leading" secondItem="zkO-5a-HeQ" secondAttribute="leading" id="3Se-fG-BPR"/>
                             <constraint firstItem="odd-SN-LP4" firstAttribute="leading" secondItem="zkO-5a-HeQ" secondAttribute="leading" constant="30" id="6ej-r0-Dmh"/>
                             <constraint firstItem="JJx-Pw-6Bq" firstAttribute="leading" secondItem="zkO-5a-HeQ" secondAttribute="leading" constant="30" id="8Ns-qk-N7T"/>
                             <constraint firstItem="Hf1-Qh-2cY" firstAttribute="leading" secondItem="zkO-5a-HeQ" secondAttribute="leading" constant="20" id="8RS-k7-z9R"/>
                             <constraint firstItem="zkO-5a-HeQ" firstAttribute="bottom" secondItem="Hf1-Qh-2cY" secondAttribute="bottom" constant="40" id="F7J-kC-4p4"/>
                             <constraint firstItem="JJx-Pw-6Bq" firstAttribute="top" secondItem="odd-SN-LP4" secondAttribute="bottom" constant="30" id="JqH-97-Ju6"/>
-                            <constraint firstItem="uia-iT-KzV" firstAttribute="trailing" secondItem="zkO-5a-HeQ" secondAttribute="trailing" id="PNH-ap-llB"/>
                             <constraint firstItem="odd-SN-LP4" firstAttribute="top" secondItem="eXc-Sk-ShI" secondAttribute="bottom" constant="30" id="Rmx-L5-Wwn"/>
                             <constraint firstItem="zkO-5a-HeQ" firstAttribute="trailing" secondItem="eXc-Sk-ShI" secondAttribute="trailing" constant="30" id="e2f-JS-Oew"/>
                             <constraint firstItem="zkO-5a-HeQ" firstAttribute="trailing" secondItem="Hf1-Qh-2cY" secondAttribute="trailing" constant="20" id="ez9-bU-Ghl"/>
                             <constraint firstItem="zkO-5a-HeQ" firstAttribute="trailing" secondItem="odd-SN-LP4" secondAttribute="trailing" constant="30" id="g1G-sY-vyZ"/>
-                            <constraint firstItem="eXc-Sk-ShI" firstAttribute="top" secondItem="uia-iT-KzV" secondAttribute="bottom" constant="20" id="gKx-T2-nBA"/>
                             <constraint firstItem="eXc-Sk-ShI" firstAttribute="leading" secondItem="zkO-5a-HeQ" secondAttribute="leading" constant="30" id="nCZ-H3-xd0"/>
                             <constraint firstItem="zkO-5a-HeQ" firstAttribute="trailing" secondItem="JJx-Pw-6Bq" secondAttribute="trailing" constant="30" id="ynm-b5-juH"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="chK-aI-am2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tsg-Zd-IOR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -605,7 +597,6 @@
         <image name="rectangle.split.2x1.fill" catalog="system" width="128" height="93"/>
         <image name="tshirt" catalog="system" width="128" height="98"/>
         <image name="tshirt.fill" catalog="system" width="128" height="98"/>
-        <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="AccentColour2">
             <color red="0.13300000131130219" green="0.20000000298023224" blue="0.23100000619888306" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
