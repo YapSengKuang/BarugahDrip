@@ -46,10 +46,10 @@ protocol DatabaseProtocol: AnyObject {
     var currentOutfit: Outfit? {get set}
     var currentUser: User? {get set}
     
-    func addGarment(name: String, price: Double, brand: String, size: String, numberOfWears: Int, datePurchased: Date) -> Garment
+    func addGarment(name: String, price: Double, brand: String, size: String, numberOfWears: Int, datePurchased: Date, image: String) -> Garment
     func deleteGarment(garment: Garment)
     
-    func addOutfit(price: Double, wears: Int, outfitName: String)
+    func addOutfit(price: Double, wears: Int, outfitName: String, image: String)
     func deleteOutfit(outfit: Outfit)
     
     func addGarmentToOutfit(garment: Garment, outfit: Outfit) -> Bool

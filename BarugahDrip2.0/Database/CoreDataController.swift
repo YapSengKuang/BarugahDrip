@@ -41,7 +41,7 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         
     }
     
-    func addGarment(name: String, price: Double, brand: String, size: String, numberOfWears: Int, datePurchased: Date) -> Garment {
+    func addGarment(name: String, price: Double, brand: String, size: String, numberOfWears: Int, datePurchased: Date, image: String) -> Garment {
         /**
          Create and add a garment to CoreData given a valid name, price, brand, size, number of wears and date purchased.
          */
@@ -52,6 +52,7 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         garment.size = size
         garment.numberOfWears = Int32(numberOfWears)
         garment.dateBought = datePurchased
+        garment.image = image
         
         return garment
     }
@@ -63,13 +64,14 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         persistentContainer.viewContext.delete(garment)
     }
     
-    func addOutfit(price: Double, wears: Int, outfitName: String) {
+    func addOutfit(price: Double, wears: Int, outfitName: String, image: String) {
         /**
          Creates and adds an empty outfit to CoreDate, given valid price, wears and outfitName
          */
         let outfit = NSEntityDescription.insertNewObject(forEntityName: "Outfit", into: persistentContainer.viewContext) as! Outfit
         outfit.price = price
         outfit.name = outfitName
+        outfit.image = image
         
     }
     
@@ -280,16 +282,7 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
     }
     
     func addDefaultGarments(){
-        let _ = addGarment(name: "Jeans", price: 79.99, brand: "Denim Co.", size: "32", numberOfWears: 10, datePurchased: Date())
-
-        let _ = addGarment(name: "Dress", price: 59.99, brand: "Fashionista", size: "S", numberOfWears: 3, datePurchased: Date())
-
-        let _ = addGarment(name: "Sneakers", price: 99.99, brand: "Sportify", size: "US 8", numberOfWears: 2, datePurchased: Date())
-
-        let _ = addGarment(name: "Blouse", price: 39.99, brand: "ChicStyle", size: "L", numberOfWears: 7, datePurchased: Date())
-
-        let _ = addGarment(name: "Shorts", price: 24.99, brand: "Summer Vibes", size: "M", numberOfWears: 4, datePurchased: Date())
-
+        
         cleanup()
     }
 }
