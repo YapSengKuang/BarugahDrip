@@ -10,16 +10,12 @@
 		A707FD942A0E0C7F00942499 /* outfitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707FD932A0E0C7F00942499 /* outfitsViewController.swift */; };
 		A707FD972A0E0F3700942499 /* outfitsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707FD952A0E0F3700942499 /* outfitsCollectionViewCell.swift */; };
 		A707FD982A0E0F3700942499 /* outfitsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A707FD962A0E0F3700942499 /* outfitsCollectionViewCell.xib */; };
-		A707FDEA2A1336DD00942499 /* AddGarmentPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707FDE92A1336DD00942499 /* AddGarmentPhotoViewController.swift */; };
-		A707FDEC2A1336ED00942499 /* AddGarmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707FDEB2A1336ED00942499 /* AddGarmentViewController.swift */; };
 		A707FDF32A146B5300942499 /* Outfit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707FDED2A146B5300942499 /* Outfit+CoreDataClass.swift */; };
 		A707FDF42A146B5300942499 /* Outfit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707FDEE2A146B5300942499 /* Outfit+CoreDataProperties.swift */; };
 		A707FDF52A146B5300942499 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707FDEF2A146B5300942499 /* User+CoreDataClass.swift */; };
 		A707FDF62A146B5300942499 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707FDF02A146B5300942499 /* User+CoreDataProperties.swift */; };
 		A707FDF72A146B5300942499 /* Garment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707FDF12A146B5300942499 /* Garment+CoreDataClass.swift */; };
 		A707FDF82A146B5300942499 /* Garment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707FDF22A146B5300942499 /* Garment+CoreDataProperties.swift */; };
-		A707FDFA2A14715A00942499 /* GarmentCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707FDF92A14715A00942499 /* GarmentCollectionViewController.swift */; };
-		A707FDFC2A14739D00942499 /* GarmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707FDFB2A14739D00942499 /* GarmentCollectionViewCell.swift */; };
 		A70990DE2A0B35080053943D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70990DD2A0B35080053943D /* AppDelegate.swift */; };
 		A70990E02A0B35080053943D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70990DF2A0B35080053943D /* SceneDelegate.swift */; };
 		A70990E52A0B35080053943D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A70990E32A0B35080053943D /* Main.storyboard */; };
@@ -32,26 +28,18 @@
 		A70991212A0B3B400053943D /* signUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70991202A0B3B400053943D /* signUpPageViewController.swift */; };
 		A70991232A0B3B580053943D /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70991222A0B3B580053943D /* MainMenuViewController.swift */; };
 		A70991252A0B3B700053943D /* tabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70991242A0B3B700053943D /* tabBarViewController.swift */; };
-		A7483DC52A147DBC00DA5D3B /* GarmentCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7483DC12A147DBC00DA5D3B /* GarmentCollectionViewController.swift */; };
-		A7483DC62A147DBC00DA5D3B /* AddGarmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7483DC22A147DBC00DA5D3B /* AddGarmentViewController.swift */; };
-		A7483DC72A147DBC00DA5D3B /* AddGarmentPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7483DC32A147DBC00DA5D3B /* AddGarmentPhotoViewController.swift */; };
-		A7483DC82A147DBC00DA5D3B /* GarmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7483DC42A147DBC00DA5D3B /* GarmentCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A707FD932A0E0C7F00942499 /* outfitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = outfitsViewController.swift; sourceTree = "<group>"; };
 		A707FD952A0E0F3700942499 /* outfitsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = outfitsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A707FD962A0E0F3700942499 /* outfitsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = outfitsCollectionViewCell.xib; sourceTree = "<group>"; };
-		A707FDE92A1336DD00942499 /* AddGarmentPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGarmentPhotoViewController.swift; sourceTree = "<group>"; };
-		A707FDEB2A1336ED00942499 /* AddGarmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGarmentViewController.swift; sourceTree = "<group>"; };
 		A707FDED2A146B5300942499 /* Outfit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Outfit+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A707FDEE2A146B5300942499 /* Outfit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Outfit+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A707FDEF2A146B5300942499 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A707FDF02A146B5300942499 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A707FDF12A146B5300942499 /* Garment+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Garment+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A707FDF22A146B5300942499 /* Garment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Garment+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A707FDF92A14715A00942499 /* GarmentCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentCollectionViewController.swift; sourceTree = "<group>"; };
-		A707FDFB2A14739D00942499 /* GarmentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentCollectionViewCell.swift; sourceTree = "<group>"; };
 		A70990DA2A0B35080053943D /* BarugahDrip2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarugahDrip2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A70990DD2A0B35080053943D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A70990DF2A0B35080053943D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,10 +54,6 @@
 		A70991202A0B3B400053943D /* signUpPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpPageViewController.swift; sourceTree = "<group>"; };
 		A70991222A0B3B580053943D /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		A70991242A0B3B700053943D /* tabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabBarViewController.swift; sourceTree = "<group>"; };
-		A7483DC12A147DBC00DA5D3B /* GarmentCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarmentCollectionViewController.swift; sourceTree = "<group>"; };
-		A7483DC22A147DBC00DA5D3B /* AddGarmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGarmentViewController.swift; sourceTree = "<group>"; };
-		A7483DC32A147DBC00DA5D3B /* AddGarmentPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGarmentPhotoViewController.swift; sourceTree = "<group>"; };
-		A7483DC42A147DBC00DA5D3B /* GarmentCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarmentCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,25 +145,9 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		A7483DC02A147DBC00DA5D3B /* Garment */ = {
-			isa = PBXGroup;
-			children = (
-				A7483DC12A147DBC00DA5D3B /* GarmentCollectionViewController.swift */,
-				A7483DC22A147DBC00DA5D3B /* AddGarmentViewController.swift */,
-				A7483DC32A147DBC00DA5D3B /* AddGarmentPhotoViewController.swift */,
-				A7483DC42A147DBC00DA5D3B /* GarmentCollectionViewCell.swift */,
-			);
-			name = Garment;
-			sourceTree = "<group>";
-		};
 		A77FD9622A0DD9570013E2F5 /* Garment */ = {
 			isa = PBXGroup;
 			children = (
-				A707FDE92A1336DD00942499 /* AddGarmentPhotoViewController.swift */,
-				A707FDEB2A1336ED00942499 /* AddGarmentViewController.swift */,
-				A707FDF92A14715A00942499 /* GarmentCollectionViewController.swift */,
-				A707FDFB2A14739D00942499 /* GarmentCollectionViewCell.swift */,
-				A7483DC02A147DBC00DA5D3B /* Garment */,
 			);
 			path = Garment;
 			sourceTree = "<group>";
@@ -261,20 +229,12 @@
 				A70991232A0B3B580053943D /* MainMenuViewController.swift in Sources */,
 				A707FDF42A146B5300942499 /* Outfit+CoreDataProperties.swift in Sources */,
 				A70990E82A0B35080053943D /* BarugahDrip2_0.xcdatamodeld in Sources */,
-				A707FDFA2A14715A00942499 /* GarmentCollectionViewController.swift in Sources */,
 				A707FDF32A146B5300942499 /* Outfit+CoreDataClass.swift in Sources */,
 				A70990DE2A0B35080053943D /* AppDelegate.swift in Sources */,
-				A707FDEC2A1336ED00942499 /* AddGarmentViewController.swift in Sources */,
-				A7483DC62A147DBC00DA5D3B /* AddGarmentViewController.swift in Sources */,
-				A7483DC82A147DBC00DA5D3B /* GarmentCollectionViewCell.swift in Sources */,
 				A707FDF72A146B5300942499 /* Garment+CoreDataClass.swift in Sources */,
 				A709911F2A0B3AD30053943D /* CoreDataController.swift in Sources */,
-				A7483DC52A147DBC00DA5D3B /* GarmentCollectionViewController.swift in Sources */,
-				A707FDEA2A1336DD00942499 /* AddGarmentPhotoViewController.swift in Sources */,
-				A7483DC72A147DBC00DA5D3B /* AddGarmentPhotoViewController.swift in Sources */,
 				A707FDF62A146B5300942499 /* User+CoreDataProperties.swift in Sources */,
 				A709911D2A0B3AC50053943D /* DatabaseProtocol.swift in Sources */,
-				A707FDFC2A14739D00942499 /* GarmentCollectionViewCell.swift in Sources */,
 				A707FDF82A146B5300942499 /* Garment+CoreDataProperties.swift in Sources */,
 				A709911B2A0B3A910053943D /* MulticastDelegate.swift in Sources */,
 				A70990E02A0B35080053943D /* SceneDelegate.swift in Sources */,
