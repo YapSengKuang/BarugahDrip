@@ -111,7 +111,7 @@
         <!--Garments-->
         <scene sceneID="EUF-jx-hnV">
             <objects>
-                <collectionViewController id="5YF-hD-WXX" customClass="GarmentCollectionViewController" customModule="BarugahDrip2_0" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="5YF-hD-WXX" customClass="GarmentVer2CollectionViewController" customModule="BarugahDrip2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Sp9-F3-kjs">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,7 +123,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="DFb-fE-9fP" customClass="GarmentCollectionViewCell" customModule="BarugahDrip2_0" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="DFb-fE-9fP" customClass="GarmentsVer2CollectionViewCell" customModule="BarugahDrip2_0" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jzW-Ke-z49">
@@ -142,7 +142,7 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
-                                    <outlet property="imageView" destination="rib-WM-45C" id="BYp-Xy-WuM"/>
+                                    <outlet property="imageView" destination="rib-WM-45C" id="0AO-Ew-jeE"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
