@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A707FD942A0E0C7F00942499 /* outfitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707FD932A0E0C7F00942499 /* outfitsViewController.swift */; };
-		A707FD972A0E0F3700942499 /* outfitsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707FD952A0E0F3700942499 /* outfitsCollectionViewCell.swift */; };
-		A707FD982A0E0F3700942499 /* outfitsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A707FD962A0E0F3700942499 /* outfitsCollectionViewCell.xib */; };
 		A707FDF32A146B5300942499 /* Outfit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707FDED2A146B5300942499 /* Outfit+CoreDataClass.swift */; };
 		A707FDF42A146B5300942499 /* Outfit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707FDEE2A146B5300942499 /* Outfit+CoreDataProperties.swift */; };
 		A707FDF52A146B5300942499 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707FDEF2A146B5300942499 /* User+CoreDataClass.swift */; };
@@ -37,9 +34,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A707FD932A0E0C7F00942499 /* outfitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = outfitsViewController.swift; sourceTree = "<group>"; };
-		A707FD952A0E0F3700942499 /* outfitsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = outfitsCollectionViewCell.swift; sourceTree = "<group>"; };
-		A707FD962A0E0F3700942499 /* outfitsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = outfitsCollectionViewCell.xib; sourceTree = "<group>"; };
 		A707FDED2A146B5300942499 /* Outfit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Outfit+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A707FDEE2A146B5300942499 /* Outfit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Outfit+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A707FDEF2A146B5300942499 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -82,9 +76,6 @@
 		A707FD922A0E0C5700942499 /* Outfits */ = {
 			isa = PBXGroup;
 			children = (
-				A707FD932A0E0C7F00942499 /* outfitsViewController.swift */,
-				A707FD952A0E0F3700942499 /* outfitsCollectionViewCell.swift */,
-				A707FD962A0E0F3700942499 /* outfitsCollectionViewCell.xib */,
 			);
 			path = Outfits;
 			sourceTree = "<group>";
@@ -228,7 +219,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A707FD982A0E0F3700942499 /* outfitsCollectionViewCell.xib in Resources */,
 				A70990ED2A0B35080053943D /* LaunchScreen.storyboard in Resources */,
 				A70990EA2A0B35080053943D /* Assets.xcassets in Resources */,
 				A70990E52A0B35080053943D /* Main.storyboard in Resources */,
@@ -262,9 +252,7 @@
 				A709911B2A0B3A910053943D /* MulticastDelegate.swift in Sources */,
 				A70990E02A0B35080053943D /* SceneDelegate.swift in Sources */,
 				A707FDF52A146B5300942499 /* User+CoreDataClass.swift in Sources */,
-				A707FD942A0E0C7F00942499 /* outfitsViewController.swift in Sources */,
 				A76B48BC2A1485B400A213FC /* GarmentsVer2CollectionViewCell.swift in Sources */,
-				A707FD972A0E0F3700942499 /* outfitsCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
