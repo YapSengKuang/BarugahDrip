@@ -106,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dVG-Yb-ajR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-896" y="2341"/>
+            <point key="canvasLocation" x="-854" y="2515"/>
         </scene>
         <!--Garments-->
         <scene sceneID="EUF-jx-hnV">
@@ -130,7 +130,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rib-WM-45C">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rib-WM-45C">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         </imageView>
                                     </subviews>
@@ -143,6 +143,7 @@
                                 </collectionViewCellContentView>
                                 <connections>
                                     <outlet property="imageView" destination="rib-WM-45C" id="0AO-Ew-jeE"/>
+                                    <segue destination="wxH-dM-6Vs" kind="show" identifier="showGarment" id="Kue-gb-FBe"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -158,9 +159,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="wxH-dM-6Vs" kind="show" identifier="showGarment" id="OBY-4m-bzi"/>
-                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Fn-Mj-GaV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -345,48 +343,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hf1-Qh-2cY">
+                                <rect key="frame" x="20" y="728" width="353" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chevron.down" catalog="system" title=""/>
+                                <connections>
+                                    <segue destination="Eaz-e6-SnZ" kind="showDetail" id="Qzc-9m-EOg"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eXc-Sk-ShI">
+                                <rect key="frame" x="30" y="96" width="333" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="fvs-LW-mIJ"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brand name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odd-SN-LP4">
-                                <rect key="frame" x="30" y="440" width="333" height="41"/>
+                                <rect key="frame" x="30" y="526" width="333" height="41"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Garment Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJx-Pw-6Bq">
-                                <rect key="frame" x="30" y="511" width="333" height="21"/>
+                                <rect key="frame" x="30" y="597" width="333" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hf1-Qh-2cY">
-                                <rect key="frame" x="20" y="728" width="353" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="chevron.down" catalog="system" title=""/>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eXc-Sk-ShI">
-                                <rect key="frame" x="30" y="10" width="333" height="400"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="4Zt-YK-77d"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zkO-5a-HeQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="odd-SN-LP4" firstAttribute="leading" secondItem="zkO-5a-HeQ" secondAttribute="leading" constant="30" id="6ej-r0-Dmh"/>
-                            <constraint firstItem="JJx-Pw-6Bq" firstAttribute="leading" secondItem="zkO-5a-HeQ" secondAttribute="leading" constant="30" id="8Ns-qk-N7T"/>
-                            <constraint firstItem="Hf1-Qh-2cY" firstAttribute="leading" secondItem="zkO-5a-HeQ" secondAttribute="leading" constant="20" id="8RS-k7-z9R"/>
-                            <constraint firstItem="zkO-5a-HeQ" firstAttribute="bottom" secondItem="Hf1-Qh-2cY" secondAttribute="bottom" constant="40" id="F7J-kC-4p4"/>
-                            <constraint firstItem="JJx-Pw-6Bq" firstAttribute="top" secondItem="odd-SN-LP4" secondAttribute="bottom" constant="30" id="JqH-97-Ju6"/>
-                            <constraint firstItem="odd-SN-LP4" firstAttribute="top" secondItem="eXc-Sk-ShI" secondAttribute="bottom" constant="30" id="Rmx-L5-Wwn"/>
-                            <constraint firstItem="eXc-Sk-ShI" firstAttribute="top" secondItem="Nxt-pN-fPQ" secondAttribute="top" constant="10" id="UIR-Je-n1I"/>
-                            <constraint firstItem="zkO-5a-HeQ" firstAttribute="trailing" secondItem="eXc-Sk-ShI" secondAttribute="trailing" constant="30" id="e2f-JS-Oew"/>
-                            <constraint firstItem="zkO-5a-HeQ" firstAttribute="trailing" secondItem="Hf1-Qh-2cY" secondAttribute="trailing" constant="20" id="ez9-bU-Ghl"/>
-                            <constraint firstItem="zkO-5a-HeQ" firstAttribute="trailing" secondItem="odd-SN-LP4" secondAttribute="trailing" constant="30" id="g1G-sY-vyZ"/>
-                            <constraint firstItem="eXc-Sk-ShI" firstAttribute="leading" secondItem="zkO-5a-HeQ" secondAttribute="leading" constant="30" id="nCZ-H3-xd0"/>
-                            <constraint firstItem="zkO-5a-HeQ" firstAttribute="trailing" secondItem="JJx-Pw-6Bq" secondAttribute="trailing" constant="30" id="ynm-b5-juH"/>
+                            <constraint firstItem="zkO-5a-HeQ" firstAttribute="trailing" secondItem="Hf1-Qh-2cY" secondAttribute="trailing" constant="20" id="8OP-RJ-IWO"/>
+                            <constraint firstItem="JJx-Pw-6Bq" firstAttribute="top" secondItem="odd-SN-LP4" secondAttribute="bottom" constant="30" id="CvL-Dg-7o9"/>
+                            <constraint firstItem="odd-SN-LP4" firstAttribute="top" secondItem="eXc-Sk-ShI" secondAttribute="bottom" constant="30" id="FIo-N1-mwB"/>
+                            <constraint firstItem="zkO-5a-HeQ" firstAttribute="trailing" secondItem="eXc-Sk-ShI" secondAttribute="trailing" constant="30" id="N1l-Ma-JDe"/>
+                            <constraint firstItem="JJx-Pw-6Bq" firstAttribute="leading" secondItem="zkO-5a-HeQ" secondAttribute="leading" constant="30" id="Ue2-gd-Mew"/>
+                            <constraint firstItem="eXc-Sk-ShI" firstAttribute="top" secondItem="zkO-5a-HeQ" secondAttribute="top" id="V5p-xy-xAO"/>
+                            <constraint firstItem="Hf1-Qh-2cY" firstAttribute="leading" secondItem="zkO-5a-HeQ" secondAttribute="leading" constant="20" id="XdY-lk-KcM"/>
+                            <constraint firstItem="zkO-5a-HeQ" firstAttribute="trailing" secondItem="JJx-Pw-6Bq" secondAttribute="trailing" constant="30" id="XtZ-aR-YLf"/>
+                            <constraint firstItem="eXc-Sk-ShI" firstAttribute="leading" secondItem="zkO-5a-HeQ" secondAttribute="leading" constant="30" id="Y47-tP-8Sj"/>
+                            <constraint firstItem="zkO-5a-HeQ" firstAttribute="bottom" secondItem="Hf1-Qh-2cY" secondAttribute="bottom" constant="40" id="dKi-Sg-kla"/>
+                            <constraint firstItem="odd-SN-LP4" firstAttribute="leading" secondItem="zkO-5a-HeQ" secondAttribute="leading" constant="30" id="iuv-WU-cL0"/>
+                            <constraint firstItem="zkO-5a-HeQ" firstAttribute="trailing" secondItem="odd-SN-LP4" secondAttribute="trailing" constant="30" id="qfU-FB-dtn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="chK-aI-am2"/>
+                    <connections>
+                        <outlet property="brandNameOutlet" destination="odd-SN-LP4" id="OGO-LF-mXF"/>
+                        <outlet property="garmentNameOutlet" destination="JJx-Pw-6Bq" id="R0c-s2-fBj"/>
+                        <outlet property="imageView" destination="eXc-Sk-ShI" id="Z1v-LT-LGx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tsg-Zd-IOR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -477,16 +483,16 @@
             <objects>
                 <viewController title="view garment details" id="Eaz-e6-SnZ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7im-v5-rqu">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Suq-Lg-ib9">
-                                <rect key="frame" x="20" y="79" width="353" height="35"/>
+                                <rect key="frame" x="20" y="20" width="353" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="chevron.up" catalog="system" title=""/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NX5-9s-XzM">
-                                <rect key="frame" x="30" y="164" width="150" height="150"/>
+                                <rect key="frame" x="30" y="105" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="6zm-dl-zCU"/>
                                     <constraint firstAttribute="height" constant="150" id="cG1-7F-L57"/>
@@ -495,7 +501,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHR-49-ihL">
-                                <rect key="frame" x="213" y="164" width="150" height="150"/>
+                                <rect key="frame" x="213" y="105" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="1Yv-sk-p1I"/>
                                     <constraint firstAttribute="width" constant="150" id="AO7-rC-zIX"/>
@@ -506,7 +512,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yoh-WI-UzN">
-                                <rect key="frame" x="30" y="344" width="150" height="150"/>
+                                <rect key="frame" x="30" y="285" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="PXq-BU-gEM"/>
                                     <constraint firstAttribute="height" constant="150" id="iE7-fS-dgA"/>
@@ -515,7 +521,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAY-CU-mzh">
-                                <rect key="frame" x="213" y="344" width="150" height="150"/>
+                                <rect key="frame" x="213" y="285" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="kA5-jj-eci"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="npG-Oh-Qi4"/>

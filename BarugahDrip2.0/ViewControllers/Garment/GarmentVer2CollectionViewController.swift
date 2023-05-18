@@ -52,6 +52,12 @@ class GarmentVer2CollectionViewController: UICollectionViewController, DatabaseL
             print("Unable to Fetch images")
         }
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        print("tapped \(indexPath.item)")
+        
+    }
 
     func generateLayout() -> UICollectionViewLayout {
         let imageItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(1.0))
@@ -93,12 +99,8 @@ class GarmentVer2CollectionViewController: UICollectionViewController, DatabaseL
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CELL_IMAGE, for: indexPath) as! GarmentsVer2CollectionViewCell
         cell.backgroundColor = .secondarySystemFill
-        cell.imageView.image = imageList[indexPath.row]
+        cell.imageView.image = imageList[indexPath.item]
         return cell
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
     }
     
     func onGarmentChange(change: DatabaseChange, garments: [Garment]) {
@@ -111,6 +113,20 @@ class GarmentVer2CollectionViewController: UICollectionViewController, DatabaseL
     
     func onOutfitGarmentsChange(change: DatabaseChange, garments: [Garment]) {
         //nothing
+    }
+    
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showGarment"{
+            if let cell = sender as? GarmentsVer2CollectionViewCell,
+               let indexPath = collectionView.indexPath(for: cell){
+                let controller = segue.destination as! SoloGarmentViewController
+                controller.selectedGarment = allGarments[indexPath.item]
+            }
+            
+        }
     }
     
 }

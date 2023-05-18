@@ -10,4 +10,6 @@ import UIKit
 class GarmentsVer2CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
+    
+    
 }

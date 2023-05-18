@@ -105,7 +105,7 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         if allGarmentsFetchedResultsController == nil {
             //Create fetch request
             let request: NSFetchRequest<Garment> = Garment.fetchRequest()
-            let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+            let nameSortDescriptor = NSSortDescriptor(key: "dateBought", ascending: false)
             request.sortDescriptors = [nameSortDescriptor]
             
             //Intialise Fetch results controller
