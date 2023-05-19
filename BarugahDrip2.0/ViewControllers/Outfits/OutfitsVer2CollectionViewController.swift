@@ -98,9 +98,10 @@ class OutfitsVer2CollectionViewController: UICollectionViewController, DatabaseL
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // TODO: Implement
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CELL_IMAGE, for: indexPath) as! OutfitsVer2CollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CELL_IMAGE, for: indexPath) as! PickGarmentCollectionViewCell
         cell.backgroundColor = .secondarySystemFill
         cell.imageView.image = imageList[indexPath.item]
+        cell.checkmarkImageView.image = .checkmark
         return cell
     }
     

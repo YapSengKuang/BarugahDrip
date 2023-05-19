@@ -10,6 +10,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--viewOutfit-->
+        <scene sceneID="lv1-K7-a40">
+            <objects>
+                <viewController title="viewOutfit" id="goo-Vn-dbe" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W14-ae-COK">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ZlB-II-coZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="06B-hq-wQs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hqd-l7-dgK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2220" y="1651"/>
+        </scene>
         <!--Outfits-->
         <scene sceneID="ttS-fi-8hG">
             <objects>
@@ -57,15 +73,18 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="goo-Vn-dbe" kind="show" id="lLn-PZ-dEU"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xuu-Tx-jqd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-854" y="1647"/>
+            <point key="canvasLocation" x="-854" y="1651"/>
         </scene>
         <!--pick garments-->
         <scene sceneID="q5G-OX-VK0">
             <objects>
-                <collectionViewController title="pick garments" id="fvn-cz-T0u" sceneMemberID="viewController">
+                <collectionViewController title="pick garments" id="fvn-cz-T0u" customClass="PickGarmentCollectionViewController" customModule="BarugahDrip2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="0m2-EV-4qi">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,13 +96,20 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="pickGarmentCell" id="Kup-df-ItL">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="pickGarmentCell" id="Kup-df-ItL" customClass="PickGarmentCollectionViewCell" customModule="BarugahDrip2_0" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mZo-4K-igs">
                                     <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="s3M-nT-jqD">
+                                            <rect key="frame" x="108" y="0.0" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="93R-cr-bq0"/>
+                                                <constraint firstAttribute="height" constant="20" id="LOe-b7-fNe"/>
+                                            </constraints>
+                                        </imageView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2kO-KX-nbm">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         </imageView>
@@ -91,10 +117,16 @@
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="2kO-KX-nbm" secondAttribute="trailing" id="Fmr-67-vEh"/>
                                         <constraint firstItem="2kO-KX-nbm" firstAttribute="leading" secondItem="mZo-4K-igs" secondAttribute="leading" id="G1x-Nl-hDX"/>
+                                        <constraint firstAttribute="trailing" secondItem="s3M-nT-jqD" secondAttribute="trailing" id="HU8-3h-vYa"/>
                                         <constraint firstAttribute="bottom" secondItem="2kO-KX-nbm" secondAttribute="bottom" id="aDq-EN-RK1"/>
+                                        <constraint firstItem="s3M-nT-jqD" firstAttribute="top" secondItem="mZo-4K-igs" secondAttribute="top" id="dCb-X8-rxf"/>
                                         <constraint firstItem="2kO-KX-nbm" firstAttribute="top" secondItem="mZo-4K-igs" secondAttribute="top" id="uR2-vg-f6e"/>
                                     </constraints>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="checkmarkImageView" destination="s3M-nT-jqD" id="rs5-7B-htC"/>
+                                    <outlet property="imageView" destination="2kO-KX-nbm" id="TTf-VE-8yh"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -105,10 +137,13 @@
                     <navigationItem key="navigationItem" title="Pick Garments" id="WHa-JB-KDw">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="chevron.right" catalog="system" id="vqM-83-PXk">
                             <connections>
-                                <segue destination="rfn-2J-8F7" kind="show" id="3GP-24-Y2l"/>
+                                <action selector="nextButton:" destination="fvn-cz-T0u" id="3MZ-LG-nmA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="rfn-2J-8F7" kind="show" identifier="addOutfitPhoto" id="nDA-CO-mfy"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SfF-rX-Zff" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -117,7 +152,7 @@
         <!--Pick Image-->
         <scene sceneID="448-rJ-P79">
             <objects>
-                <viewController id="rfn-2J-8F7" sceneMemberID="viewController">
+                <viewController id="rfn-2J-8F7" customClass="AddPhotoOutfitViewController" customModule="BarugahDrip2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pom-DV-4nN">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -132,6 +167,9 @@
                                 <rect key="frame" x="20" y="546" width="353" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Pick a Photo"/>
+                                <connections>
+                                    <action selector="pickPhotoButton:" destination="rfn-2J-8F7" eventType="touchUpInside" id="vHV-dJ-kTr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="j3A-Cb-UF2"/>
@@ -146,9 +184,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Pick Image" id="CuB-c4-DTe">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="chevron.right" catalog="system" id="crt-AF-QoK"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="chevron.right" catalog="system" id="crt-AF-QoK">
+                            <connections>
+                                <action selector="nextButton:" destination="rfn-2J-8F7" id="uZr-E7-zoT"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="imageView" destination="tfv-c2-Jov" id="jN9-vS-BDZ"/>
                         <segue destination="IfE-3F-9h7" kind="show" id="5YF-8y-0a7"/>
                     </connections>
                 </viewController>
@@ -159,7 +202,7 @@
         <!--Add Outfit-->
         <scene sceneID="UoJ-j8-N84">
             <objects>
-                <viewController id="IfE-3F-9h7" sceneMemberID="viewController">
+                <viewController id="IfE-3F-9h7" customClass="AddOutfitViewController" customModule="BarugahDrip2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7OS-78-5C9">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -679,6 +722,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="checkmark" width="128" height="128"/>
         <image name="chevron.down" catalog="system" width="128" height="70"/>
         <image name="chevron.forward" catalog="system" width="97" height="128"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
