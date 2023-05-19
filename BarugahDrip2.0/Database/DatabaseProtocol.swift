@@ -49,7 +49,7 @@ protocol DatabaseProtocol: AnyObject {
     func addGarment(name: String, price: Double, brand: String, size: String, numberOfWears: Int, datePurchased: Date, image: String) -> Garment
     func deleteGarment(garment: Garment)
     
-    func addOutfit(price: Double, wears: Int, outfitName: String, image: String)
+    func addOutfit(price: Double, wears: Int, outfitName: String, image: String) -> Outfit
     func deleteOutfit(outfit: Outfit)
     
     func addGarmentToOutfit(garment: Garment, outfit: Outfit) -> Bool

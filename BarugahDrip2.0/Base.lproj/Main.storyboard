@@ -59,6 +59,9 @@
                                         <constraint firstItem="ltu-ll-asO" firstAttribute="top" secondItem="QRt-2G-SOH" secondAttribute="top" id="orE-gc-zEO"/>
                                     </constraints>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="imageView" destination="ltu-ll-asO" id="1Be-YN-D2O"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -192,7 +195,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="tfv-c2-Jov" id="jN9-vS-BDZ"/>
-                        <segue destination="IfE-3F-9h7" kind="show" id="5YF-8y-0a7"/>
+                        <segue destination="IfE-3F-9h7" kind="show" identifier="addOutfitName" id="5YF-8y-0a7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dVG-Yb-ajR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -231,8 +234,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Outfit" id="4aE-la-gvE">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="chevron.right" catalog="system" id="jli-ea-BLi"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="chevron.right" catalog="system" id="jli-ea-BLi">
+                            <connections>
+                                <action selector="addOutfitButton:" destination="IfE-3F-9h7" id="BTK-kG-NrV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="AWb-zW-D4L" id="MtJ-qD-3Hn"/>
+                        <outlet property="outfitName" destination="EQ8-iA-0fE" id="QdC-8N-TCQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3U8-Q7-b82" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

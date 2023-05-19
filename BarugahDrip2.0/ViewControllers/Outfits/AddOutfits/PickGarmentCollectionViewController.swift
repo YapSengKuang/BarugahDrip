@@ -147,7 +147,10 @@ class PickGarmentCollectionViewController: UICollectionViewController, DatabaseL
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addOutfitPhoto"{
             let destination = segue.destination as!AddPhotoOutfitViewController
-            destination.selectedGarmentsIndexPath = collectionView.indexPathsForSelectedItems!
+            for index in collectionView.indexPathsForSelectedItems!{
+                selectedGarments.append(allGarments[index.item])
+            }
+            destination.selectedGarments = selectedGarments
         }
     }
 }

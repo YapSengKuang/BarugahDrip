@@ -64,7 +64,7 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         persistentContainer.viewContext.delete(garment)
     }
     
-    func addOutfit(price: Double, wears: Int, outfitName: String, image: String) {
+    func addOutfit(price: Double, wears: Int, outfitName: String, image: String) -> Outfit{
         /**
          Creates and adds an empty outfit to CoreDate, given valid price, wears and outfitName
          */
@@ -72,6 +72,8 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         outfit.price = price
         outfit.name = outfitName
         outfit.image = image
+        
+        return outfit
         
     }
     

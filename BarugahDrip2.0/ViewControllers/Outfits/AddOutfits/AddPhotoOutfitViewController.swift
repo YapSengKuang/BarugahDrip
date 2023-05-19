@@ -8,7 +8,7 @@
 import UIKit
 
 class AddPhotoOutfitViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    var selectedGarmentsIndexPath = [IndexPath]()
+    var selectedGarments = [Garment]()
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -72,7 +72,7 @@ class AddPhotoOutfitViewController: UIViewController,UIImagePickerControllerDele
             displayMessage(title: "Error", message: "Cannot save until an image has been selected!")
             return
         }
-        self.performSegue(withIdentifier: "addGarmentDetails", sender: self)
+        self.performSegue(withIdentifier: "addOutfitName", sender: self)
         
     }
         
@@ -80,9 +80,10 @@ class AddPhotoOutfitViewController: UIViewController,UIImagePickerControllerDele
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "addGarmentDetails"{
-            let destination = segue.destination as! AddGarmentVer2ViewController
-            destination.garmentImage = self.imageView.image
+        if segue.identifier == "addOutfitName"{
+            let destination = segue.destination as! AddOutfitViewController
+            destination.selectedImage = self.imageView.image
+            destination.selectedGarments = selectedGarments
         }
     }
     
