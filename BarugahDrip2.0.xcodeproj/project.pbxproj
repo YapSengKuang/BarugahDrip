@@ -31,6 +31,11 @@
 		A76B48C42A14862B00A213FC /* GarmentVer2CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B48C32A14862B00A213FC /* GarmentVer2CollectionViewController.swift */; };
 		A76B48C62A14879300A213FC /* DisplayMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B48C52A14879300A213FC /* DisplayMessage.swift */; };
 		A76B48C82A14964900A213FC /* SoloGarmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B48C72A14964900A213FC /* SoloGarmentViewController.swift */; };
+		A76B48CA2A15D2CC00A213FC /* OutfitsVer2CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B48C92A15D2CC00A213FC /* OutfitsVer2CollectionViewController.swift */; };
+		A76B48CC2A15D2FD00A213FC /* OutfitsVer2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B48CB2A15D2FD00A213FC /* OutfitsVer2CollectionViewCell.swift */; };
+		A76B48CF2A17053200A213FC /* AddPhotoOutfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B48CE2A17053200A213FC /* AddPhotoOutfitViewController.swift */; };
+		A76B48D12A17054700A213FC /* PickGarmentCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B48D02A17054700A213FC /* PickGarmentCollectionViewController.swift */; };
+		A76B48D32A17056800A213FC /* AddOutfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B48D22A17056800A213FC /* AddOutfitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +65,11 @@
 		A76B48C32A14862B00A213FC /* GarmentVer2CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentVer2CollectionViewController.swift; sourceTree = "<group>"; };
 		A76B48C52A14879300A213FC /* DisplayMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayMessage.swift; sourceTree = "<group>"; };
 		A76B48C72A14964900A213FC /* SoloGarmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoloGarmentViewController.swift; sourceTree = "<group>"; };
+		A76B48C92A15D2CC00A213FC /* OutfitsVer2CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitsVer2CollectionViewController.swift; sourceTree = "<group>"; };
+		A76B48CB2A15D2FD00A213FC /* OutfitsVer2CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitsVer2CollectionViewCell.swift; sourceTree = "<group>"; };
+		A76B48CE2A17053200A213FC /* AddPhotoOutfitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoOutfitViewController.swift; sourceTree = "<group>"; };
+		A76B48D02A17054700A213FC /* PickGarmentCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickGarmentCollectionViewController.swift; sourceTree = "<group>"; };
+		A76B48D22A17056800A213FC /* AddOutfitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOutfitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +86,9 @@
 		A707FD922A0E0C5700942499 /* Outfits */ = {
 			isa = PBXGroup;
 			children = (
+				A76B48CD2A17050900A213FC /* AddOutfits */,
+				A76B48C92A15D2CC00A213FC /* OutfitsVer2CollectionViewController.swift */,
+				A76B48CB2A15D2FD00A213FC /* OutfitsVer2CollectionViewCell.swift */,
 			);
 			path = Outfits;
 			sourceTree = "<group>";
@@ -147,6 +160,16 @@
 				A76B48C52A14879300A213FC /* DisplayMessage.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A76B48CD2A17050900A213FC /* AddOutfits */ = {
+			isa = PBXGroup;
+			children = (
+				A76B48CE2A17053200A213FC /* AddPhotoOutfitViewController.swift */,
+				A76B48D02A17054700A213FC /* PickGarmentCollectionViewController.swift */,
+				A76B48D22A17056800A213FC /* AddOutfitViewController.swift */,
+			);
+			path = AddOutfits;
 			sourceTree = "<group>";
 		};
 		A77FD9622A0DD9570013E2F5 /* Garment */ = {
@@ -233,6 +256,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A76B48BE2A1485CD00A213FC /* AddGarmentPhotoVer2ViewController.swift in Sources */,
+				A76B48CC2A15D2FD00A213FC /* OutfitsVer2CollectionViewCell.swift in Sources */,
+				A76B48CF2A17053200A213FC /* AddPhotoOutfitViewController.swift in Sources */,
 				A70991252A0B3B700053943D /* tabBarViewController.swift in Sources */,
 				A76B48C62A14879300A213FC /* DisplayMessage.swift in Sources */,
 				A76B48C02A1485DC00A213FC /* AddGarmentVer2ViewController.swift in Sources */,
@@ -242,6 +267,9 @@
 				A707FDF42A146B5300942499 /* Outfit+CoreDataProperties.swift in Sources */,
 				A70990E82A0B35080053943D /* BarugahDrip2_0.xcdatamodeld in Sources */,
 				A707FDF32A146B5300942499 /* Outfit+CoreDataClass.swift in Sources */,
+				A76B48CA2A15D2CC00A213FC /* OutfitsVer2CollectionViewController.swift in Sources */,
+				A76B48D32A17056800A213FC /* AddOutfitViewController.swift in Sources */,
+				A76B48D12A17054700A213FC /* PickGarmentCollectionViewController.swift in Sources */,
 				A76B48C42A14862B00A213FC /* GarmentVer2CollectionViewController.swift in Sources */,
 				A70990DE2A0B35080053943D /* AppDelegate.swift in Sources */,
 				A707FDF72A146B5300942499 /* Garment+CoreDataClass.swift in Sources */,
