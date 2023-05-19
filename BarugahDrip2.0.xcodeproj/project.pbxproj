@@ -37,6 +37,7 @@
 		A76B48D12A17054700A213FC /* PickGarmentCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B48D02A17054700A213FC /* PickGarmentCollectionViewController.swift */; };
 		A76B48D32A17056800A213FC /* AddOutfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B48D22A17056800A213FC /* AddOutfitViewController.swift */; };
 		A7A8E5F72A1707EB005F735E /* PickGarmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8E5F62A1707EB005F735E /* PickGarmentCollectionViewCell.swift */; };
+		A7A8E5F92A172532005F735E /* SoloOutfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8E5F82A172532005F735E /* SoloOutfitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		A76B48D02A17054700A213FC /* PickGarmentCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickGarmentCollectionViewController.swift; sourceTree = "<group>"; };
 		A76B48D22A17056800A213FC /* AddOutfitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOutfitViewController.swift; sourceTree = "<group>"; };
 		A7A8E5F62A1707EB005F735E /* PickGarmentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickGarmentCollectionViewCell.swift; sourceTree = "<group>"; };
+		A7A8E5F82A172532005F735E /* SoloOutfitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoloOutfitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				A76B48CD2A17050900A213FC /* AddOutfits */,
 				A76B48C92A15D2CC00A213FC /* OutfitsVer2CollectionViewController.swift */,
 				A76B48CB2A15D2FD00A213FC /* OutfitsVer2CollectionViewCell.swift */,
+				A7A8E5F82A172532005F735E /* SoloOutfitViewController.swift */,
 			);
 			path = Outfits;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				A707FDF42A146B5300942499 /* Outfit+CoreDataProperties.swift in Sources */,
 				A70990E82A0B35080053943D /* BarugahDrip2_0.xcdatamodeld in Sources */,
 				A707FDF32A146B5300942499 /* Outfit+CoreDataClass.swift in Sources */,
+				A7A8E5F92A172532005F735E /* SoloOutfitViewController.swift in Sources */,
 				A76B48CA2A15D2CC00A213FC /* OutfitsVer2CollectionViewController.swift in Sources */,
 				A76B48D32A17056800A213FC /* AddOutfitViewController.swift in Sources */,
 				A76B48D12A17054700A213FC /* PickGarmentCollectionViewController.swift in Sources */,

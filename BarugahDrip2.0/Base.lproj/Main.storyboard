@@ -13,14 +13,62 @@
         <!--viewOutfit-->
         <scene sceneID="lv1-K7-a40">
             <objects>
-                <viewController title="viewOutfit" id="goo-Vn-dbe" sceneMemberID="viewController">
+                <viewController title="viewOutfit" id="goo-Vn-dbe" customClass="SoloOutfitViewController" customModule="BarugahDrip2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W14-ae-COK">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K3J-u7-cnr">
+                                <rect key="frame" x="30" y="96" width="333" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="ifV-Rc-uep"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OutfitName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eer-cq-Xty">
+                                <rect key="frame" x="30" y="662" width="333" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uT4-0y-Kry">
+                                <rect key="frame" x="283" y="526" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="fPs-Qy-Ebg"/>
+                                    <constraint firstAttribute="width" constant="80" id="qyr-uZ-pqN"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJz-KY-9br">
+                                <rect key="frame" x="173" y="526" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="5v9-l5-Cgn"/>
+                                    <constraint firstAttribute="width" constant="80" id="dm1-Lp-NLF"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ZlB-II-coZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="K3J-u7-cnr" firstAttribute="leading" secondItem="ZlB-II-coZ" secondAttribute="leading" constant="30" id="5R7-Pi-jcj"/>
+                            <constraint firstItem="ZlB-II-coZ" firstAttribute="trailing" secondItem="uT4-0y-Kry" secondAttribute="trailing" constant="30" id="E2u-SZ-0AP"/>
+                            <constraint firstItem="ZlB-II-coZ" firstAttribute="bottom" secondItem="Eer-cq-Xty" secondAttribute="bottom" constant="100" id="Hxc-4a-fHf"/>
+                            <constraint firstItem="uT4-0y-Kry" firstAttribute="top" secondItem="K3J-u7-cnr" secondAttribute="bottom" constant="30" id="ODj-Ot-Tg5"/>
+                            <constraint firstItem="K3J-u7-cnr" firstAttribute="top" secondItem="ZlB-II-coZ" secondAttribute="top" id="OuJ-yb-9MA"/>
+                            <constraint firstItem="ZlB-II-coZ" firstAttribute="trailing" secondItem="Eer-cq-Xty" secondAttribute="trailing" constant="30" id="Pwg-Kt-aUA"/>
+                            <constraint firstItem="uT4-0y-Kry" firstAttribute="leading" secondItem="xJz-KY-9br" secondAttribute="trailing" constant="30" id="So5-Q3-6Sh"/>
+                            <constraint firstItem="ZlB-II-coZ" firstAttribute="trailing" secondItem="K3J-u7-cnr" secondAttribute="trailing" constant="30" id="UkF-BT-OLr"/>
+                            <constraint firstItem="xJz-KY-9br" firstAttribute="top" secondItem="K3J-u7-cnr" secondAttribute="bottom" constant="30" id="b8F-cB-1PO"/>
+                            <constraint firstItem="Eer-cq-Xty" firstAttribute="leading" secondItem="ZlB-II-coZ" secondAttribute="leading" constant="30" id="ijT-km-81R"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="06B-hq-wQs"/>
+                    <connections>
+                        <outlet property="imageView" destination="K3J-u7-cnr" id="LAc-ed-V8C"/>
+                        <outlet property="outfitName" destination="Eer-cq-Xty" id="tVn-Ud-Nhg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hqd-l7-dgK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -61,6 +109,7 @@
                                 </collectionViewCellContentView>
                                 <connections>
                                     <outlet property="imageView" destination="ltu-ll-asO" id="1Be-YN-D2O"/>
+                                    <segue destination="goo-Vn-dbe" kind="show" identifier="showOutfit" id="q13-eB-UcU"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -76,9 +125,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="goo-Vn-dbe" kind="show" id="lLn-PZ-dEU"/>
-                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xuu-Tx-jqd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

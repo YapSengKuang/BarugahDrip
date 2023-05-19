@@ -79,7 +79,14 @@ class OutfitsVer2CollectionViewController: UICollectionViewController, DatabaseL
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == "showOutfit"{
+            if let cell = sender as? OutfitsVer2CollectionViewCell,
+               let indexPath = collectionView.indexPath(for: cell){
+                let controller = segue.destination as! SoloOutfitViewController
+                controller.selectedOutfit = allOutfits[indexPath.item]
+            }
+            
+        }
     }
  
     // MARK: UICollectionViewDataSource
