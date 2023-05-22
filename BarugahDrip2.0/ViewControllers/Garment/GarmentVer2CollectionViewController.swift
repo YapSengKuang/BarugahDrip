@@ -130,14 +130,3 @@ class GarmentVer2CollectionViewController: UICollectionViewController, DatabaseL
     
 }
 
-extension UICollectionViewController{
-    
-    func loadImageData(filename: String) -> UIImage?{
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsDirectory = paths[0]
-        let imageURL = documentsDirectory.appendingPathComponent(filename)
-        let image = UIImage(contentsOfFile: imageURL.path)
-        return image
-    }
-    
-}
