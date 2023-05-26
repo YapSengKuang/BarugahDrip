@@ -60,6 +60,11 @@ class SoloOutfitViewController: UIViewController, DatabaseListener {
         
         self.performSegue(withIdentifier: "lodgeCreatedOutfit", sender: self)
     }
+    
+    @IBAction func viewGarments(_ sender: Any) {
+        self.performSegue(withIdentifier: "viewGarmentFromOutfit", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "chartSeg"{
             let destination = segue.destination as! ChartViewController
@@ -68,6 +73,11 @@ class SoloOutfitViewController: UIViewController, DatabaseListener {
         if segue.identifier == "lodgeCreatedOutfit"{
             let destination = segue.destination as! LodgeOutfitViewController
             destination.outfitToLodge = selectedOutfit
+        }
+        if segue.identifier == "viewGarmentFromOutfit"{
+            let destination = segue.destination as! GarmentsTableViewController
+            
+            
         }
     }
     

@@ -7,39 +7,67 @@
 
 import UIKit
 
-class GarmentsTableViewController: UITableViewController {
+class GarmentsTableViewController: UITableViewController, DatabaseListener {
+    let CELL_ID = "garmentOutfitCell"
+    
+    var listenerType: ListenerType = .outfit
+    
+    var garmentsToShow = [Garment]()
+    
+    var imageList = [UIImage]()
+    
+    var imagePathList = [String]()
+
+    weak var databaseController: DatabaseProtocol?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        databaseController = appDelegate?.databaseController
+        
+        
+        
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return garmentsToShow.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID, for: indexPath) as! GarmentOutfitTableViewCell
+        
+        let garment = garmentsToShow[indexPath.row]
+        
+        cell.Brand.text = garment.brand
+        cell.name.text = garment.name
+        cell.garmentImageView.image = imageList[indexPath.row]
+        
+        
+        
+        
+        //cell.garmentImageView.image = imageList[indexPath.row]
+        
+       
+       
+ 
         // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -76,6 +104,23 @@ class GarmentsTableViewController: UITableViewController {
     }
     */
 
+    func onGarmentChange(change: DatabaseChange, garments: [Garment]) {
+        //nothing
+    }
+    
+    func onOutfitsChange(change: DatabaseChange, outfits: [Outfit]) {
+        //nothing
+    }
+    
+    func onOutfitGarmentsChange(change: DatabaseChange, garments: [Garment]) {
+        garmentsToShow = garments
+        tableView.reloadData()
+    }
+    
+    func onWearOutfitChange(change: DatabaseChange, wears: [WearInfo]) {
+        //nothing
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -85,5 +130,37 @@ class GarmentsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        databaseController?.addListener(listener: self)
+        
+        do{
+            
+            for data in garmentsToShow {
+                let filename = data.image!
+                
+                if imagePathList.contains(filename){
+                    print("Image Already loaded. Skipping image")
+                    continue
+                }
+                
+                if let image = loadImageData(filename: filename) {
+                    imageList.append(image)
+                    imagePathList.append(filename)
+                }
+            }
+            
+        }catch{
+            print("Unable to Fetch images")
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        super.viewWillDisappear(animated)
+        databaseController?.removeListener(listener: self)
+    }
 
 }
