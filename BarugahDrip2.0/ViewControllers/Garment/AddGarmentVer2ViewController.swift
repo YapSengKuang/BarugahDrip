@@ -71,6 +71,7 @@ class AddGarmentVer2ViewController: UIViewController {
                 
                 if let priceDouble = Double(price){
                     let _  = databaseController?.addGarment(name: name, price: priceDouble, brand: brand, size: size, numberOfWears: 0, datePurchased: Date(), image: filename)
+                    print(filename)
                 }
                 
                 databaseController?.cleanup()

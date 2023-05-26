@@ -10,6 +10,35 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Garments-->
+        <scene sceneID="2g9-LL-DMu">
+            <objects>
+                <tableViewController id="e4u-wu-1OG" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="bnE-7Q-6hi">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="xRB-mz-pxv">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xRB-mz-pxv" id="R2l-x5-Vom">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="e4u-wu-1OG" id="6Af-Ez-1PP"/>
+                            <outlet property="delegate" destination="e4u-wu-1OG" id="amd-Ff-0s9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Garments" id="Wj9-yo-2lH"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="297-BV-drV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3370" y="2584"/>
+        </scene>
         <!--viewOutfit-->
         <scene sceneID="lv1-K7-a40">
             <objects>
@@ -39,6 +68,9 @@
                                 <color key="tintColor" name="AccentColour2"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="square.and.arrow.down" catalog="system" title=""/>
+                                <connections>
+                                    <action selector="lodge:" destination="goo-Vn-dbe" eventType="touchUpInside" id="gmU-QO-zyc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJz-KY-9br">
                                 <rect key="frame" x="173" y="526" width="80" height="80"/>
@@ -49,6 +81,9 @@
                                 <color key="tintColor" name="AccentColour2"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="square.and.arrow.up" catalog="system" title=""/>
+                                <connections>
+                                    <action selector="viewChart:" destination="goo-Vn-dbe" eventType="touchUpInside" id="8uR-ml-Gf7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZlB-II-coZ"/>
@@ -70,11 +105,14 @@
                     <connections>
                         <outlet property="imageView" destination="K3J-u7-cnr" id="LAc-ed-V8C"/>
                         <outlet property="outfitName" destination="Eer-cq-Xty" id="tVn-Ud-Nhg"/>
+                        <segue destination="e4u-wu-1OG" kind="show" id="qhN-ab-UJ5"/>
+                        <segue destination="o1H-kX-jYE" kind="show" identifier="chartSeg" id="V5M-bJ-j7e"/>
+                        <segue destination="6fi-6b-JfA" kind="show" identifier="lodgeCreatedOutfit" id="qBp-R8-Jkw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hqd-l7-dgK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2222" y="1677"/>
+            <point key="canvasLocation" x="-2222" y="1651"/>
         </scene>
         <!--Outfits-->
         <scene sceneID="ttS-fi-8hG">
@@ -131,6 +169,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xuu-Tx-jqd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-854" y="1651"/>
+        </scene>
+        <!--Wears-->
+        <scene sceneID="Sc2-C5-NJq">
+            <objects>
+                <viewController id="o1H-kX-jYE" customClass="ChartViewController" customModule="BarugahDrip2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XTJ-zd-fOE">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ajA-NR-JIS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Wears" id="IEi-R3-9KA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hmA-r7-ivd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2222" y="2584"/>
         </scene>
         <!--pick garments-->
         <scene sceneID="q5G-OX-VK0">
@@ -254,18 +308,18 @@
         <scene sceneID="UoJ-j8-N84">
             <objects>
                 <viewController id="IfE-3F-9h7" customClass="AddOutfitViewController" customModule="BarugahDrip2_0" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="7OS-78-5C9">
+                    <view key="view" contentMode="scaleToFill" id="7OS-78-5C9">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AWb-zW-D4L">
-                                <rect key="frame" x="20" y="116" width="353" height="300"/>
+                                <rect key="frame" x="20" y="126" width="353" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="OgG-sg-X5g"/>
+                                    <constraint firstAttribute="height" constant="300" id="VRb-zh-6kz"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Garment Name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EQ8-iA-0fE">
-                                <rect key="frame" x="20" y="446" width="353" height="19"/>
+                                <rect key="frame" x="20" y="568.33333333333337" width="353" height="19"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
@@ -276,33 +330,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sri-AO-EZE">
-                                <rect key="frame" x="324" y="485" width="51" height="31"/>
-                            </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lodge Outfit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQQ-oW-c7F">
-                                <rect key="frame" x="20" y="485" width="284" height="21"/>
+                                <rect key="frame" x="20" y="632.66666666666663" width="95" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" preferredStyle="sliding" translatesAutoresizingMaskIntoConstraints="NO" id="sri-AO-EZE">
+                                <rect key="frame" x="324" y="627.33333333333337" width="51" height="31"/>
+                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ttf-tW-Gap"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="EQ8-iA-0fE" firstAttribute="leading" secondItem="ttf-tW-Gap" secondAttribute="leading" constant="20" id="29c-YS-ZtU"/>
-                            <constraint firstItem="AWb-zW-D4L" firstAttribute="leading" secondItem="ttf-tW-Gap" secondAttribute="leading" constant="20" id="AXL-h9-Hau"/>
-                            <constraint firstItem="ttf-tW-Gap" firstAttribute="trailing" secondItem="sri-AO-EZE" secondAttribute="trailing" constant="20" id="I1r-CH-bLv"/>
-                            <constraint firstItem="ttf-tW-Gap" firstAttribute="trailing" secondItem="EQ8-iA-0fE" secondAttribute="trailing" constant="20" id="Ima-W7-k4V"/>
-                            <constraint firstItem="EQ8-iA-0fE" firstAttribute="leading" secondItem="ttf-tW-Gap" secondAttribute="leading" constant="20" id="JhE-Ad-rbu"/>
-                            <constraint firstItem="sri-AO-EZE" firstAttribute="top" secondItem="EQ8-iA-0fE" secondAttribute="bottom" constant="20" id="V93-jx-wIV"/>
-                            <constraint firstItem="AWb-zW-D4L" firstAttribute="top" secondItem="ttf-tW-Gap" secondAttribute="top" constant="20" id="XLt-vr-sdG"/>
-                            <constraint firstItem="ttf-tW-Gap" firstAttribute="trailing" secondItem="EQ8-iA-0fE" secondAttribute="trailing" constant="20" id="YN5-eo-cc8"/>
-                            <constraint firstItem="KQQ-oW-c7F" firstAttribute="leading" secondItem="ttf-tW-Gap" secondAttribute="leading" constant="20" id="Z9Y-LR-iM1"/>
-                            <constraint firstItem="ttf-tW-Gap" firstAttribute="trailing" secondItem="AWb-zW-D4L" secondAttribute="trailing" constant="20" id="aXF-EB-Veg"/>
-                            <constraint firstItem="KQQ-oW-c7F" firstAttribute="centerY" secondItem="7OS-78-5C9" secondAttribute="centerY" id="b8v-PP-B4d"/>
-                            <constraint firstItem="sri-AO-EZE" firstAttribute="leading" secondItem="KQQ-oW-c7F" secondAttribute="trailing" constant="20" id="lz2-sp-syq"/>
-                            <constraint firstItem="KQQ-oW-c7F" firstAttribute="top" secondItem="EQ8-iA-0fE" secondAttribute="bottom" constant="20" id="xRp-G7-5yq"/>
-                            <constraint firstItem="EQ8-iA-0fE" firstAttribute="top" secondItem="AWb-zW-D4L" secondAttribute="bottom" constant="30" id="z5S-mN-AmM"/>
+                            <constraint firstItem="KQQ-oW-c7F" firstAttribute="leading" secondItem="ttf-tW-Gap" secondAttribute="leading" constant="20" id="CBJ-5b-8nx"/>
+                            <constraint firstItem="AWb-zW-D4L" firstAttribute="top" secondItem="ttf-tW-Gap" secondAttribute="top" constant="30" id="G6O-2P-lZv"/>
+                            <constraint firstItem="sri-AO-EZE" firstAttribute="top" secondItem="EQ8-iA-0fE" secondAttribute="bottom" constant="40" id="HAs-ka-xMp"/>
+                            <constraint firstItem="sri-AO-EZE" firstAttribute="centerY" secondItem="KQQ-oW-c7F" secondAttribute="centerY" id="W6b-ND-ev0"/>
+                            <constraint firstItem="AWb-zW-D4L" firstAttribute="leading" secondItem="ttf-tW-Gap" secondAttribute="leading" constant="20" id="Y2C-rF-gFF"/>
+                            <constraint firstItem="ttf-tW-Gap" firstAttribute="trailing" secondItem="sri-AO-EZE" secondAttribute="trailing" constant="20" id="YRy-tx-opU"/>
+                            <constraint firstItem="ttf-tW-Gap" firstAttribute="trailing" secondItem="EQ8-iA-0fE" secondAttribute="trailing" constant="20" id="k4q-N4-Fq2"/>
+                            <constraint firstItem="ttf-tW-Gap" firstAttribute="trailing" secondItem="AWb-zW-D4L" secondAttribute="trailing" constant="20" id="kbc-AX-vHB"/>
+                            <constraint firstItem="ttf-tW-Gap" firstAttribute="bottom" secondItem="KQQ-oW-c7F" secondAttribute="bottom" constant="150" id="oMY-eH-Qmj"/>
+                            <constraint firstItem="KQQ-oW-c7F" firstAttribute="leading" secondItem="EQ8-iA-0fE" secondAttribute="leading" id="qlL-OR-6vm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Outfit" id="4aE-la-gvE">
@@ -321,7 +371,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3U8-Q7-b82" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1775" y="2584"/>
+            <point key="canvasLocation" x="1774.8091603053435" y="2583.8028169014087"/>
         </scene>
         <!--Lodge Outfit-->
         <scene sceneID="MvN-1h-ya7">
@@ -386,7 +436,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AcS-Yd-0Ny" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2783.969465648855" y="2583.8028169014087"/>
+            <point key="canvasLocation" x="-1611" y="3368"/>
         </scene>
         <!--Garments-->
         <scene sceneID="EUF-jx-hnV">
@@ -875,6 +925,9 @@
             <point key="canvasLocation" x="3011" y="801"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="qBp-R8-Jkw"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="checkmark" width="128" height="128"/>
         <image name="chevron.down" catalog="system" width="128" height="70"/>

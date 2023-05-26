@@ -83,6 +83,7 @@ class OutfitsVer2CollectionViewController: UICollectionViewController, DatabaseL
             if let cell = sender as? OutfitsVer2CollectionViewCell,
                let indexPath = collectionView.indexPath(for: cell){
                 let controller = segue.destination as! SoloOutfitViewController
+                databaseController?.currentOutfit = allOutfits[indexPath.item]
                 controller.selectedOutfit = allOutfits[indexPath.item]
             }
             

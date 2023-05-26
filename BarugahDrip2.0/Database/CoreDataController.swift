@@ -34,10 +34,6 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         
         super.init()
         
-        if fetchAllGarments().count == 0{
-            addDefaultGarments()
-        }
-        
         
     }
     
@@ -242,7 +238,7 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         
         let outfitName = currentOutfit?.name
         
-        let predicate = NSPredicate(format: "ANY outfits.name == %@", outfitName!)
+        let predicate = NSPredicate(format: "ANY outfit.name == %@", outfitName!)
         
         fetchRequest.sortDescriptors = [sortDescriptor]
         fetchRequest.predicate = predicate
@@ -355,7 +351,7 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
             }
         }else if controller == outfitWearInfoFetchedResultsController{
             listeners.invoke(){ listener in
-                if listener.listenerType == .wear || listener.listenerType == .outfit || listener.listenerType == .all{
+                if listener.listenerType == .wear || listener.listenerType == .all{
                     listener.onWearOutfitChange(change: .update, wears: fetchWearsFromCurrentOutfit())
                 }
                 
@@ -364,6 +360,10 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
     }
     
     func addDefaultGarments(){
+        let _ = addGarment(name: "Boxy Tee", price: 900.00, brand: "Nike", size: "S", numberOfWears: 0, datePurchased: Date(), image: "1685069003.jpg")
+        let _ = addGarment(name: "Hoodie", price: 1500.00, brand: "Adidas", size: "M", numberOfWears: 2, datePurchased: Date(), image: "1685069003.jpg")
+        let _ = addGarment(name: "Jeans", price: 1200.00, brand: "Levi's", size: "30", numberOfWears: 5, datePurchased: Date(), image: "1685069003.jpg")
+        
         
         cleanup()
     }

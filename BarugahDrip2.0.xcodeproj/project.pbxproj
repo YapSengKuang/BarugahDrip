@@ -42,7 +42,9 @@
 		A7E647252A1E1C7100018D15 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E6471D2A1E1C7100018D15 /* User+CoreDataClass.swift */; };
 		A7E647262A1E1C7100018D15 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E6471E2A1E1C7100018D15 /* User+CoreDataProperties.swift */; };
 		A7E647282A203B8700018D15 /* LodgeOutfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E647272A203B8700018D15 /* LodgeOutfitViewController.swift */; };
-		A7E6472C2A20448100018D15 /* ViewOutfitDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E6472B2A20448100018D15 /* ViewOutfitDetailsViewController.swift */; };
+		A7E6472E2A20462E00018D15 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E6472D2A20462E00018D15 /* ChartViewController.swift */; };
+		A7E647302A20464200018D15 /* GarmentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E6472F2A20464200018D15 /* GarmentsTableViewController.swift */; };
+		A7E647362A2046F800018D15 /* ChartSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E647352A2046F800018D15 /* ChartSwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,7 +85,9 @@
 		A7E6471D2A1E1C7100018D15 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A7E6471E2A1E1C7100018D15 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A7E647272A203B8700018D15 /* LodgeOutfitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LodgeOutfitViewController.swift; sourceTree = "<group>"; };
-		A7E6472B2A20448100018D15 /* ViewOutfitDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOutfitDetailsViewController.swift; sourceTree = "<group>"; };
+		A7E6472D2A20462E00018D15 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		A7E6472F2A20464200018D15 /* GarmentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentsTableViewController.swift; sourceTree = "<group>"; };
+		A7E647352A2046F800018D15 /* ChartSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartSwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,7 +212,9 @@
 			isa = PBXGroup;
 			children = (
 				A7A8E5F82A172532005F735E /* SoloOutfitViewController.swift */,
-				A7E6472B2A20448100018D15 /* ViewOutfitDetailsViewController.swift */,
+				A7E6472F2A20464200018D15 /* GarmentsTableViewController.swift */,
+				A7E6472D2A20462E00018D15 /* ChartViewController.swift */,
+				A7E647352A2046F800018D15 /* ChartSwiftUIView.swift */,
 			);
 			path = ViewOutfit;
 			sourceTree = "<group>";
@@ -291,7 +297,6 @@
 				A76B48CF2A17053200A213FC /* AddPhotoOutfitViewController.swift in Sources */,
 				A70991252A0B3B700053943D /* tabBarViewController.swift in Sources */,
 				A76B48C62A14879300A213FC /* DisplayMessage.swift in Sources */,
-				A7E6472C2A20448100018D15 /* ViewOutfitDetailsViewController.swift in Sources */,
 				A7E647212A1E1C7100018D15 /* Outfit+CoreDataClass.swift in Sources */,
 				A76B48C02A1485DC00A213FC /* AddGarmentVer2ViewController.swift in Sources */,
 				A7E6471F2A1E1C7100018D15 /* WearInfo+CoreDataClass.swift in Sources */,
@@ -308,15 +313,18 @@
 				A76B48D12A17054700A213FC /* PickGarmentCollectionViewController.swift in Sources */,
 				A76B48C42A14862B00A213FC /* GarmentVer2CollectionViewController.swift in Sources */,
 				A70990DE2A0B35080053943D /* AppDelegate.swift in Sources */,
+				A7E647362A2046F800018D15 /* ChartSwiftUIView.swift in Sources */,
 				A709911F2A0B3AD30053943D /* CoreDataController.swift in Sources */,
 				A709911D2A0B3AC50053943D /* DatabaseProtocol.swift in Sources */,
 				A7A8E5F72A1707EB005F735E /* PickGarmentCollectionViewCell.swift in Sources */,
 				A709911B2A0B3A910053943D /* MulticastDelegate.swift in Sources */,
 				A7A8E5FE2A172B82005F735E /* Visual.swift in Sources */,
+				A7E647302A20464200018D15 /* GarmentsTableViewController.swift in Sources */,
 				A70990E02A0B35080053943D /* SceneDelegate.swift in Sources */,
 				A76B48BC2A1485B400A213FC /* GarmentsVer2CollectionViewCell.swift in Sources */,
 				A7E647242A1E1C7100018D15 /* Garment+CoreDataProperties.swift in Sources */,
 				A7E647282A203B8700018D15 /* LodgeOutfitViewController.swift in Sources */,
+				A7E6472E2A20462E00018D15 /* ChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

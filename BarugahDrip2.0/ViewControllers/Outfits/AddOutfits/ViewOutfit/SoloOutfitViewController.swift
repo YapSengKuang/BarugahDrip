@@ -7,24 +7,87 @@
 
 import UIKit
 
-class SoloOutfitViewController: UIViewController {
+class SoloOutfitViewController: UIViewController, DatabaseListener {
+    var listenerType: ListenerType = .wear
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var outfitName: UILabel!
     
     var selectedOutfit: Outfit?
+    var selectedOutfitWears: [WearInfo]?
+    
+    weak var databaseController: DatabaseProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        databaseController = appDelegate?.databaseController
+        
+        
         outfitName.text = selectedOutfit?.name
         imageView.image = loadImageData(filename: (selectedOutfit?.image!)!)
+        
+        
 
         // Do any additional setup after loading the view.
     }
     
+    func onGarmentChange(change: DatabaseChange, garments: [Garment]) {
+        //nothing
+    }
 
+    func onOutfitsChange(change: DatabaseChange, outfits: [Outfit]) {
+        //nothing
+    }
+
+    func onOutfitGarmentsChange(change: DatabaseChange, garments: [Garment]) {
+        //nothing
+    }
+
+    func onWearOutfitChange(change: DatabaseChange, wears: [WearInfo]) {
+        selectedOutfitWears = wears
+    }
+    
+    @IBAction func viewChart(_ sender: Any) {
+        
+        
+        self.performSegue(withIdentifier: "chartSeg", sender: self)
+        
+    }
+    
+    @IBAction func lodge(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "lodgeCreatedOutfit", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "chartSeg"{
+            let destination = segue.destination as! ChartViewController
+            destination.dataset = selectedOutfitWears
+        }
+        if segue.identifier == "lodgeCreatedOutfit"{
+            let destination = segue.destination as! LodgeOutfitViewController
+            destination.outfitToLodge = selectedOutfit
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        databaseController?.addListener(listener: self)
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        super.viewWillDisappear(animated)
+        databaseController?.removeListener(listener: self)
+    }
+    
     
 }
+
+    
 
 extension UIViewController{
     func loadImageData(filename: String) -> UIImage?{
