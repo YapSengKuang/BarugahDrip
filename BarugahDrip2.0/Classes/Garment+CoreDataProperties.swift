@@ -2,7 +2,7 @@
 //  Garment+CoreDataProperties.swift
 //  BarugahDrip2.0
 //
-//  Created by Eskay Yap on 17/5/2023.
+//  Created by Eskay Yap on 24/5/2023.
 //
 //
 
@@ -18,11 +18,11 @@ extension Garment {
 
     @NSManaged public var brand: String?
     @NSManaged public var dateBought: Date?
+    @NSManaged public var image: String?
     @NSManaged public var name: String?
     @NSManaged public var numberOfWears: Int32
     @NSManaged public var price: Double
     @NSManaged public var size: String?
-    @NSManaged public var image: String?
     @NSManaged public var outfits: NSSet?
 
 }

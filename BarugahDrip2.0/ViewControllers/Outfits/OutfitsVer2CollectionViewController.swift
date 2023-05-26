@@ -122,5 +122,10 @@ class OutfitsVer2CollectionViewController: UICollectionViewController, DatabaseL
     func onOutfitGarmentsChange(change: DatabaseChange, garments: [Garment]) {
         //nothing
     }
+    
+    func onWearOutfitChange(change: DatabaseChange, wears: [WearInfo]) {
+        // nothing
+    }
+    
 
 }

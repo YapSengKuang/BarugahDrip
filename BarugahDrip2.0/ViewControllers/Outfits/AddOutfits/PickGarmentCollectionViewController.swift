@@ -133,6 +133,11 @@ class PickGarmentCollectionViewController: UICollectionViewController, DatabaseL
         //nothing
     }
     
+    func onWearOutfitChange(change: DatabaseChange, wears: [WearInfo]) {
+        // nothing
+    }
+    
+    
     @IBAction func nextButton(_ sender: Any) {
         if (collectionView.indexPathsForSelectedItems?.count != 0){
             performSegue(withIdentifier: "addOutfitPhoto", sender: self)

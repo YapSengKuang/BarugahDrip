@@ -10,10 +10,10 @@ import UIKit
 import CoreData
 
 class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsControllerDelegate {
-    
     var currentUser: User?
     var currentOutfit: Outfit?
     var outfitGarmentsFetchedResultsController: NSFetchedResultsController<Garment>?
+    var outfitWearInfoFetchedResultsController: NSFetchedResultsController<WearInfo>?
     var allOutfitsFetchedResultsController: NSFetchedResultsController<Outfit>?
     var allGarmentsFetchedResultsController: NSFetchedResultsController<Garment>?
     var listeners = MulticastDelegate<DatabaseListener>()
@@ -82,6 +82,40 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
          Deletes an outfit given the Outfit instance from CoreData
          */
         persistentContainer.viewContext.delete(outfit)
+    }
+    
+    func addWear(date: Date, tempCelcuis: Int, event: String) -> WearInfo {
+        /**
+         Creates WearInfo to CoreData, given date, tempCelcuis and event
+         */
+        let wearInfo = NSEntityDescription.insertNewObject(forEntityName: "WearInfo", into: persistentContainer.viewContext) as! WearInfo
+        wearInfo.date = date
+        wearInfo.event = event
+        wearInfo.tempCelcuis = Int32(tempCelcuis)
+        
+        return wearInfo
+    }
+    
+    func deleteWear(wearInfo: WearInfo) {
+        /**
+         Deletes a WearInfo from coreData
+         */
+        persistentContainer.viewContext.delete(wearInfo)
+    }
+    
+    func addWearToOutfit(outfit: Outfit, wearInfo: WearInfo) -> Bool {
+        /**
+         Adds a WearInfo class to outfits
+         */
+        outfit.addToWears(wearInfo)
+        return true
+    }
+    
+    func deleteWearFromOutfit(outfit: Outfit, wearInfo: WearInfo) {
+        /**
+         Removes a WearInfo from Outfit
+         */
+        outfit.removeFromWears(wearInfo)
     }
     
     func addGarmentToOutfit(garment: Garment, outfit: Outfit) -> Bool {
@@ -199,6 +233,41 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         return garments
     }
     
+    func fetchWearsFromCurrentOutfit() -> [WearInfo]{
+        /**
+         Fetches the array of WearInfo from an outift
+         */
+        let fetchRequest: NSFetchRequest<WearInfo> = WearInfo.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+        
+        let outfitName = currentOutfit?.name
+        
+        let predicate = NSPredicate(format: "ANY outfits.name == %@", outfitName!)
+        
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        fetchRequest.predicate = predicate
+        
+        outfitWearInfoFetchedResultsController =
+        NSFetchedResultsController<WearInfo>(fetchRequest: fetchRequest,
+                                             managedObjectContext: persistentContainer.viewContext,
+                                             sectionNameKeyPath: nil, cacheName: nil)
+        outfitWearInfoFetchedResultsController?.delegate = self
+        
+        do {
+            try outfitWearInfoFetchedResultsController?.performFetch()
+        }catch{
+            print("Fetch Request Failed: \(error)")
+            
+        }
+        
+        var wears = [WearInfo]()
+        if outfitWearInfoFetchedResultsController?.fetchedObjects != nil{
+            wears = (outfitWearInfoFetchedResultsController?.fetchedObjects)!
+        }
+        
+        return wears
+    }
+    
     func cleanup() {
         /**
          Clean up method checks if there are changes to CoreData then saves the changes made to CoreData
@@ -229,6 +298,10 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         if listener.listenerType == .outfit || listener.listenerType == .all{
             listener.onOutfitGarmentsChange(change: .update, garments: fetchGarmentFromCurrentOutfit())
         }
+        if listener.listenerType == .outfit || listener.listenerType == .wear || listener.listenerType == .all{
+            listener.onWearOutfitChange(change: .update, wears: fetchWearsFromCurrentOutfit())
+        }
+        
     }
     
     func removeListener(listener: DatabaseListener) {
@@ -279,6 +352,13 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
                 if listener.listenerType == .outfits{
                     listener.onOutfitsChange(change: .update, outfits: fetchAllOutfits())
                 }
+            }
+        }else if controller == outfitWearInfoFetchedResultsController{
+            listeners.invoke(){ listener in
+                if listener.listenerType == .wear || listener.listenerType == .outfit || listener.listenerType == .all{
+                    listener.onWearOutfitChange(change: .update, wears: fetchWearsFromCurrentOutfit())
+                }
+                
             }
         }
     }

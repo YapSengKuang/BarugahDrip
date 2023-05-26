@@ -25,6 +25,7 @@ enum ListenerType{
     case outfits
     case garment
     case outfit
+    case wear
 }
 
 protocol DatabaseListener: AnyObject {
@@ -38,6 +39,9 @@ protocol DatabaseListener: AnyObject {
     
     ///When there is a change in the garments that make up the outfit
     func onOutfitGarmentsChange(change: DatabaseChange, garments: [Garment])
+    
+    ///When there is a change in the wearInfo of an outfit
+    func onWearOutfitChange(change: DatabaseChange, wears: [WearInfo])
 
 }
 
@@ -52,8 +56,14 @@ protocol DatabaseProtocol: AnyObject {
     func addOutfit(price: Double, wears: Int, outfitName: String, image: String) -> Outfit
     func deleteOutfit(outfit: Outfit)
     
+    func addWear(date: Date, tempCelcuis: Int, event: String) -> WearInfo
+    func deleteWear(wearInfo: WearInfo)
+    
     func addGarmentToOutfit(garment: Garment, outfit: Outfit) -> Bool
     func deleteGarmentFromOutfit(garment: Garment, outfit: Outfit)
+    
+    func addWearToOutfit(outfit: Outfit, wearInfo: WearInfo) -> Bool
+    func deleteWearFromOutfit(outfit: Outfit, wearInfo: WearInfo)
     
     func cleanup()
     

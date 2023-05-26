@@ -112,6 +112,11 @@ class GarmentVer2CollectionViewController: UICollectionViewController, DatabaseL
         //nothing
     }
     
+    func onWearOutfitChange(change: DatabaseChange, wears: [WearInfo]) {
+        // nothing
+    }
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

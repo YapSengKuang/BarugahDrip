@@ -16,8 +16,15 @@
         <attribute name="numberOfWears" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="garments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Garment" inverseName="outfits" inverseEntity="Garment"/>
+        <relationship name="wears" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WearInfo" inverseName="outfit" inverseEntity="WearInfo"/>
     </entity>
     <entity name="User" representedClassName=".User" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="WearInfo" representedClassName=".WearInfo" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="event" optional="YES" attributeType="String"/>
+        <attribute name="tempCelcuis" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="outfit" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Outfit" inverseName="wears" inverseEntity="Outfit"/>
     </entity>
 </model>

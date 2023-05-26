@@ -45,4 +45,9 @@ class signUpPageViewController: UIViewController, DatabaseListener {
     func onOutfitGarmentsChange(change: DatabaseChange, garments: [Garment]) {
         //Nothing
     }
+    
+    func onWearOutfitChange(change: DatabaseChange, wears: [WearInfo]) {
+        // nothing
+    }
+    
 }

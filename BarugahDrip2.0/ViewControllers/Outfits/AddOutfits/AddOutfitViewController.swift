@@ -10,6 +10,7 @@ import UIKit
 class AddOutfitViewController: UIViewController{
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var lodgeOutfitSwitch: UISwitch!
     var selectedImage: UIImage?
     
     @IBOutlet weak var outfitName: UITextField!
@@ -17,6 +18,8 @@ class AddOutfitViewController: UIViewController{
     var selectedGarments = [Garment]()
     
     weak var databaseController: DatabaseProtocol?
+    
+    var createdOutfit: Outfit?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +55,8 @@ class AddOutfitViewController: UIViewController{
             
             let outfit  = (databaseController?.addOutfit(price: 0.00, wears: 0, outfitName: name, image: filename))!
             
+            createdOutfit = outfit
+            
             for garment in selectedGarments{
                 let _ = databaseController?.addGarmentToOutfit(garment: garment, outfit: outfit)
             }
@@ -62,7 +67,18 @@ class AddOutfitViewController: UIViewController{
             displayMessage(title: "Error", message: "\(error)")
         }
         
-        navigationController?.popToRootViewController(animated: true)
+        if lodgeOutfitSwitch.isOn {
+            self.performSegue(withIdentifier: "lodgeOutfit", sender: self)
+        }else{
+            navigationController?.popToRootViewController(animated: true)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "lodgeOutfit"{
+            let destination = segue.destination as! LodgeOutfitViewController
+            destination.outfitToLodge = self.createdOutfit
+        }
     }
     
 }

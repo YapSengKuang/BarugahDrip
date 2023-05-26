@@ -74,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hqd-l7-dgK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2220" y="1651"/>
+            <point key="canvasLocation" x="-2222" y="1677"/>
         </scene>
         <!--Outfits-->
         <scene sceneID="ttS-fi-8hG">
@@ -254,31 +254,55 @@
         <scene sceneID="UoJ-j8-N84">
             <objects>
                 <viewController id="IfE-3F-9h7" customClass="AddOutfitViewController" customModule="BarugahDrip2_0" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7OS-78-5C9">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="7OS-78-5C9">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AWb-zW-D4L">
                                 <rect key="frame" x="20" y="116" width="353" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="boR-iO-Mr4"/>
+                                    <constraint firstAttribute="height" constant="300" id="OgG-sg-X5g"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Garment Name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EQ8-iA-0fE">
-                                <rect key="frame" x="20" y="436" width="353" height="19"/>
+                                <rect key="frame" x="20" y="446" width="353" height="19"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cl7-rG-zg0">
+                                <rect key="frame" x="20" y="473" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sri-AO-EZE">
+                                <rect key="frame" x="324" y="485" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lodge Outfit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQQ-oW-c7F">
+                                <rect key="frame" x="20" y="485" width="284" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ttf-tW-Gap"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="EQ8-iA-0fE" firstAttribute="leading" secondItem="ttf-tW-Gap" secondAttribute="leading" constant="20" id="5zE-Zv-N74"/>
-                            <constraint firstItem="ttf-tW-Gap" firstAttribute="trailing" secondItem="EQ8-iA-0fE" secondAttribute="trailing" constant="20" id="Lmw-Fm-R95"/>
-                            <constraint firstItem="ttf-tW-Gap" firstAttribute="trailing" secondItem="AWb-zW-D4L" secondAttribute="trailing" constant="20" id="Y7M-Lg-a0A"/>
-                            <constraint firstItem="AWb-zW-D4L" firstAttribute="leading" secondItem="ttf-tW-Gap" secondAttribute="leading" constant="20" id="Zfp-PJ-35i"/>
-                            <constraint firstItem="EQ8-iA-0fE" firstAttribute="top" secondItem="AWb-zW-D4L" secondAttribute="bottom" constant="20" id="hTQ-g0-IMM"/>
-                            <constraint firstItem="AWb-zW-D4L" firstAttribute="top" secondItem="ttf-tW-Gap" secondAttribute="top" constant="20" id="mGu-lA-6CT"/>
+                            <constraint firstItem="EQ8-iA-0fE" firstAttribute="leading" secondItem="ttf-tW-Gap" secondAttribute="leading" constant="20" id="29c-YS-ZtU"/>
+                            <constraint firstItem="AWb-zW-D4L" firstAttribute="leading" secondItem="ttf-tW-Gap" secondAttribute="leading" constant="20" id="AXL-h9-Hau"/>
+                            <constraint firstItem="ttf-tW-Gap" firstAttribute="trailing" secondItem="sri-AO-EZE" secondAttribute="trailing" constant="20" id="I1r-CH-bLv"/>
+                            <constraint firstItem="ttf-tW-Gap" firstAttribute="trailing" secondItem="EQ8-iA-0fE" secondAttribute="trailing" constant="20" id="Ima-W7-k4V"/>
+                            <constraint firstItem="EQ8-iA-0fE" firstAttribute="leading" secondItem="ttf-tW-Gap" secondAttribute="leading" constant="20" id="JhE-Ad-rbu"/>
+                            <constraint firstItem="sri-AO-EZE" firstAttribute="top" secondItem="EQ8-iA-0fE" secondAttribute="bottom" constant="20" id="V93-jx-wIV"/>
+                            <constraint firstItem="AWb-zW-D4L" firstAttribute="top" secondItem="ttf-tW-Gap" secondAttribute="top" constant="20" id="XLt-vr-sdG"/>
+                            <constraint firstItem="ttf-tW-Gap" firstAttribute="trailing" secondItem="EQ8-iA-0fE" secondAttribute="trailing" constant="20" id="YN5-eo-cc8"/>
+                            <constraint firstItem="KQQ-oW-c7F" firstAttribute="leading" secondItem="ttf-tW-Gap" secondAttribute="leading" constant="20" id="Z9Y-LR-iM1"/>
+                            <constraint firstItem="ttf-tW-Gap" firstAttribute="trailing" secondItem="AWb-zW-D4L" secondAttribute="trailing" constant="20" id="aXF-EB-Veg"/>
+                            <constraint firstItem="KQQ-oW-c7F" firstAttribute="centerY" secondItem="7OS-78-5C9" secondAttribute="centerY" id="b8v-PP-B4d"/>
+                            <constraint firstItem="sri-AO-EZE" firstAttribute="leading" secondItem="KQQ-oW-c7F" secondAttribute="trailing" constant="20" id="lz2-sp-syq"/>
+                            <constraint firstItem="KQQ-oW-c7F" firstAttribute="top" secondItem="EQ8-iA-0fE" secondAttribute="bottom" constant="20" id="xRp-G7-5yq"/>
+                            <constraint firstItem="EQ8-iA-0fE" firstAttribute="top" secondItem="AWb-zW-D4L" secondAttribute="bottom" constant="30" id="z5S-mN-AmM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Outfit" id="4aE-la-gvE">
@@ -290,12 +314,79 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="AWb-zW-D4L" id="MtJ-qD-3Hn"/>
+                        <outlet property="lodgeOutfitSwitch" destination="sri-AO-EZE" id="r9E-Jb-bPs"/>
                         <outlet property="outfitName" destination="EQ8-iA-0fE" id="QdC-8N-TCQ"/>
+                        <segue destination="6fi-6b-JfA" kind="show" identifier="lodgeOutfit" id="Exh-bk-Blm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3U8-Q7-b82" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1775" y="2584"/>
+        </scene>
+        <!--Lodge Outfit-->
+        <scene sceneID="MvN-1h-ya7">
+            <objects>
+                <viewController id="6fi-6b-JfA" customClass="LodgeOutfitViewController" customModule="BarugahDrip2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T94-Zx-hFP">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Worn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Qk-3e-aPb">
+                                <rect key="frame" x="20" y="126" width="353" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tempurature (Celcius)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wGL-Rd-ywU">
+                                <rect key="frame" x="20" y="447" width="353" height="18.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Occasion" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oUG-SL-tOg">
+                                <rect key="frame" x="20" y="495.66666666666669" width="353" height="18.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="hsp-3w-z3M">
+                                <rect key="frame" x="20" y="167" width="353" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="qDc-TH-a96"/>
+                                </constraints>
+                            </datePicker>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6SY-o9-hHY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3Qk-3e-aPb" firstAttribute="top" secondItem="6SY-o9-hHY" secondAttribute="top" constant="30" id="0I9-Si-0LS"/>
+                            <constraint firstItem="oUG-SL-tOg" firstAttribute="leading" secondItem="6SY-o9-hHY" secondAttribute="leading" constant="20" id="0NK-F1-3Ih"/>
+                            <constraint firstItem="oUG-SL-tOg" firstAttribute="top" secondItem="wGL-Rd-ywU" secondAttribute="bottom" constant="30" id="HBO-RD-vsF"/>
+                            <constraint firstItem="hsp-3w-z3M" firstAttribute="top" secondItem="3Qk-3e-aPb" secondAttribute="bottom" constant="20" id="Hds-lW-JGC"/>
+                            <constraint firstItem="wGL-Rd-ywU" firstAttribute="leading" secondItem="6SY-o9-hHY" secondAttribute="leading" constant="20" id="UXs-Jn-Sfm"/>
+                            <constraint firstItem="hsp-3w-z3M" firstAttribute="leading" secondItem="6SY-o9-hHY" secondAttribute="leading" constant="20" id="YhM-4x-qhB"/>
+                            <constraint firstItem="3Qk-3e-aPb" firstAttribute="leading" secondItem="6SY-o9-hHY" secondAttribute="leading" constant="20" id="Yt3-ff-hBb"/>
+                            <constraint firstItem="6SY-o9-hHY" firstAttribute="trailing" secondItem="hsp-3w-z3M" secondAttribute="trailing" constant="20" id="Zsv-qQ-6AO"/>
+                            <constraint firstItem="wGL-Rd-ywU" firstAttribute="top" secondItem="hsp-3w-z3M" secondAttribute="bottom" constant="30" id="dSm-Kw-fGA"/>
+                            <constraint firstItem="6SY-o9-hHY" firstAttribute="trailing" secondItem="wGL-Rd-ywU" secondAttribute="trailing" constant="20" id="ovI-ba-WUl"/>
+                            <constraint firstItem="6SY-o9-hHY" firstAttribute="trailing" secondItem="3Qk-3e-aPb" secondAttribute="trailing" constant="20" id="s4P-xc-mFR"/>
+                            <constraint firstItem="6SY-o9-hHY" firstAttribute="trailing" secondItem="oUG-SL-tOg" secondAttribute="trailing" constant="20" id="sDY-59-vbG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Lodge Outfit" id="q36-Oh-5PZ">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="chevron.right" catalog="system" id="c9Z-YL-Koi">
+                            <connections>
+                                <action selector="nextButton:" destination="6fi-6b-JfA" id="BEV-OF-JjG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="datePicker" destination="hsp-3w-z3M" id="1SZ-er-60D"/>
+                        <outlet property="occasionOutlet" destination="oUG-SL-tOg" id="EV5-Kd-p9c"/>
+                        <outlet property="tempOutlet" destination="wGL-Rd-ywU" id="Vhu-MN-J4s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AcS-Yd-0Ny" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2783.969465648855" y="2583.8028169014087"/>
         </scene>
         <!--Garments-->
         <scene sceneID="EUF-jx-hnV">
