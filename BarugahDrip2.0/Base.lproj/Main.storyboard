@@ -84,7 +84,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K3J-u7-cnr">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K3J-u7-cnr">
                                 <rect key="frame" x="30" y="96" width="333" height="400"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="400" id="ifV-Rc-uep"/>
@@ -153,7 +153,13 @@
                             <constraint firstItem="xJz-KY-9br" firstAttribute="centerY" secondItem="tpW-Nk-P0T" secondAttribute="centerY" id="yuh-qz-iE2"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="06B-hq-wQs"/>
+                    <navigationItem key="navigationItem" id="06B-hq-wQs">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="CT2-O2-eZd">
+                            <connections>
+                                <action selector="deleteOutfit:" destination="goo-Vn-dbe" id="Qfx-4L-ujP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="K3J-u7-cnr" id="LAc-ed-V8C"/>
                         <outlet property="outfitName" destination="Eer-cq-Xty" id="tVn-Ud-Nhg"/>
@@ -173,7 +179,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="8Km-3q-Udw">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Background"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lq6-XB-dGg">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -188,7 +194,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ltu-ll-asO">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ltu-ll-asO">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         </imageView>
                                     </subviews>
@@ -544,7 +550,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Fn-Mj-GaV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4160" y="801"/>
+            <point key="canvasLocation" x="5086.259541984733" y="800.70422535211276"/>
         </scene>
         <!--Pick Image-->
         <scene sceneID="VTF-U0-GWj">
@@ -598,7 +604,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eaR-5t-fWb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5146" y="802"/>
+            <point key="canvasLocation" x="6072.5190839694651" y="801.4084507042254"/>
         </scene>
         <!--Let's get started-->
         <scene sceneID="tne-QT-ifu">
@@ -647,7 +653,7 @@
             </objects>
             <point key="canvasLocation" x="117" y="-612"/>
         </scene>
-        <!--Home-->
+        <!--Main Menu View Controller-->
         <scene sceneID="lxP-pM-U0m">
             <objects>
                 <viewController id="Ubo-pb-sXU" customClass="MainMenuViewController" customModule="BarugahDrip2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -656,7 +662,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxb-3u-LBD">
-                                <rect key="frame" x="30" y="20" width="333" height="41"/>
+                                <rect key="frame" x="30" y="64" width="333" height="41"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -670,11 +676,11 @@
                             <constraint firstItem="pxb-3u-LBD" firstAttribute="leading" secondItem="OSd-Yn-g6P" secondAttribute="leading" constant="30" id="z1j-Dz-8QA"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house.fill" id="mXT-cz-hVI"/>
+                    <navigationItem key="navigationItem" id="oXK-X0-x79"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="575-jk-hWj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1043.5114503816794" y="841.54929577464793"/>
+            <point key="canvasLocation" x="1970.2290076335878" y="841.54929577464793"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="V4t-gp-Yyz">
@@ -707,7 +713,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="e1G-db-byT" kind="relationship" relationship="viewControllers" id="fmM-Xw-QUf"/>
-                        <segue destination="Ubo-pb-sXU" kind="relationship" relationship="viewControllers" id="0pi-Gb-2wV"/>
+                        <segue destination="AKv-6y-8yc" kind="relationship" relationship="viewControllers" id="0pi-Gb-2wV"/>
                         <segue destination="P0a-y6-rUi" kind="relationship" relationship="viewControllers" id="MqB-Nz-5Xn"/>
                     </connections>
                 </tabBarController>
@@ -974,7 +980,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V0S-kP-GP1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3011" y="801"/>
+            <point key="canvasLocation" x="3936.6412213740455" y="800.70422535211276"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="2S3-Ou-s75">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AKv-6y-8yc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house.fill" id="mXT-cz-hVI"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JtO-Ng-aOS">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ubo-pb-sXU" kind="relationship" relationship="rootViewController" id="6e3-Ew-Sll"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7wu-sI-sqy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1043.5114503816794" y="841.54929577464793"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

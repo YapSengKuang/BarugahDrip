@@ -16,7 +16,7 @@ class GarmentOutfitTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        garmentImageView.layer.cornerRadius = 8.0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

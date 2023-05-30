@@ -73,6 +73,29 @@ class OutfitsVer2CollectionViewController: UICollectionViewController, DatabaseL
         
         return UICollectionViewCompositionalLayout(section: imageSection)
     }
+    
+    func deleteItem(outfit: Outfit){
+         /**
+          Deletes and item from this view
+          */
+        
+        // Get index of item to delete
+        
+        var index: Int?
+        var counter = 0
+        for i in allOutfits{
+            if i == outfit{
+                index = counter
+            }
+            counter+=1
+        }
+        
+        imageList.remove(at: index!)
+        imagePathList.remove(at: index!)
+        databaseController?.deleteOutfit(outfit: outfit)
+        print("has been deleted")
+        
+    }
 
     
     // MARK: - Navigation

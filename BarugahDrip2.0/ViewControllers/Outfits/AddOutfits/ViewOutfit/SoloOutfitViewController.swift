@@ -29,7 +29,10 @@ class SoloOutfitViewController: UIViewController, DatabaseListener {
         imageView.image = loadImageData(filename: (selectedOutfit?.image!)!)
         
         
-
+        imageView.layer.cornerRadius = 8.0
+        imageView.layer.masksToBounds = true
+        
+        
         // Do any additional setup after loading the view.
     }
     
@@ -75,11 +78,19 @@ class SoloOutfitViewController: UIViewController, DatabaseListener {
             destination.outfitToLodge = selectedOutfit
         }
         if segue.identifier == "viewGarmentFromOutfit"{
-            let destination = segue.destination as! GarmentsTableViewController
+            _ = segue.destination as! GarmentsTableViewController
             
             
         }
     }
+    
+    @IBAction func deleteOutfit(_ sender: Any) {
+        
+        
+        navigationController?.popViewController(animated: true)
+        //navigationController?.topViewController.
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

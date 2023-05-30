@@ -16,6 +16,10 @@ class AddGarmentPhotoVer2ViewController: UIViewController,UIImagePickerControlle
                 
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         databaseController = appDelegate?.databaseController
+        
+        
+        
+        
     }
     
     @IBAction func pickPhotoButton(_ sender: Any) {

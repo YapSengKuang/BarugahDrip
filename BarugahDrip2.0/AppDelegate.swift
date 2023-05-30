@@ -7,18 +7,55 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate{
 
     var databaseController: DatabaseProtocol?
+    
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         databaseController = CoreDataController()
+    
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert])
+            { (granted, error) in
+                if !granted {
+                    print("Permission was not granted")
+                    return
+                }
+        }
+        
+        let notificationContent = UNMutableNotificationContent()
+        
+        // Create details
+        notificationContent.title = "Good Morning! 🙇‍♂️"
+        notificationContent.body = "Remember to lodge a fit for the day!"
+        
+        let calendar = Calendar.current
+        var dateComponents = DateComponents(calendar: calendar, timeZone: TimeZone.current)
+        dateComponents.hour = 10
+        dateComponents.minute = 30
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true	)
+        
+        let uuidString = UUID().uuidString
+        
+        let request = UNNotificationRequest(identifier: uuidString, content: notificationContent, trigger: trigger)
+    
+        center.removePendingNotificationRequests(withIdentifiers: [uuidString])
+        
+        center.add(request) { (error) in
+        }
+        
         return true
     }
+    
+    
 
     // MARK: UISceneSession Lifecycle
 
