@@ -58,6 +58,7 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
          Deletes a garment from coredata
          */
         persistentContainer.viewContext.delete(garment)
+        
     }
     
     func addOutfit(price: Double, wears: Int, outfitName: String, image: String) -> Outfit{

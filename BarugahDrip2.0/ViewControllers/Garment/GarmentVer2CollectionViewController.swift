@@ -116,6 +116,30 @@ class GarmentVer2CollectionViewController: UICollectionViewController, DatabaseL
         // nothing
     }
     
+    func deleteGarment(garment: Garment){
+         /**
+          Deletes and item from this view
+          */
+        
+        // Get index of item to delete
+        
+        var index: Int?
+        var counter = 0
+        for i in allGarments{
+            if i == garment{
+                index = counter
+            }
+            counter+=1
+        }
+        
+        imageList.remove(at: index!)
+        imagePathList.remove(at: index!)
+        databaseController?.deleteGarment(garment: garment)
+        databaseController?.cleanup()
+        collectionView.reloadData()
+        print("has been deleted")
+        
+    }
     
     // MARK: - Navigation
 
@@ -126,6 +150,7 @@ class GarmentVer2CollectionViewController: UICollectionViewController, DatabaseL
                let indexPath = collectionView.indexPath(for: cell){
                 let controller = segue.destination as! SoloGarmentViewController
                 controller.selectedGarment = allGarments[indexPath.item]
+                controller.outfitsViewController = self
             }
             
         }

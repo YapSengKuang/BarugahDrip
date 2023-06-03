@@ -15,6 +15,7 @@ class OutfitsVer2CollectionViewController: UICollectionViewController, DatabaseL
     var imageList = [UIImage]()
     var imagePathList = [String]()
     var allOutfits = [Outfit]()
+    var outfitToDelete: Outfit?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,6 +94,8 @@ class OutfitsVer2CollectionViewController: UICollectionViewController, DatabaseL
         imageList.remove(at: index!)
         imagePathList.remove(at: index!)
         databaseController?.deleteOutfit(outfit: outfit)
+        databaseController?.cleanup()
+        collectionView.reloadData()
         print("has been deleted")
         
     }
@@ -108,6 +111,7 @@ class OutfitsVer2CollectionViewController: UICollectionViewController, DatabaseL
                 let controller = segue.destination as! SoloOutfitViewController
                 databaseController?.currentOutfit = allOutfits[indexPath.item]
                 controller.selectedOutfit = allOutfits[indexPath.item]
+                controller.outfitsViewController = self
             }
             
         }

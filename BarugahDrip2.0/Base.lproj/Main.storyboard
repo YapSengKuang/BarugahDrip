@@ -773,7 +773,13 @@
                             <constraint firstItem="zkO-5a-HeQ" firstAttribute="trailing" secondItem="odd-SN-LP4" secondAttribute="trailing" constant="30" id="qfU-FB-dtn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="chK-aI-am2"/>
+                    <navigationItem key="navigationItem" id="chK-aI-am2">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="trash" catalog="system" id="HlK-o2-kpO">
+                            <connections>
+                                <action selector="deleteGarment:" destination="wxH-dM-6Vs" id="hXO-EU-7wD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="brandNameOutlet" destination="odd-SN-LP4" id="OGO-LF-mXF"/>
                         <outlet property="garmentNameOutlet" destination="JJx-Pw-6Bq" id="R0c-s2-fBj"/>
@@ -1017,6 +1023,7 @@
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="rectangle.split.2x1" catalog="system" width="128" height="93"/>
         <image name="rectangle.split.2x1.fill" catalog="system" width="128" height="93"/>
+        <image name="trash" catalog="system" width="117" height="128"/>
         <image name="tshirt" catalog="system" width="128" height="98"/>
         <image name="tshirt.fill" catalog="system" width="128" height="98"/>
         <namedColor name="AccentColour2">

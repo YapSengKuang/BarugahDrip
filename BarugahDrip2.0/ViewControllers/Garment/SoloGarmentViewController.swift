@@ -15,6 +15,8 @@ class SoloGarmentViewController: UIViewController {
     
     @IBOutlet weak var brandNameOutlet: UILabel!
     
+    weak var outfitsViewController: GarmentVer2CollectionViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         garmentNameOutlet.text = selectedGarment?.name
@@ -23,4 +25,11 @@ class SoloGarmentViewController: UIViewController {
     
     }
 
+    @IBAction func deleteGarment(_ sender: Any) {
+        outfitsViewController?.deleteGarment(garment: selectedGarment!)
+
+        
+        navigationController?.popViewController(animated: true)
+        
+    }
 }

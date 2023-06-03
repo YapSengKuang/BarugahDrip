@@ -16,6 +16,7 @@ class SoloOutfitViewController: UIViewController, DatabaseListener {
     var selectedOutfit: Outfit?
     var selectedOutfitWears: [WearInfo]?
     
+    weak var outfitsViewController: OutfitsVer2CollectionViewController?
     weak var databaseController: DatabaseProtocol?
     
     override func viewDidLoad() {
@@ -85,10 +86,11 @@ class SoloOutfitViewController: UIViewController, DatabaseListener {
     }
     
     @IBAction func deleteOutfit(_ sender: Any) {
-        
+        outfitsViewController?.deleteItem(outfit: selectedOutfit!)
+
         
         navigationController?.popViewController(animated: true)
-        //navigationController?.topViewController.
+        
     }
     
     
