@@ -157,7 +157,7 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate{
         
         Task{
             await requestWeather()
-            setWeatherData()
+            //setWeatherData()
         }
     }
 }
