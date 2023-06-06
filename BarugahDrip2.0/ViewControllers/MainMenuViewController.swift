@@ -7,8 +7,11 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 
-class MainMenuViewController: UIViewController {
+class MainMenuViewController: UIViewController, CLLocationManagerDelegate{
+    var manager: CLLocationManager = CLLocationManager()
+    
     var indicator = UIActivityIndicatorView()
     
     @IBOutlet weak var weatherIcon: UIImageView!
@@ -18,6 +21,10 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var textLabel: UILabel!
     
     var weatherData: WeatherAPIData?
+    
+    var longitude: String?
+    
+    var latitude: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,10 +41,7 @@ class MainMenuViewController: UIViewController {
                                                 view.safeAreaLayoutGuide.centerYAnchor)
         ])
         // Do any additional setup after loading the view.
-        Task{
-            await requestWeather()
-            setWeatherData()
-        }
+
         //print(weatherData?.text)
     }
     
@@ -53,6 +57,8 @@ class MainMenuViewController: UIViewController {
         if let temp = weatherData?.temp_c{
             tempLabel.text = String(temp) + " C"
         }
+        
+        
         
         if let iconLink = weatherData?.icon {
             
@@ -78,66 +84,48 @@ class MainMenuViewController: UIViewController {
          Requests for weather information from a location
          */
         
-        let headers = [
-            "X-RapidAPI-Key": "b2a635592emshaa0ae2ed3541cf9p198bdajsn43765fefaae5",
-            "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com"
-        ]
+        // Get Longitude and Latitude
         
-        let request = NSMutableURLRequest(url: NSURL(string: "https://weatherapi-com.p.rapidapi.com/current.json?q=53.1%2C-0.13")! as URL,
-                                          cachePolicy: .useProtocolCachePolicy,
-                                          timeoutInterval: 10.0)
-        request.httpMethod = "GET"
-        request.allHTTPHeaderFields = headers
+
         
-        DispatchQueue.main.async {
-            self.indicator.stopAnimating()
-        }
-        
-        do{
-            let (data, response) = try await URLSession.shared.data(for: request as URLRequest)
-            print(response)
+        if let longitude = Double(longitude!), let latitude = Double(latitude!){
+            let longitudeFormatted = String(format: "%.1f", longitude)
+            let latitudeFormateed = String(format: "%.1f", latitude)
+            
+            let headers = [
+                "X-RapidAPI-Key": "b2a635592emshaa0ae2ed3541cf9p198bdajsn43765fefaae5",
+                "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com"
+            ]
+            
+            let request = NSMutableURLRequest(url: NSURL(string: "https://weatherapi-com.p.rapidapi.com/current.json?q=\(latitudeFormateed)%2C\(longitudeFormatted)")! as URL,
+                                              cachePolicy: .useProtocolCachePolicy,
+                                              timeoutInterval: 10.0)
+            request.httpMethod = "GET"
+            request.allHTTPHeaderFields = headers
+            
             DispatchQueue.main.async {
                 self.indicator.stopAnimating()
             }
             
             do{
-                let decoder = JSONDecoder()
-                let weatherDataOutput = try decoder.decode(WeatherAPIData.self, from: data)
-                weatherData = weatherDataOutput
+                let (data, response) = try await URLSession.shared.data(for: request as URLRequest)
+                print(response)
+                DispatchQueue.main.async {
+                    self.indicator.stopAnimating()
+                }
                 
+                do{
+                    let decoder = JSONDecoder()
+                    let weatherDataOutput = try decoder.decode(WeatherAPIData.self, from: data)
+                    weatherData = weatherDataOutput
+                    
+                }catch let error{
+                    print(error)
+                }
             }catch let error{
                 print(error)
             }
-        }catch let error{
-            print(error)
         }
-        
-
-//        let session = URLSession.shared
-//        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { [self] (data, response, error) -> Void in
-//            if (error != nil) {
-//                print(error as Any)
-//            } else {
-//
-//                do{
-//                    let decoder = JSONDecoder()
-//                    let weatherDataOutput = try decoder.decode(WeatherAPIData.self, from: data!)
-//                    setWeatherData(data: weatherDataOutput)
-//                    print(weatherDataOutput)
-//
-//
-//
-//
-//                }catch let error{
-//                    print(error)
-//                }
-//
-//                //let httpResponse = response as? HTTPURLResponse
-//                //print(httpResponse)
-//            }
-//        })
-//
-//        dataTask.resume()
     }
 
     /*
@@ -149,5 +137,27 @@ class MainMenuViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let first = locations.first else{
+            return
+        }
+        
+        longitude = String(first.coordinate.longitude)
+        print("Longitude = " + longitude!)
+        latitude = String(first.coordinate.latitude)
+        print("Latitude = " + latitude!)
+        
+        Task{
+            await requestWeather()
+            setWeatherData()
+        }
+    }
 }

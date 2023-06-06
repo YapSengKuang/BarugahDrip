@@ -13,6 +13,8 @@ class WeatherAPIData: NSObject, Decodable {
     var text: String?
     var code: Int?
     var icon: String?
+    var long: Double?
+    var lat: Double?
     
     private enum RootKeys: String, CodingKey{
         case current
@@ -24,6 +26,9 @@ class WeatherAPIData: NSObject, Decodable {
         case temp_c
         case text
         case condition
+        case lon
+        case lat
+
     }
     
     private enum ConditionKeys: String, CodingKey{
@@ -55,6 +60,9 @@ class WeatherAPIData: NSObject, Decodable {
         
         icon = try conditionContainer.decode(String.self, forKey: .icon)
         
+        lat = try locationContainer.decode(Double.self, forKey: .lat)
+        
+        long = try locationContainer.decode(Double.self, forKey: .lon)
     }
     
 }
