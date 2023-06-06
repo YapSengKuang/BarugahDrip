@@ -11,5 +11,9 @@ class GarmentsVer2CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
-    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.layer.cornerRadius = 10.0
+        self.layer.masksToBounds = true
+    }
 }

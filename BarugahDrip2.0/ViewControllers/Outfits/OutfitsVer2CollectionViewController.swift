@@ -61,19 +61,21 @@ class OutfitsVer2CollectionViewController: UICollectionViewController, DatabaseL
     }
     
     func generateLayout() -> UICollectionViewLayout {
-        let imageItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(1.0))
         
-        let imageItem = NSCollectionLayoutItem(layoutSize: imageItemSize)
-        imageItem.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/3), heightDimension: .fractionalHeight(1.0))
         
-        let imageGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalWidth(1/3))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
         
-        let imageGroup = NSCollectionLayoutGroup.horizontal(layoutSize: imageGroupSize, subitems: [imageItem])
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalWidth(4/9))
         
-        let imageSection = NSCollectionLayoutSection(group: imageGroup)
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 3)
         
-        return UICollectionViewCompositionalLayout(section: imageSection)
+        let section = NSCollectionLayoutSection(group: group)
+        
+        return UICollectionViewCompositionalLayout(section: section)
     }
+
     
     func deleteItem(outfit: Outfit){
          /**

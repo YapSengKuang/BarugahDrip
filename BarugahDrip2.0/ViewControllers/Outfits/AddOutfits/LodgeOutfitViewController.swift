@@ -31,7 +31,7 @@ class LodgeOutfitViewController: UIViewController {
             return
         }
         
-        var wearInfo = (databaseController?.addWear(date: datePicker.date, tempCelcuis: temp, event: occasion))!
+        let wearInfo = (databaseController?.addWear(date: datePicker.date, tempCelcuis: temp, event: occasion))!
         
         let _ = databaseController?.addWearToOutfit(outfit: outfitToLodge!, wearInfo: wearInfo)
         

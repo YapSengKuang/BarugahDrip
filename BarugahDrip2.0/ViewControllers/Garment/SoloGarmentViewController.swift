@@ -22,6 +22,9 @@ class SoloGarmentViewController: UIViewController {
         garmentNameOutlet.text = selectedGarment?.name
         brandNameOutlet.text = selectedGarment?.brand
         imageView.image = loadImageData(filename: (selectedGarment?.image!)!)
+        
+        imageView.layer.cornerRadius = 8.0
+        imageView.layer.masksToBounds = true
     
     }
 
