@@ -35,7 +35,7 @@ class MainMenuViewController: UIViewController {
         ])
         // Do any additional setup after loading the view.
         Task{
-            //await requestWeather()
+            await requestWeather()
             setWeatherData()
         }
         //print(weatherData?.text)
@@ -51,12 +51,25 @@ class MainMenuViewController: UIViewController {
         }
         
         if let temp = weatherData?.temp_c{
-            tempLabel.text = String(temp)
+            tempLabel.text = String(temp) + " C"
         }
         
-        if let code = weatherData?.code {
+        if let iconLink = weatherData?.icon {
             
+            // Split the string by "/"
+            let components = iconLink.components(separatedBy: "/")
+
+            // Find the component that contains the number
+            if let numberComponent = components.last, numberComponent.hasSuffix(".png") {
+                let iconName = String(numberComponent.dropLast(4))
+                print(iconName)
+                
+                weatherIcon.image = UIImage(named: iconName)
+            }
+
         }
+        
+        
         
     }
     
