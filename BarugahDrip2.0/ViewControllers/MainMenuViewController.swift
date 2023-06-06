@@ -11,8 +11,14 @@ import UIKit
 class MainMenuViewController: UIViewController {
     var indicator = UIActivityIndicatorView()
     
+    @IBOutlet weak var weatherIcon: UIImageView!
+    
+    @IBOutlet weak var tempLabel: UILabel!
+    
+    @IBOutlet weak var textLabel: UILabel!
+    
     var weatherData: WeatherAPIData?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,11 +35,28 @@ class MainMenuViewController: UIViewController {
         ])
         // Do any additional setup after loading the view.
         Task{
-            await requestWeather()
+            //await requestWeather()
+            setWeatherData()
+        }
+        //print(weatherData?.text)
+    }
+    
+    func setWeatherData(){
+        /**
+         Method used to set the labels to the values in weatherData
+         */
+        
+        if let text = weatherData?.text{
+            textLabel.text = text
         }
         
-        print(weatherData)
+        if let temp = weatherData?.temp_c{
+            tempLabel.text = String(temp)
+        }
         
+        if let code = weatherData?.code {
+            
+        }
         
     }
     
@@ -46,10 +69,10 @@ class MainMenuViewController: UIViewController {
             "X-RapidAPI-Key": "b2a635592emshaa0ae2ed3541cf9p198bdajsn43765fefaae5",
             "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com"
         ]
-
+        
         let request = NSMutableURLRequest(url: NSURL(string: "https://weatherapi-com.p.rapidapi.com/current.json?q=53.1%2C-0.13")! as URL,
-                                                cachePolicy: .useProtocolCachePolicy,
-                                            timeoutInterval: 10.0)
+                                          cachePolicy: .useProtocolCachePolicy,
+                                          timeoutInterval: 10.0)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
         
@@ -57,32 +80,51 @@ class MainMenuViewController: UIViewController {
             self.indicator.stopAnimating()
         }
         
-
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { [self] (data, response, error) -> Void in
-            if (error != nil) {
-                print(error as Any)
-            } else {
-                
-                do{
-                    let decoder = JSONDecoder()
-                    let weatherDataOutput = try decoder.decode(WeatherAPIData.self, from: data!)
-                    self.weatherData = weatherDataOutput
-                    print(weatherDataOutput.text!)
-                    
-                    
-                    
-                    
-                }catch let error{
-                    print(error)
-                }
-            
-                //let httpResponse = response as? HTTPURLResponse
-                //print(httpResponse)
+        do{
+            let (data, response) = try await URLSession.shared.data(for: request as URLRequest)
+            print(response)
+            DispatchQueue.main.async {
+                self.indicator.stopAnimating()
             }
-        })
+            
+            do{
+                let decoder = JSONDecoder()
+                let weatherDataOutput = try decoder.decode(WeatherAPIData.self, from: data)
+                weatherData = weatherDataOutput
+                
+            }catch let error{
+                print(error)
+            }
+        }catch let error{
+            print(error)
+        }
+        
 
-        dataTask.resume()
+//        let session = URLSession.shared
+//        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { [self] (data, response, error) -> Void in
+//            if (error != nil) {
+//                print(error as Any)
+//            } else {
+//
+//                do{
+//                    let decoder = JSONDecoder()
+//                    let weatherDataOutput = try decoder.decode(WeatherAPIData.self, from: data!)
+//                    setWeatherData(data: weatherDataOutput)
+//                    print(weatherDataOutput)
+//
+//
+//
+//
+//                }catch let error{
+//                    print(error)
+//                }
+//
+//                //let httpResponse = response as? HTTPURLResponse
+//                //print(httpResponse)
+//            }
+//        })
+//
+//        dataTask.resume()
     }
 
     /*

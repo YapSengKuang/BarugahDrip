@@ -12,6 +12,7 @@ class WeatherAPIData: NSObject, Decodable {
     var temp_c: Int?
     var text: String?
     var code: Int?
+    var icon: String?
     
     private enum RootKeys: String, CodingKey{
         case current
@@ -28,6 +29,7 @@ class WeatherAPIData: NSObject, Decodable {
     private enum ConditionKeys: String, CodingKey{
         case text
         case code
+        case icon
     }
     
     required init(from decoder: Decoder) throws{
@@ -50,6 +52,8 @@ class WeatherAPIData: NSObject, Decodable {
         text = try conditionContainer.decode(String.self, forKey: .text)
         
         code = try conditionContainer.decode(Int.self, forKey: .code)
+        
+        icon = try conditionContainer.decode(String.self, forKey: .icon)
         
     }
     
