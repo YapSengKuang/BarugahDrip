@@ -2,7 +2,7 @@
 //  WearInfo+CoreDataProperties.swift
 //  BarugahDrip2.0
 //
-//  Created by Eskay Yap on 24/5/2023.
+//  Created by Eskay Yap on 9/6/2023.
 //
 //
 
@@ -17,8 +17,8 @@ extension WearInfo {
     }
 
     @NSManaged public var date: Date?
-    @NSManaged public var tempCelcuis: Int32
     @NSManaged public var event: String?
+    @NSManaged public var tempCelcuis: Int32
     @NSManaged public var outfit: NSSet?
 
 }

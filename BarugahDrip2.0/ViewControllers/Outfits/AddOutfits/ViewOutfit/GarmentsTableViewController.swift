@@ -54,16 +54,6 @@ class GarmentsTableViewController: UITableViewController, DatabaseListener {
         cell.Brand.text = garment.brand
         cell.name.text = garment.name
         cell.garmentImageView.image = imageList[indexPath.row]
-        
-        
-        
-        
-        //cell.garmentImageView.image = imageList[indexPath.row]
-        
-       
-       
- 
-        // Configure the cell...
 
         return cell
     }
@@ -151,9 +141,6 @@ class GarmentsTableViewController: UITableViewController, DatabaseListener {
                     imagePathList.append(filename)
                 }
             }
-            
-        }catch{
-            print("Unable to Fetch images")
         }
     }
     

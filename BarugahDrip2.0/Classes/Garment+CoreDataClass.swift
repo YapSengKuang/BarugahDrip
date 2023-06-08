@@ -2,7 +2,7 @@
 //  Garment+CoreDataClass.swift
 //  BarugahDrip2.0
 //
-//  Created by Eskay Yap on 24/5/2023.
+//  Created by Eskay Yap on 9/6/2023.
 //
 //
 

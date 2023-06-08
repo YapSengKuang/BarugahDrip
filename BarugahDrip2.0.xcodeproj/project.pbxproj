@@ -16,9 +16,15 @@
 		A709911B2A0B3A910053943D /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709911A2A0B3A910053943D /* MulticastDelegate.swift */; };
 		A709911D2A0B3AC50053943D /* DatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709911C2A0B3AC50053943D /* DatabaseProtocol.swift */; };
 		A709911F2A0B3AD30053943D /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709911E2A0B3AD30053943D /* CoreDataController.swift */; };
-		A70991212A0B3B400053943D /* signUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70991202A0B3B400053943D /* signUpPageViewController.swift */; };
 		A70991232A0B3B580053943D /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70991222A0B3B580053943D /* MainMenuViewController.swift */; };
 		A70991252A0B3B700053943D /* tabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70991242A0B3B700053943D /* tabBarViewController.swift */; };
+		A748D2EA2A321E5F00E188F0 /* GarmentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A748D2E92A321E5F00E188F0 /* GarmentInfoViewController.swift */; };
+		A748D2F12A32240300E188F0 /* Outfit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A748D2EB2A32240300E188F0 /* Outfit+CoreDataClass.swift */; };
+		A748D2F22A32240300E188F0 /* Outfit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A748D2EC2A32240300E188F0 /* Outfit+CoreDataProperties.swift */; };
+		A748D2F32A32240300E188F0 /* Garment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A748D2ED2A32240300E188F0 /* Garment+CoreDataClass.swift */; };
+		A748D2F42A32240300E188F0 /* Garment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A748D2EE2A32240300E188F0 /* Garment+CoreDataProperties.swift */; };
+		A748D2F52A32240300E188F0 /* WearInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A748D2EF2A32240300E188F0 /* WearInfo+CoreDataClass.swift */; };
+		A748D2F62A32240300E188F0 /* WearInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A748D2F02A32240300E188F0 /* WearInfo+CoreDataProperties.swift */; };
 		A75E27982A2F2D4900B0DAAA /* WeatherAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75E27972A2F2D4900B0DAAA /* WeatherAPIData.swift */; };
 		A76B48BC2A1485B400A213FC /* GarmentsVer2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B48BB2A1485B400A213FC /* GarmentsVer2CollectionViewCell.swift */; };
 		A76B48BE2A1485CD00A213FC /* AddGarmentPhotoVer2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B48BD2A1485CD00A213FC /* AddGarmentPhotoVer2ViewController.swift */; };
@@ -33,16 +39,7 @@
 		A76B48D32A17056800A213FC /* AddOutfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B48D22A17056800A213FC /* AddOutfitViewController.swift */; };
 		A7A8E5F72A1707EB005F735E /* PickGarmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8E5F62A1707EB005F735E /* PickGarmentCollectionViewCell.swift */; };
 		A7A8E5F92A172532005F735E /* SoloOutfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8E5F82A172532005F735E /* SoloOutfitViewController.swift */; };
-		A7A8E5FE2A172B82005F735E /* Visual.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A8E5FD2A172B82005F735E /* Visual.swift */; };
 		A7BB9FEA2A2063640095502A /* GarmentOutfitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB9FE92A2063640095502A /* GarmentOutfitTableViewCell.swift */; };
-		A7E6471F2A1E1C7100018D15 /* WearInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E647172A1E1C7100018D15 /* WearInfo+CoreDataClass.swift */; };
-		A7E647202A1E1C7100018D15 /* WearInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E647182A1E1C7100018D15 /* WearInfo+CoreDataProperties.swift */; };
-		A7E647212A1E1C7100018D15 /* Outfit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E647192A1E1C7100018D15 /* Outfit+CoreDataClass.swift */; };
-		A7E647222A1E1C7100018D15 /* Outfit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E6471A2A1E1C7100018D15 /* Outfit+CoreDataProperties.swift */; };
-		A7E647232A1E1C7100018D15 /* Garment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E6471B2A1E1C7100018D15 /* Garment+CoreDataClass.swift */; };
-		A7E647242A1E1C7100018D15 /* Garment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E6471C2A1E1C7100018D15 /* Garment+CoreDataProperties.swift */; };
-		A7E647252A1E1C7100018D15 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E6471D2A1E1C7100018D15 /* User+CoreDataClass.swift */; };
-		A7E647262A1E1C7100018D15 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E6471E2A1E1C7100018D15 /* User+CoreDataProperties.swift */; };
 		A7E647282A203B8700018D15 /* LodgeOutfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E647272A203B8700018D15 /* LodgeOutfitViewController.swift */; };
 		A7E6472E2A20462E00018D15 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E6472D2A20462E00018D15 /* ChartViewController.swift */; };
 		A7E647302A20464200018D15 /* GarmentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E6472F2A20464200018D15 /* GarmentsTableViewController.swift */; };
@@ -61,9 +58,15 @@
 		A709911A2A0B3A910053943D /* MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
 		A709911C2A0B3AC50053943D /* DatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProtocol.swift; sourceTree = "<group>"; };
 		A709911E2A0B3AD30053943D /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
-		A70991202A0B3B400053943D /* signUpPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpPageViewController.swift; sourceTree = "<group>"; };
 		A70991222A0B3B580053943D /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		A70991242A0B3B700053943D /* tabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabBarViewController.swift; sourceTree = "<group>"; };
+		A748D2E92A321E5F00E188F0 /* GarmentInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentInfoViewController.swift; sourceTree = "<group>"; };
+		A748D2EB2A32240300E188F0 /* Outfit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Outfit+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A748D2EC2A32240300E188F0 /* Outfit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Outfit+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A748D2ED2A32240300E188F0 /* Garment+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Garment+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A748D2EE2A32240300E188F0 /* Garment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Garment+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A748D2EF2A32240300E188F0 /* WearInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WearInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A748D2F02A32240300E188F0 /* WearInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WearInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A75E27972A2F2D4900B0DAAA /* WeatherAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPIData.swift; sourceTree = "<group>"; };
 		A76B48BB2A1485B400A213FC /* GarmentsVer2CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentsVer2CollectionViewCell.swift; sourceTree = "<group>"; };
 		A76B48BD2A1485CD00A213FC /* AddGarmentPhotoVer2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGarmentPhotoVer2ViewController.swift; sourceTree = "<group>"; };
@@ -78,16 +81,7 @@
 		A76B48D22A17056800A213FC /* AddOutfitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOutfitViewController.swift; sourceTree = "<group>"; };
 		A7A8E5F62A1707EB005F735E /* PickGarmentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickGarmentCollectionViewCell.swift; sourceTree = "<group>"; };
 		A7A8E5F82A172532005F735E /* SoloOutfitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoloOutfitViewController.swift; sourceTree = "<group>"; };
-		A7A8E5FD2A172B82005F735E /* Visual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Visual.swift; sourceTree = "<group>"; };
 		A7BB9FE92A2063640095502A /* GarmentOutfitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentOutfitTableViewCell.swift; sourceTree = "<group>"; };
-		A7E647172A1E1C7100018D15 /* WearInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WearInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A7E647182A1E1C7100018D15 /* WearInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WearInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A7E647192A1E1C7100018D15 /* Outfit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Outfit+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A7E6471A2A1E1C7100018D15 /* Outfit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Outfit+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A7E6471B2A1E1C7100018D15 /* Garment+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Garment+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A7E6471C2A1E1C7100018D15 /* Garment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Garment+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A7E6471D2A1E1C7100018D15 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A7E6471E2A1E1C7100018D15 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A7E647272A203B8700018D15 /* LodgeOutfitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LodgeOutfitViewController.swift; sourceTree = "<group>"; };
 		A7E6472D2A20462E00018D15 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		A7E6472F2A20464200018D15 /* GarmentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentsTableViewController.swift; sourceTree = "<group>"; };
@@ -151,14 +145,12 @@
 		A70990F42A0B37480053943D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				A7E647172A1E1C7100018D15 /* WearInfo+CoreDataClass.swift */,
-				A7E647182A1E1C7100018D15 /* WearInfo+CoreDataProperties.swift */,
-				A7E647192A1E1C7100018D15 /* Outfit+CoreDataClass.swift */,
-				A7E6471A2A1E1C7100018D15 /* Outfit+CoreDataProperties.swift */,
-				A7E6471B2A1E1C7100018D15 /* Garment+CoreDataClass.swift */,
-				A7E6471C2A1E1C7100018D15 /* Garment+CoreDataProperties.swift */,
-				A7E6471D2A1E1C7100018D15 /* User+CoreDataClass.swift */,
-				A7E6471E2A1E1C7100018D15 /* User+CoreDataProperties.swift */,
+				A748D2EB2A32240300E188F0 /* Outfit+CoreDataClass.swift */,
+				A748D2EC2A32240300E188F0 /* Outfit+CoreDataProperties.swift */,
+				A748D2ED2A32240300E188F0 /* Garment+CoreDataClass.swift */,
+				A748D2EE2A32240300E188F0 /* Garment+CoreDataProperties.swift */,
+				A748D2EF2A32240300E188F0 /* WearInfo+CoreDataClass.swift */,
+				A748D2F02A32240300E188F0 /* WearInfo+CoreDataProperties.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -179,11 +171,9 @@
 			children = (
 				A707FD922A0E0C5700942499 /* Outfits */,
 				A77FD9622A0DD9570013E2F5 /* Garment */,
-				A70991202A0B3B400053943D /* signUpPageViewController.swift */,
 				A70991222A0B3B580053943D /* MainMenuViewController.swift */,
 				A70991242A0B3B700053943D /* tabBarViewController.swift */,
 				A76B48C52A14879300A213FC /* DisplayMessage.swift */,
-				A7A8E5FD2A172B82005F735E /* Visual.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -217,6 +207,7 @@
 				A76B48BF2A1485DC00A213FC /* AddGarmentVer2ViewController.swift */,
 				A76B48C32A14862B00A213FC /* GarmentVer2CollectionViewController.swift */,
 				A76B48C72A14964900A213FC /* SoloGarmentViewController.swift */,
+				A748D2E92A321E5F00E188F0 /* GarmentInfoViewController.swift */,
 			);
 			path = Garment;
 			sourceTree = "<group>";
@@ -304,41 +295,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7E647232A1E1C7100018D15 /* Garment+CoreDataClass.swift in Sources */,
 				A76B48BE2A1485CD00A213FC /* AddGarmentPhotoVer2ViewController.swift in Sources */,
 				A7BB9FEA2A2063640095502A /* GarmentOutfitTableViewCell.swift in Sources */,
 				A76B48CC2A15D2FD00A213FC /* OutfitsVer2CollectionViewCell.swift in Sources */,
-				A7E647202A1E1C7100018D15 /* WearInfo+CoreDataProperties.swift in Sources */,
 				A76B48CF2A17053200A213FC /* AddPhotoOutfitViewController.swift in Sources */,
 				A70991252A0B3B700053943D /* tabBarViewController.swift in Sources */,
 				A76B48C62A14879300A213FC /* DisplayMessage.swift in Sources */,
-				A7E647212A1E1C7100018D15 /* Outfit+CoreDataClass.swift in Sources */,
 				A75E27982A2F2D4900B0DAAA /* WeatherAPIData.swift in Sources */,
 				A76B48C02A1485DC00A213FC /* AddGarmentVer2ViewController.swift in Sources */,
-				A7E6471F2A1E1C7100018D15 /* WearInfo+CoreDataClass.swift in Sources */,
-				A70991212A0B3B400053943D /* signUpPageViewController.swift in Sources */,
+				A748D2F52A32240300E188F0 /* WearInfo+CoreDataClass.swift in Sources */,
+				A748D2F32A32240300E188F0 /* Garment+CoreDataClass.swift in Sources */,
 				A70991232A0B3B580053943D /* MainMenuViewController.swift in Sources */,
 				A76B48C82A14964900A213FC /* SoloGarmentViewController.swift in Sources */,
 				A70990E82A0B35080053943D /* BarugahDrip2_0.xcdatamodeld in Sources */,
-				A7E647252A1E1C7100018D15 /* User+CoreDataClass.swift in Sources */,
-				A7E647262A1E1C7100018D15 /* User+CoreDataProperties.swift in Sources */,
-				A7E647222A1E1C7100018D15 /* Outfit+CoreDataProperties.swift in Sources */,
+				A748D2EA2A321E5F00E188F0 /* GarmentInfoViewController.swift in Sources */,
 				A7A8E5F92A172532005F735E /* SoloOutfitViewController.swift in Sources */,
 				A76B48CA2A15D2CC00A213FC /* OutfitsVer2CollectionViewController.swift in Sources */,
 				A76B48D32A17056800A213FC /* AddOutfitViewController.swift in Sources */,
 				A76B48D12A17054700A213FC /* PickGarmentCollectionViewController.swift in Sources */,
 				A76B48C42A14862B00A213FC /* GarmentVer2CollectionViewController.swift in Sources */,
+				A748D2F42A32240300E188F0 /* Garment+CoreDataProperties.swift in Sources */,
 				A70990DE2A0B35080053943D /* AppDelegate.swift in Sources */,
 				A7E647362A2046F800018D15 /* ChartSwiftUIView.swift in Sources */,
 				A709911F2A0B3AD30053943D /* CoreDataController.swift in Sources */,
 				A709911D2A0B3AC50053943D /* DatabaseProtocol.swift in Sources */,
+				A748D2F22A32240300E188F0 /* Outfit+CoreDataProperties.swift in Sources */,
+				A748D2F12A32240300E188F0 /* Outfit+CoreDataClass.swift in Sources */,
+				A748D2F62A32240300E188F0 /* WearInfo+CoreDataProperties.swift in Sources */,
 				A7A8E5F72A1707EB005F735E /* PickGarmentCollectionViewCell.swift in Sources */,
 				A709911B2A0B3A910053943D /* MulticastDelegate.swift in Sources */,
-				A7A8E5FE2A172B82005F735E /* Visual.swift in Sources */,
 				A7E647302A20464200018D15 /* GarmentsTableViewController.swift in Sources */,
 				A70990E02A0B35080053943D /* SceneDelegate.swift in Sources */,
 				A76B48BC2A1485B400A213FC /* GarmentsVer2CollectionViewCell.swift in Sources */,
-				A7E647242A1E1C7100018D15 /* Garment+CoreDataProperties.swift in Sources */,
 				A7E647282A203B8700018D15 /* LodgeOutfitViewController.swift in Sources */,
 				A7E6472E2A20462E00018D15 /* ChartViewController.swift in Sources */,
 			);
@@ -484,7 +472,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColour2;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -511,7 +499,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColour2;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;

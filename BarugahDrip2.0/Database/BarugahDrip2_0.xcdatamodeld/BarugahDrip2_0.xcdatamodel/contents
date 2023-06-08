@@ -11,15 +11,13 @@
         <relationship name="outfits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Outfit" inverseName="garments" inverseEntity="Outfit"/>
     </entity>
     <entity name="Outfit" representedClassName=".Outfit" syncable="YES">
+        <attribute name="dateCreated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="numberOfWears" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="garments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Garment" inverseName="outfits" inverseEntity="Garment"/>
         <relationship name="wears" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WearInfo" inverseName="outfit" inverseEntity="WearInfo"/>
-    </entity>
-    <entity name="User" representedClassName=".User" syncable="YES">
-        <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
     <entity name="WearInfo" representedClassName=".WearInfo" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>

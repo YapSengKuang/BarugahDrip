@@ -10,7 +10,6 @@ import UIKit
 import CoreData
 
 class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsControllerDelegate {
-    var currentUser: User?
     var currentOutfit: Outfit?
     var outfitGarmentsFetchedResultsController: NSFetchedResultsController<Garment>?
     var outfitWearInfoFetchedResultsController: NSFetchedResultsController<WearInfo>?
@@ -69,6 +68,7 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         outfit.price = price
         outfit.name = outfitName
         outfit.image = image
+        outfit.dateCreated = Date()
         
         return outfit
         
@@ -105,6 +105,7 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
          Adds a WearInfo class to outfits
          */
         outfit.addToWears(wearInfo)
+        cleanup()
         return true
     }
     
@@ -113,6 +114,7 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
          Removes a WearInfo from Outfit
          */
         outfit.removeFromWears(wearInfo)
+        cleanup()
     }
     
     func addGarmentToOutfit(garment: Garment, outfit: Outfit) -> Bool {
@@ -170,7 +172,7 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         if allOutfitsFetchedResultsController == nil {
             //Create fetch request
             let request: NSFetchRequest<Outfit> = Outfit.fetchRequest()
-            let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+            let nameSortDescriptor = NSSortDescriptor(key: "dateCreated", ascending: true)
             request.sortDescriptors = [nameSortDescriptor]
             
             //Intialise Fetch results controller
@@ -306,24 +308,6 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
          Removes listener from saved listeners
          */
         listeners.removeDelegate(listener)
-    }
-    
-    func addUser(name: String) {
-        /**
-         Creates a user profile to CoreData, given their name
-         */
-        let user = NSEntityDescription.insertNewObject(forEntityName: "User", into: persistentContainer.viewContext) as! User
-        user.name = name
-        
-        currentUser = user
-    }
-    
-    func deleteUser(user: User) {
-        /**
-         Deletes a user from CoreData
-         */
-        persistentContainer.viewContext.delete(user)
-        currentUser = nil
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {

@@ -620,7 +620,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Service Is Not Working" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iB3-az-d4Q">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Service Is Not Working" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iB3-az-d4Q">
                                 <rect key="frame" x="50" y="385" width="293" height="54.333333333333314"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <nil key="textColor"/>
@@ -857,75 +857,63 @@
         <!--view garment details-->
         <scene sceneID="ls4-Cl-iLr">
             <objects>
-                <viewController title="view garment details" id="Eaz-e6-SnZ" sceneMemberID="viewController">
+                <viewController title="view garment details" id="Eaz-e6-SnZ" customClass="GarmentInfoViewController" customModule="BarugahDrip2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7im-v5-rqu">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Suq-Lg-ib9">
-                                <rect key="frame" x="20" y="20" width="353" height="34"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="chevron.up" catalog="system" title=""/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NX5-9s-XzM">
-                                <rect key="frame" x="30" y="104" width="150" height="150"/>
+                                <rect key="frame" x="20" y="20" width="170" height="170"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="6zm-dl-zCU"/>
-                                    <constraint firstAttribute="height" constant="150" id="cG1-7F-L57"/>
+                                    <constraint firstAttribute="height" constant="170" id="2t5-ng-ymV"/>
+                                    <constraint firstAttribute="width" constant="170" id="yG0-4o-8ST"/>
                                 </constraints>
                                 <color key="tintColor" name="AccentColour2"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Price" cornerStyle="small"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHR-49-ihL">
-                                <rect key="frame" x="213" y="104" width="150" height="150"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jYh-cR-AY3">
+                                <rect key="frame" x="20" y="210" width="170" height="170"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="1Yv-sk-p1I"/>
-                                    <constraint firstAttribute="width" constant="150" id="AO7-rC-zIX"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="JTK-Kx-xKJ"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="en6-Tx-M0w"/>
+                                    <constraint firstAttribute="width" constant="170" id="FLJ-TF-3r3"/>
+                                    <constraint firstAttribute="height" constant="170" id="LAf-CR-Q2a"/>
                                 </constraints>
                                 <color key="tintColor" name="AccentColour2"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Size" cornerStyle="small"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yoh-WI-UzN">
-                                <rect key="frame" x="30" y="284" width="150" height="150"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0K-G1-iCt">
+                                <rect key="frame" x="203" y="20" width="170" height="170"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="PXq-BU-gEM"/>
-                                    <constraint firstAttribute="height" constant="150" id="iE7-fS-dgA"/>
+                                    <constraint firstAttribute="width" constant="170" id="DNS-Uf-fl7"/>
+                                    <constraint firstAttribute="height" constant="170" id="rWM-PU-xBK"/>
                                 </constraints>
                                 <color key="tintColor" name="AccentColour2"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Price per Wear" cornerStyle="small"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAY-CU-mzh">
-                                <rect key="frame" x="213" y="284" width="150" height="150"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dh0-1G-Ne5">
+                                <rect key="frame" x="203" y="210" width="170" height="170"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="kA5-jj-eci"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="npG-Oh-Qi4"/>
-                                    <constraint firstAttribute="width" constant="150" id="sdP-Jg-NZC"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="yu1-QA-Juc"/>
+                                    <constraint firstAttribute="width" constant="170" id="I0Q-8l-8EH"/>
+                                    <constraint firstAttribute="height" constant="170" id="arS-gP-2fC"/>
                                 </constraints>
                                 <color key="tintColor" name="AccentColour2"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Wears" cornerStyle="small"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ViP-an-BVb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="NX5-9s-XzM" firstAttribute="leading" secondItem="ViP-an-BVb" secondAttribute="leading" constant="30" id="E1u-tA-Qlb"/>
-                            <constraint firstItem="TAY-CU-mzh" firstAttribute="top" secondItem="gHR-49-ihL" secondAttribute="bottom" constant="30" id="H4Q-jC-EVK"/>
-                            <constraint firstItem="NX5-9s-XzM" firstAttribute="top" secondItem="Suq-Lg-ib9" secondAttribute="bottom" constant="50" id="LGe-sp-Ajy"/>
-                            <constraint firstItem="Suq-Lg-ib9" firstAttribute="leading" secondItem="ViP-an-BVb" secondAttribute="leading" constant="20" id="Vk7-EM-2Nc"/>
-                            <constraint firstItem="ViP-an-BVb" firstAttribute="trailing" secondItem="Suq-Lg-ib9" secondAttribute="trailing" constant="20" id="cXk-7q-kR8"/>
-                            <constraint firstItem="Yoh-WI-UzN" firstAttribute="leading" secondItem="ViP-an-BVb" secondAttribute="leading" constant="30" id="crX-Xh-n8K"/>
-                            <constraint firstItem="Yoh-WI-UzN" firstAttribute="top" secondItem="NX5-9s-XzM" secondAttribute="bottom" constant="30" id="eDG-su-5ew"/>
-                            <constraint firstItem="gHR-49-ihL" firstAttribute="top" secondItem="Suq-Lg-ib9" secondAttribute="bottom" constant="50" id="mYQ-6X-u0x"/>
-                            <constraint firstItem="Suq-Lg-ib9" firstAttribute="top" secondItem="ViP-an-BVb" secondAttribute="top" constant="20" id="rjL-fJ-WwU"/>
-                            <constraint firstItem="ViP-an-BVb" firstAttribute="trailing" secondItem="gHR-49-ihL" secondAttribute="trailing" constant="30" id="shW-Gt-TLc"/>
-                            <constraint firstItem="ViP-an-BVb" firstAttribute="trailing" secondItem="TAY-CU-mzh" secondAttribute="trailing" constant="30" id="yM4-Bw-e2J"/>
+                            <constraint firstItem="dh0-1G-Ne5" firstAttribute="top" secondItem="A0K-G1-iCt" secondAttribute="bottom" constant="20" id="9H1-8K-aUO"/>
+                            <constraint firstItem="NX5-9s-XzM" firstAttribute="top" secondItem="ViP-an-BVb" secondAttribute="top" constant="20" id="MdA-IG-lN8"/>
+                            <constraint firstItem="ViP-an-BVb" firstAttribute="trailing" secondItem="A0K-G1-iCt" secondAttribute="trailing" constant="20" id="O4G-fv-dsn"/>
+                            <constraint firstItem="jYh-cR-AY3" firstAttribute="leading" secondItem="ViP-an-BVb" secondAttribute="leading" constant="20" id="UEU-io-765"/>
+                            <constraint firstItem="NX5-9s-XzM" firstAttribute="leading" secondItem="ViP-an-BVb" secondAttribute="leading" constant="20" id="VC7-9J-s9w"/>
+                            <constraint firstItem="A0K-G1-iCt" firstAttribute="top" secondItem="ViP-an-BVb" secondAttribute="top" constant="20" id="bXW-Le-fyM"/>
+                            <constraint firstItem="ViP-an-BVb" firstAttribute="trailing" secondItem="dh0-1G-Ne5" secondAttribute="trailing" constant="20" id="vK0-Dr-QfR"/>
+                            <constraint firstItem="jYh-cR-AY3" firstAttribute="top" secondItem="NX5-9s-XzM" secondAttribute="bottom" constant="20" id="vrb-Zt-dlD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="s8c-AA-Eu1"/>
@@ -1001,7 +989,6 @@
         <image name="chevron.down" catalog="system" width="128" height="70"/>
         <image name="chevron.forward" catalog="system" width="97" height="128"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
-        <image name="chevron.up" catalog="system" width="128" height="70"/>
         <image name="gearshape" catalog="system" width="128" height="123"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>

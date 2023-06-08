@@ -48,7 +48,6 @@ protocol DatabaseListener: AnyObject {
 protocol DatabaseProtocol: AnyObject {
     
     var currentOutfit: Outfit? {get set}
-    var currentUser: User? {get set}
     
     func addGarment(name: String, price: Double, brand: String, size: String, numberOfWears: Int, datePurchased: Date, image: String) -> Garment
     func deleteGarment(garment: Garment)
@@ -69,8 +68,4 @@ protocol DatabaseProtocol: AnyObject {
     
     func addListener(listener: DatabaseListener)
     func removeListener(listener: DatabaseListener)
-    
-    func addUser(name: String)
-    
-    func deleteUser(user: User)
 }

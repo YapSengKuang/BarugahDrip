@@ -55,7 +55,7 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate{
         }
         
         if let temp = weatherData?.temp_c{
-            tempLabel.text = String(temp) + " C"
+            tempLabel.text = String(temp) + " °C"
         }
         
         
@@ -157,7 +157,7 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate{
         
         Task{
             await requestWeather()
-            //setWeatherData()
+            setWeatherData()
         }
     }
 }
