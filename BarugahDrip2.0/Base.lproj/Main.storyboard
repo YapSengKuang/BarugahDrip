@@ -718,7 +718,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="chevron.down" catalog="system" title=""/>
                                 <connections>
-                                    <segue destination="Eaz-e6-SnZ" kind="presentation" id="Qzc-9m-EOg"/>
+                                    <segue destination="Eaz-e6-SnZ" kind="presentation" identifier="MoreGarmentInfo" id="Qzc-9m-EOg"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eXc-Sk-ShI">
@@ -917,6 +917,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="s8c-AA-Eu1"/>
+                    <connections>
+                        <outlet property="priceLabel" destination="NX5-9s-XzM" id="eE2-p8-nd7"/>
+                        <outlet property="pricePerWearLabel" destination="A0K-G1-iCt" id="gTI-yw-swQ"/>
+                        <outlet property="sizeLabel" destination="jYh-cR-AY3" id="mRl-bN-Z4j"/>
+                        <outlet property="wearsLabel" destination="dh0-1G-Ne5" id="Ldg-GY-29C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="isP-zl-ByC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

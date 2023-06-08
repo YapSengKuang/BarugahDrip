@@ -35,4 +35,16 @@ class SoloGarmentViewController: UIViewController {
         navigationController?.popViewController(animated: true)
         
     }
+    
+    
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MoreGarmentInfo"{
+            let destination = segue.destination as! GarmentInfoViewController
+            destination.selectedGarment = selectedGarment
+        }
+    }
+    
 }

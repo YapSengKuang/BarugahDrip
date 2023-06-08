@@ -13,7 +13,16 @@ class GarmentInfoViewController: UIViewController, UISheetPresentationController
         presentationController as! UISheetPresentationController
     }
     
-
+    var selectedGarment: Garment?
+    
+    @IBOutlet weak var priceLabel: UIButton!
+    
+    @IBOutlet weak var pricePerWearLabel: UIButton!
+    
+    @IBOutlet weak var sizeLabel: UIButton!
+    
+    @IBOutlet weak var wearsLabel: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         sheetPresentationController.delegate = self
@@ -21,6 +30,20 @@ class GarmentInfoViewController: UIViewController, UISheetPresentationController
         sheetPresentationController.prefersGrabberVisible = true
         sheetPresentationController.detents = [
             .medium()]
-        // Do any additional setup after loading the view.
+        // load garment info
+        
+        priceLabel.setTitle("$"+String(selectedGarment!.price), for: .normal)
+        
+        sizeLabel.setTitle(selectedGarment?.size, for: .normal)
+        
+        wearsLabel.setTitle(String(selectedGarment!.numberOfWears), for: .normal)
+        
+        
+        if Double(selectedGarment!.numberOfWears) > 0{
+            let pricePerWear = selectedGarment!.price/Double(selectedGarment!.numberOfWears)
+            pricePerWearLabel.setTitle("$"+String(pricePerWear), for: .normal)
+        }else{
+            pricePerWearLabel.setTitle("$"+String(selectedGarment!.price), for: .normal)
+        }
     }
 }
