@@ -12,16 +12,24 @@ class PickGarmentCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var checkmarkImageView: UIImageView!
     @IBOutlet weak var imageView: UIImageView!
     
-    override var isSelected: Bool {
-        didSet {
-            checkmarkImageView.image = isSelected ? UIImage(systemName: "checkmark.circle.fill") : UIImage(systemName: "checkmark.circle")
+    override var isSelected: Bool{
+        didSet{
+            toggleSelected()
         }
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        checkmarkImageView.bringSubviewToFront(checkmarkImageView)
-            
-        checkmarkImageView.image = UIImage(systemName: "checkmark.circle") // Set the initial checkbox icon
+        self.layer.cornerRadius = 10.0
+        self.layer.masksToBounds = true
+        toggleSelected()
+    }
+    
+    func toggleSelected(){
+        if isSelected{
+            self.checkmarkImageView.image = UIImage(systemName: "checkmark.square.fill")
+        }else{
+            self.checkmarkImageView.image = UIImage(systemName: "checkmark.square")
         }
+    }
 }

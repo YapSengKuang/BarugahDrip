@@ -68,15 +68,16 @@ class PickGarmentCollectionViewController: UICollectionViewController, DatabaseL
         //let cell = collectionView.cellForItem(at: indexPath).
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CELL_IMAGE, for: indexPath) as! PickGarmentCollectionViewCell
         
-        //collectionView.deselectItem(at: indexPath, animated: true)
-        cell.isSelected.toggle()
+        cell.isSelected = true
+        
     }
     
     override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CELL_IMAGE, for: indexPath) as! PickGarmentCollectionViewCell
         
         collectionView.deselectItem(at: indexPath, animated: true)
-        cell.isSelected.toggle()
+        cell.isSelected = false
+        
     }
     
     func generateLayout() -> UICollectionViewLayout {
@@ -108,7 +109,7 @@ class PickGarmentCollectionViewController: UICollectionViewController, DatabaseL
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CELL_IMAGE, for: indexPath) as! PickGarmentCollectionViewCell
-        cell.backgroundColor = .secondarySystemFill
+        
         cell.imageView.image = imageList[indexPath.item]
         return cell
     }
