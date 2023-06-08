@@ -19,7 +19,7 @@ class OutfitsVer2CollectionViewController: UICollectionViewController, DatabaseL
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            
+        
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         databaseController = appDelegate?.databaseController
         
@@ -110,7 +110,13 @@ class OutfitsVer2CollectionViewController: UICollectionViewController, DatabaseL
                 databaseController?.currentOutfit = allOutfits[indexPath.item]
                 controller.selectedOutfit = allOutfits[indexPath.item]
                 controller.outfitsViewController = self
+                controller.hidesBottomBarWhenPushed = true
             }
+            
+        }
+        if segue.identifier == "pickGarmentSegue"{
+            let controller = segue.destination as! PickGarmentCollectionViewController
+            controller.hidesBottomBarWhenPushed = true
             
         }
     }

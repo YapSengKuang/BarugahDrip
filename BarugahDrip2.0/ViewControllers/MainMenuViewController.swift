@@ -160,4 +160,15 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate{
             setWeatherData()
         }
     }
+    
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "quickLodgeFitSegue"{
+        
+            let controller = segue.destination as! QuickLodgeOutfitCollectionViewController
+            controller.hidesBottomBarWhenPushed = true
+        }
+    }
 }

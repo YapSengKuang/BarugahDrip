@@ -1,24 +1,25 @@
 //
-//  GarmentVer2CollectionViewController.swift
+//  QuickLodgeOutfitCollectionViewController.swift
 //  BarugahDrip2.0
 //
-//  Created by Eskay Yap on 17/5/2023.
+//  Created by Eskay Yap on 9/6/2023.
 //
 
 import UIKit
 
-class GarmentVer2CollectionViewController: UICollectionViewController, DatabaseListener{
-    var listenerType: ListenerType = .garment
+class QuickLodgeOutfitCollectionViewController: UICollectionViewController, DatabaseListener {
+    var listenerType: ListenerType = .outfits
     weak var databaseController: DatabaseProtocol?
     
-    let CELL_IMAGE = "imageCell"
+    let CELL_IMAGE = "outfitCell"
     var imageList = [UIImage]()
     var imagePathList = [String]()
-    var allGarments = [Garment]()
-
+    var allOutfits = [Outfit]()
+    var outfitToDelete: Outfit?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         databaseController = appDelegate?.databaseController
         
@@ -33,11 +34,10 @@ class GarmentVer2CollectionViewController: UICollectionViewController, DatabaseL
         
         do{
             
-            for data in allGarments {
+            for data in allOutfits {
                 let filename = data.image!
                 
                 if imagePathList.contains(filename){
-                    print("Image Already loaded. Skipping image")
                     continue
                 }
                 
@@ -56,12 +56,6 @@ class GarmentVer2CollectionViewController: UICollectionViewController, DatabaseL
         databaseController?.removeListener(listener: self)
     }
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
-        print("tapped \(indexPath.item)")
-        
-    }
-
     func generateLayout() -> UICollectionViewLayout {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/3), heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -75,8 +69,20 @@ class GarmentVer2CollectionViewController: UICollectionViewController, DatabaseL
 
         return UICollectionViewCompositionalLayout(section: section)
     }
+    
+    // MARK: - Navigation
 
-
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "lodgeQuickAddOutfit"{
+            if let cell = sender as? QuickAddOutfitCollectionViewCell,
+               let indexPath = collectionView.indexPath(for: cell){
+                let controller = segue.destination as! LodgeOutfitViewController
+                controller.outfitToLodge = allOutfits[indexPath.item]
+            }
+        }
+    }
+ 
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -84,25 +90,26 @@ class GarmentVer2CollectionViewController: UICollectionViewController, DatabaseL
         return 1
     }
 
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return imageList.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CELL_IMAGE, for: indexPath) as! GarmentsVer2CollectionViewCell
+        // TODO: Implement
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CELL_IMAGE, for: indexPath) as! QuickAddOutfitCollectionViewCell
         cell.backgroundColor = .secondarySystemFill
         cell.imageView.image = imageList[indexPath.item]
         return cell
     }
     
     func onGarmentChange(change: DatabaseChange, garments: [Garment]) {
-        allGarments = garments
+        //nothing
     }
     
     func onOutfitsChange(change: DatabaseChange, outfits: [Outfit]) {
-        //nothing
+        allOutfits = outfits
     }
     
     func onOutfitGarmentsChange(change: DatabaseChange, garments: [Garment]) {
@@ -113,57 +120,5 @@ class GarmentVer2CollectionViewController: UICollectionViewController, DatabaseL
         // nothing
     }
     
-    func deleteGarment(garment: Garment){
-         /**
-          Deletes and item from this view
-          */
-        
-        // Get index of item to delete
-        
-        var index: Int?
-        var counter = 0
-        for i in allGarments{
-            if i == garment{
-                index = counter
-            }
-            counter+=1
-        }
-        
-        imageList.remove(at: index!)
-        imagePathList.remove(at: index!)
-        databaseController?.deleteGarment(garment: garment)
-        databaseController?.cleanup()
-        collectionView.reloadData()
-        print("has been deleted")
-        
-    }
-    
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showGarment"{
-            if let cell = sender as? GarmentsVer2CollectionViewCell,
-               let indexPath = collectionView.indexPath(for: cell){
-                let controller = segue.destination as! SoloGarmentViewController
-                controller.selectedGarment = allGarments[indexPath.item]
-                controller.outfitsViewController = self
-                controller.hidesBottomBarWhenPushed = true
-            }
-            
-        }
-        
-        if segue.identifier == "createGarmentSegue"{
-
-            let controller = segue.destination as! AddGarmentPhotoVer2ViewController
-            
-            controller.hidesBottomBarWhenPushed = true
-            
-            
-        }
-    }
-    
-    
-    
 }
-
