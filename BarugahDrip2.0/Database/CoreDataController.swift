@@ -105,6 +105,8 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
          Adds a WearInfo class to outfits
          */
         outfit.addToWears(wearInfo)
+        
+       
         cleanup()
         return true
     }
@@ -231,6 +233,47 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         }
         return garments
     }
+    
+    func incrementGarmentInSelectOutfit(outfit: Outfit) {
+        /**
+         Increment the wear of the garment in an Outfit
+         */
+        let fetchRequest: NSFetchRequest<Garment> = Garment.fetchRequest()
+        let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        
+        let outfitName = outfit.name
+        
+        let predicate = NSPredicate(format: "ANY outfits.name == %@", outfitName!)
+        
+        fetchRequest.sortDescriptors = [nameSortDescriptor]
+        fetchRequest.predicate = predicate
+        
+        outfitGarmentsFetchedResultsController =
+        NSFetchedResultsController<Garment>(fetchRequest: fetchRequest,
+                                            managedObjectContext: persistentContainer.viewContext,
+                                            sectionNameKeyPath: nil, cacheName: nil)
+        
+        outfitGarmentsFetchedResultsController?.delegate = self
+        
+        do {
+            try outfitGarmentsFetchedResultsController?.performFetch()
+        } catch {
+            print("Fetch Request Failed: \(error)")
+        }
+        
+        
+        var garments = [Garment]()
+        if outfitGarmentsFetchedResultsController?.fetchedObjects != nil {
+            garments = (outfitGarmentsFetchedResultsController?.fetchedObjects)!
+        }
+        
+        for garment in garments{
+            garment.numberOfWears += 1
+        }
+        
+        cleanup()
+    }
+    
     
     func fetchWearsFromCurrentOutfit() -> [WearInfo]{
         /**

@@ -35,6 +35,8 @@ class LodgeOutfitViewController: UIViewController {
         
         let _ = databaseController?.addWearToOutfit(outfit: outfitToLodge!, wearInfo: wearInfo)
         
+        databaseController?.incrementGarmentInSelectOutfit(outfit: outfitToLodge!)
+        
         navigationController?.popToRootViewController(animated: true)
     }
     

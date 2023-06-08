@@ -64,6 +64,8 @@ protocol DatabaseProtocol: AnyObject {
     func addWearToOutfit(outfit: Outfit, wearInfo: WearInfo) -> Bool
     func deleteWearFromOutfit(outfit: Outfit, wearInfo: WearInfo)
     
+    func incrementGarmentInSelectOutfit(outfit: Outfit)
+    
     func cleanup()
     
     func addListener(listener: DatabaseListener)

@@ -41,6 +41,10 @@ extension Garment {
 
     @objc(removeOutfits:)
     @NSManaged public func removeFromOutfits(_ values: NSSet)
+    
+    public func incrementWears() {
+        numberOfWears += 1
+    }
 
 }
 
