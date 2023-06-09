@@ -16,10 +16,10 @@ extension WearInfo {
         return NSFetchRequest<WearInfo>(entityName: "WearInfo")
     }
 
-    @NSManaged public var date: Date?
-    @NSManaged public var event: String?
-    @NSManaged public var tempCelcuis: Int32
-    @NSManaged public var outfit: NSSet?
+    @NSManaged public var date: Date? // date worn
+    @NSManaged public var event: String? // event description
+    @NSManaged public var tempCelcuis: Int32 // temp in c
+    @NSManaged public var outfit: NSSet? // outfit instance 
 
 }
 

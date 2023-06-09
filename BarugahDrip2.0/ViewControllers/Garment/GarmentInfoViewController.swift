@@ -30,15 +30,17 @@ class GarmentInfoViewController: UIViewController, UISheetPresentationController
         
         // load garment info
         
-        priceLabel.setTitle("$"+String(selectedGarment!.price), for: .normal)
+        priceLabel.setTitle("$"+String(format: "%.2f", selectedGarment!.price), for: .normal)
         sizeLabel.setTitle(selectedGarment?.size, for: .normal)
         wearsLabel.setTitle(String(selectedGarment!.numberOfWears), for: .normal)
         
         if Double(selectedGarment!.numberOfWears) > 0{
             let pricePerWear = selectedGarment!.price/Double(selectedGarment!.numberOfWears)
-            pricePerWearLabel.setTitle("$"+String(pricePerWear), for: .normal)
+        
+            
+            pricePerWearLabel.setTitle("$"+String(format: "%.2f", pricePerWear), for: .normal)
         }else{
-            pricePerWearLabel.setTitle("$"+String(selectedGarment!.price), for: .normal)
+            pricePerWearLabel.setTitle("$"+String(format: "%.2f", selectedGarment!.price), for: .normal)
         }
     }
 }
