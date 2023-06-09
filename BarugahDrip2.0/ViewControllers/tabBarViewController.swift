@@ -11,6 +11,7 @@ class TabBarController: UITabBarController {
 
     @IBInspectable var initialIndex: Int = 1
     override func viewDidLoad() {
+        // set the default page to home page
         super.viewDidLoad()
         selectedIndex = initialIndex
     }

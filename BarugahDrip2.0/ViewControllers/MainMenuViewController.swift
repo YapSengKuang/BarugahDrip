@@ -10,22 +10,15 @@ import UIKit
 import CoreLocation
 
 class MainMenuViewController: UIViewController, CLLocationManagerDelegate{
-    var manager: CLLocationManager = CLLocationManager()
-    
-    @IBOutlet weak var smileView: UIImageView!
+    var manager: CLLocationManager = CLLocationManager() // location manager to get coordinates
+    @IBOutlet weak var smileView: UIImageView! // image view to show if user has not turned on location services
     var indicator = UIActivityIndicatorView()
-    
-    @IBOutlet weak var weatherIcon: UIImageView!
-    
-    @IBOutlet weak var tempLabel: UILabel!
-    
-    @IBOutlet weak var textLabel: UILabel!
-    
-    var weatherData: WeatherAPIData?
-    
-    var longitude: String?
-    
-    var latitude: String?
+    @IBOutlet weak var weatherIcon: UIImageView! // image view of weather icon
+    @IBOutlet weak var tempLabel: UILabel! // Tempurature label
+    @IBOutlet weak var textLabel: UILabel! // Weather Description Lable
+    var weatherData: WeatherAPIData? // Weather data from API
+    var longitude: String? // longitude of user
+    var latitude: String? // latitude of user
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +34,6 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate{
             indicator.centerYAnchor.constraint(equalTo:
                                                 view.safeAreaLayoutGuide.centerYAnchor)
         ])
-        // Do any additional setup after loading the view.
-
-        //print(weatherData?.text)
     }
     
     func setWeatherData(){
@@ -51,6 +41,7 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate{
          Method used to set the labels to the values in weatherData
          */
         
+        // set weather info to label
         if let text = weatherData?.text{
             textLabel.text = text
         }
@@ -59,8 +50,7 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate{
             tempLabel.text = String(temp) + " °C"
         }
         
-        
-        
+        // Get images for weather
         if let iconLink = weatherData?.icon {
             
             // Split the string by "/"
@@ -73,12 +63,8 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate{
                 
                 weatherIcon.image = UIImage(named: iconName)
             }
-
         }
-        
-        
-        
-    }
+  }
     
     func requestWeather() async {
         /**
@@ -86,8 +72,6 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate{
          */
         
         // Get Longitude and Latitude
-        
-
         
         if let longitude = Double(longitude!), let latitude = Double(latitude!){
             let longitudeFormatted = String(format: "%.1f", longitude)
@@ -130,17 +114,10 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate{
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        // set manager variables to get user location
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
         manager.requestWhenInUseAuthorization()
@@ -148,15 +125,16 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        // error handling
         guard let first = locations.first else{
             return
         }
         
+        // get coordinates
         longitude = String(first.coordinate.longitude)
-        print("Longitude = " + longitude!)
         latitude = String(first.coordinate.latitude)
-        print("Latitude = " + latitude!)
-        
+
+        // call requestWeather and set data
         Task{
             await requestWeather()
             setWeatherData()
@@ -167,6 +145,8 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate{
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Hide bottom bar when users navigate to views
+        
         if segue.identifier == "quickLodgeFitSegue"{
         
             let controller = segue.destination as! QuickLodgeOutfitCollectionViewController

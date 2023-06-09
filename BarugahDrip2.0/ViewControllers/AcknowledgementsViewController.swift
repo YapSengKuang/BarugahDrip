@@ -9,24 +9,12 @@ import UIKit
 
 class AcknowledgementsViewController: UIViewController {
 
-    @IBOutlet weak var textOutlet: UITextField!
+    @IBOutlet weak var textOutlet: UITextField! // text outlet of user
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.\
         
-        textOutlet.text = "Powered by WeatherAPI.com"
+        textOutlet.text = "Powered by WeatherAPI.com" // set text
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
