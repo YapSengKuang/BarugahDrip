@@ -66,6 +66,8 @@ protocol DatabaseProtocol: AnyObject {
     
     func incrementGarmentInSelectOutfit(outfit: Outfit)
     
+    func fetchAllGarments() -> [Garment]
+    
     func cleanup()
     
     func addListener(listener: DatabaseListener)

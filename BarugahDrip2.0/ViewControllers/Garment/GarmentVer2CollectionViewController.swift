@@ -11,6 +11,8 @@ class GarmentVer2CollectionViewController: UICollectionViewController, DatabaseL
     var listenerType: ListenerType = .garment
     weak var databaseController: DatabaseProtocol?
     
+    private var activityIndicator: UIActivityIndicatorView!
+    
     let CELL_IMAGE = "imageCell"
     var imageList = [UIImage]()
     var imagePathList = [String]()
@@ -18,6 +20,13 @@ class GarmentVer2CollectionViewController: UICollectionViewController, DatabaseL
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Initialize and configure activity indicator
+        activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.color = .gray
+        activityIndicator.center = view.center
+        activityIndicator.hidesWhenStopped = true
+        view.addSubview(activityIndicator)
 
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         databaseController = appDelegate?.databaseController
@@ -28,6 +37,7 @@ class GarmentVer2CollectionViewController: UICollectionViewController, DatabaseL
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        activityIndicator.startAnimating()
         
         databaseController?.addListener(listener: self)
         
@@ -48,6 +58,7 @@ class GarmentVer2CollectionViewController: UICollectionViewController, DatabaseL
                 }
             }
         }
+        activityIndicator.stopAnimating()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

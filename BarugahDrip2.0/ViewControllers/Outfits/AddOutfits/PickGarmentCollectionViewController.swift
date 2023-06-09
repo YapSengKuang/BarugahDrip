@@ -11,6 +11,8 @@ class PickGarmentCollectionViewController: UICollectionViewController, DatabaseL
     var listenerType: ListenerType = .garment
     weak var databaseController: DatabaseProtocol?
     
+    var indicator = UIActivityIndicatorView()
+    
     let CELL_IMAGE = "pickGarmentCell"
     var imageList = [UIImage]()
     var imagePathList = [String]()
@@ -19,6 +21,8 @@ class PickGarmentCollectionViewController: UICollectionViewController, DatabaseL
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
 
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         databaseController = appDelegate?.databaseController
@@ -28,9 +32,21 @@ class PickGarmentCollectionViewController: UICollectionViewController, DatabaseL
         
         collectionView.allowsMultipleSelection = true
         
-        databaseController?.addListener(listener: self)
+        indicator.style = UIActivityIndicatorView.Style.large
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(indicator)
         
+        NSLayoutConstraint.activate([
+            indicator.centerXAnchor.constraint(equalTo:
+                                                view.safeAreaLayoutGuide.centerXAnchor),
+            indicator.centerYAnchor.constraint(equalTo:
+                                                view.safeAreaLayoutGuide.centerYAnchor)
+        ])
         
+        indicator.startAnimating()
+        Task{
+            await requestGarments()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,23 +54,6 @@ class PickGarmentCollectionViewController: UICollectionViewController, DatabaseL
         
         databaseController?.addListener(listener: self)
         
-        do{
-            
-            for data in allGarments {
-                let filename = data.image!
-                
-                if imagePathList.contains(filename){
-                    print("Image Already loaded. Skipping image")
-                    continue
-                }
-                
-                if let image = loadImageData(filename: filename) {
-                    imageList.append(image)
-                    imagePathList.append(filename)
-                    collectionView.reloadSections([0])
-                }
-            }
-        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -78,6 +77,42 @@ class PickGarmentCollectionViewController: UICollectionViewController, DatabaseL
         collectionView.deselectItem(at: indexPath, animated: true)
         cell.isSelected = false
         
+    }
+    
+    func requestGarments()async{
+        allGarments = databaseController!.fetchAllGarments()
+        await getImages()
+    }
+    
+    func getImages() async{
+        /**
+         Responsible for getting the imagePath and imageList
+         */
+        do{
+            DispatchQueue.main.async {
+                self.indicator.stopAnimating()
+            }
+            
+            for data in allGarments {
+                let filename = data.image!
+                
+                if imagePathList.contains(filename){
+                    print("Image Already loaded. Skipping image")
+                    continue
+                }
+                
+                DispatchQueue.main.async {
+                    if let image = self.loadImageData(filename: filename) {
+                        
+                        self.imageList.append(image)
+                        self.imagePathList.append(filename)
+                        self.collectionView.reloadSections([0])
+                    }
+                }
+                
+                
+            }
+        }
     }
     
     func generateLayout() -> UICollectionViewLayout {
@@ -115,7 +150,7 @@ class PickGarmentCollectionViewController: UICollectionViewController, DatabaseL
     }
     
     func onGarmentChange(change: DatabaseChange, garments: [Garment]) {
-        allGarments = garments
+        //nothing
     }
     
     func onOutfitsChange(change: DatabaseChange, outfits: [Outfit]) {

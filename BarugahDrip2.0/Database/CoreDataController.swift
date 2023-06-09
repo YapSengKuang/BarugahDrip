@@ -139,6 +139,7 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
          Fetches all garments in CoreData, using results controller. If there is no results controller, this is initialised
          */
         
+        
         if allGarmentsFetchedResultsController == nil {
             //Create fetch request
             let request: NSFetchRequest<Garment> = Garment.fetchRequest()
