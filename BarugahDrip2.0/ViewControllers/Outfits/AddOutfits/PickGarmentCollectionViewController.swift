@@ -97,7 +97,7 @@ class PickGarmentCollectionViewController: UICollectionViewController, DatabaseL
                 let filename = data.image!
                 
                 if imagePathList.contains(filename){
-                    print("Image Already loaded. Skipping image")
+//                    print("Image Already loaded. Skipping image")
                     continue
                 }
                 

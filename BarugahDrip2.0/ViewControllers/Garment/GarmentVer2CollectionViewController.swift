@@ -11,7 +11,7 @@ class GarmentVer2CollectionViewController: UICollectionViewController, DatabaseL
     var listenerType: ListenerType = .garment
     weak var databaseController: DatabaseProtocol?
     
-    private var activityIndicator: UIActivityIndicatorView!
+    var indicator = UIActivityIndicatorView()
     
     let CELL_IMAGE = "imageCell"
     var imageList = [UIImage]()
@@ -21,12 +21,17 @@ class GarmentVer2CollectionViewController: UICollectionViewController, DatabaseL
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Initialize and configure activity indicator
-        activityIndicator = UIActivityIndicatorView(style: .large)
-        activityIndicator.color = .gray
-        activityIndicator.center = view.center
-        activityIndicator.hidesWhenStopped = true
-        view.addSubview(activityIndicator)
+        // Add a loading indicator view
+        indicator.style = UIActivityIndicatorView.Style.large
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(indicator)
+        
+        NSLayoutConstraint.activate([
+            indicator.centerXAnchor.constraint(equalTo:
+                                                view.safeAreaLayoutGuide.centerXAnchor),
+            indicator.centerYAnchor.constraint(equalTo:
+                                                view.safeAreaLayoutGuide.centerYAnchor)
+        ])
 
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         databaseController = appDelegate?.databaseController
@@ -37,28 +42,38 @@ class GarmentVer2CollectionViewController: UICollectionViewController, DatabaseL
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        activityIndicator.startAnimating()
+        
         
         databaseController?.addListener(listener: self)
-        
+    }
+    
+    func getImages() async{
+        /**
+         Function is responsible for getting Imageslist and path list
+         */
         do{
+            DispatchQueue.main.async {
+                self.indicator.stopAnimating()
+            }
             
             for data in allGarments {
                 let filename = data.image!
                 
                 if imagePathList.contains(filename){
-                    print("Image Already loaded. Skipping image")
+                    //                    print("Image Already loaded. Skipping image")
                     continue
                 }
                 
-                if let image = loadImageData(filename: filename) {
-                    imageList.append(image)
-                    imagePathList.append(filename)
-                    collectionView.reloadSections([0])
+                DispatchQueue.main.async {
+                    if let image = self.loadImageData(filename: filename) {
+                        
+                        self.imageList.append(image)
+                        self.imagePathList.append(filename)
+                        self.collectionView.reloadSections([0])
+                    }
                 }
             }
         }
-        activityIndicator.stopAnimating()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -110,6 +125,11 @@ class GarmentVer2CollectionViewController: UICollectionViewController, DatabaseL
     
     func onGarmentChange(change: DatabaseChange, garments: [Garment]) {
         allGarments = garments
+        indicator.startAnimating()
+        Task{
+            await getImages()
+        }
+        
     }
     
     func onOutfitsChange(change: DatabaseChange, outfits: [Outfit]) {
