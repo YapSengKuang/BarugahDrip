@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddOutfitViewController: UIViewController{
+class AddOutfitViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var lodgeOutfitSwitch: UISwitch!
@@ -23,11 +23,21 @@ class AddOutfitViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        outfitName.delegate = self
 
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         databaseController = appDelegate?.databaseController
         imageView.image = selectedImage
+        self.hideKeyboardWhenTappedAround() 
 
+    }
+    
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        // Allows for user to dismiss keyboard when pressing return
+        textField.resignFirstResponder()
+        return true
     }
     
     @IBAction func addOutfitButton(_ sender: Any) {

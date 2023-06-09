@@ -8,7 +8,10 @@
 import UIKit
 
 class WeatherAPIData: NSObject, Decodable {
-    var name: String?
+    /**
+     Getting Weather Information using WeatherAPI.com
+     */
+    var name: String? //
     var temp_c: Int?
     var text: String?
     var code: Int?

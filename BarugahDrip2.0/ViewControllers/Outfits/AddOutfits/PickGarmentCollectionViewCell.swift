@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PickGarmentCollectionViewCell: UICollectionViewCell {
+class PickGarmentCollectionViewCell: UICollectionViewCell{
     
     @IBOutlet weak var checkmarkImageView: UIImageView!
     @IBOutlet weak var imageView: UIImageView!

@@ -10,7 +10,7 @@ import UIKit
 class OutfitsVer2CollectionViewController: UICollectionViewController, DatabaseListener {
     var listenerType: ListenerType = .outfits
     weak var databaseController: DatabaseProtocol?
-    
+    var indicator = UIActivityIndicatorView()
     let CELL_IMAGE = "outfitCell"
     var imageList = [UIImage]()
     var imagePathList = [String]()
@@ -25,30 +25,23 @@ class OutfitsVer2CollectionViewController: UICollectionViewController, DatabaseL
         
         collectionView.backgroundColor = .systemBackground
         collectionView.setCollectionViewLayout(generateLayout(), animated: false)
+        // Add a loading indicator view
+        indicator.style = UIActivityIndicatorView.Style.large
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(indicator)
+        
+        NSLayoutConstraint.activate([
+            indicator.centerXAnchor.constraint(equalTo:
+                                                view.safeAreaLayoutGuide.centerXAnchor),
+            indicator.centerYAnchor.constraint(equalTo:
+                                                view.safeAreaLayoutGuide.centerYAnchor)
+        ])
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         databaseController?.addListener(listener: self)
-        
-        do{
-            
-            for data in allOutfits {
-                let filename = data.image!
-                
-                if imagePathList.contains(filename){
-                    print("Image Already loaded. Skipping image")
-                    continue
-                }
-                
-                if let image = loadImageData(filename: filename) {
-                    imageList.append(image)
-                    imagePathList.append(filename)
-                    collectionView.reloadSections([0])
-                }
-            }
-        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -57,22 +50,37 @@ class OutfitsVer2CollectionViewController: UICollectionViewController, DatabaseL
         databaseController?.removeListener(listener: self)
     }
     
-    func generateLayout() -> UICollectionViewLayout {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/3), heightDimension: .fractionalHeight(1.0))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
-
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalWidth(4/9))
-
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item, item, item])
-
-        let section = NSCollectionLayoutSection(group: group)
-
-        return UICollectionViewCompositionalLayout(section: section)
+    func getImages() async{
+        /**
+         Responsible for getting the imagePath and imageList
+         */
+        do{
+            DispatchQueue.main.async {
+                self.indicator.stopAnimating()
+            }
+            
+            for data in allOutfits {
+                let filename = data.image!
+                
+                if imagePathList.contains(filename){
+//                    print("Image Already loaded. Skipping image")
+                    continue
+                }
+                
+                DispatchQueue.main.async {
+                    if let image = self.loadImageData(filename: filename) {
+                        
+                        self.imageList.append(image)
+                        self.imagePathList.append(filename)
+                        self.collectionView.reloadSections([0])
+                    }
+                }
+                
+                
+            }
+        }
     }
 
-
-    
     func deleteItem(outfit: Outfit){
          /**
           Deletes and item from this view
@@ -149,6 +157,10 @@ class OutfitsVer2CollectionViewController: UICollectionViewController, DatabaseL
     
     func onOutfitsChange(change: DatabaseChange, outfits: [Outfit]) {
         allOutfits = outfits
+        indicator.startAnimating()
+        Task{
+            await getImages()
+        }
     }
     
     func onOutfitGarmentsChange(change: DatabaseChange, garments: [Garment]) {

@@ -22,6 +22,13 @@ class AddGarmentPhotoVer2ViewController: UIViewController,UIImagePickerControlle
         
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        // Allows for user to dismiss keyboard when pressing return
+        textField.resignFirstResponder()
+        return true
+    }
+    
     @IBAction func pickPhotoButton(_ sender: Any) {
         let controller = UIImagePickerController()
         controller.allowsEditing = false

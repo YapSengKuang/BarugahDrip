@@ -12,6 +12,7 @@ import CoreLocation
 class MainMenuViewController: UIViewController, CLLocationManagerDelegate{
     var manager: CLLocationManager = CLLocationManager()
     
+    @IBOutlet weak var smileView: UIImageView!
     var indicator = UIActivityIndicatorView()
     
     @IBOutlet weak var weatherIcon: UIImageView!
@@ -118,6 +119,7 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate{
                     let decoder = JSONDecoder()
                     let weatherDataOutput = try decoder.decode(WeatherAPIData.self, from: data)
                     weatherData = weatherDataOutput
+                    smileView.alpha = 0
                     
                 }catch let error{
                     print(error)
@@ -168,6 +170,16 @@ class MainMenuViewController: UIViewController, CLLocationManagerDelegate{
         if segue.identifier == "quickLodgeFitSegue"{
         
             let controller = segue.destination as! QuickLodgeOutfitCollectionViewController
+            controller.hidesBottomBarWhenPushed = true
+        }
+        
+        if segue.identifier == "quickAddGarment"{
+            let controller = segue.destination as! AddGarmentPhotoVer2ViewController
+            controller.hidesBottomBarWhenPushed = true
+        }
+        
+        if segue.identifier == "ack"{
+            let controller = segue.destination as! AcknowledgementsViewController
             controller.hidesBottomBarWhenPushed = true
         }
     }

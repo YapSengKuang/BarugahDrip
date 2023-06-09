@@ -19,6 +19,7 @@ class SoloGarmentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround() 
         garmentNameOutlet.text = selectedGarment?.name
         brandNameOutlet.text = selectedGarment?.brand
         imageView.image = loadImageData(filename: (selectedGarment?.image!)!)

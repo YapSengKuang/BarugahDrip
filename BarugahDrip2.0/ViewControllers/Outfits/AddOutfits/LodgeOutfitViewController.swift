@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LodgeOutfitViewController: UIViewController {
+class LodgeOutfitViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var occasionOutlet: UITextField!
     @IBOutlet weak var tempOutlet: UITextField!
@@ -17,7 +17,10 @@ class LodgeOutfitViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         
+        occasionOutlet.delegate = self
+
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         databaseController = appDelegate?.databaseController
         
@@ -38,6 +41,13 @@ class LodgeOutfitViewController: UIViewController {
         databaseController?.incrementGarmentInSelectOutfit(outfit: outfitToLodge!)
         
         navigationController?.popToRootViewController(animated: true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        // Allows for user to dismiss keyboard when pressing return
+        textField.resignFirstResponder()
+        return true
     }
     
     /*

@@ -230,7 +230,7 @@
             </objects>
             <point key="canvasLocation" x="-854" y="1651"/>
         </scene>
-        <!--Quick Lodge Outfit Collection View Controller-->
+        <!--Lodge an Outfit-->
         <scene sceneID="OsW-Ra-eiB">
             <objects>
                 <collectionViewController id="k3z-yb-cxH" customClass="QuickLodgeOutfitCollectionViewController" customModule="BarugahDrip2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -274,7 +274,7 @@
                             <outlet property="delegate" destination="k3z-yb-cxH" id="Bui-h5-yFk"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="sAX-jQ-bhT"/>
+                    <navigationItem key="navigationItem" title="Lodge an Outfit" id="sAX-jQ-bhT"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oxd-PU-PhR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -433,7 +433,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Garment Name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EQ8-iA-0fE">
                                 <rect key="frame" x="20" y="534.33333333333337" width="353" height="19"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cl7-rG-zg0">
                                 <rect key="frame" x="20" y="473" width="0.0" height="0.0"/>
@@ -660,7 +660,7 @@
             </objects>
             <point key="canvasLocation" x="6072.5190839694651" y="801.4084507042254"/>
         </scene>
-        <!--Welcome, User-->
+        <!--Home-->
         <scene sceneID="lxP-pM-U0m">
             <objects>
                 <viewController id="Ubo-pb-sXU" customClass="MainMenuViewController" customModule="BarugahDrip2_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -674,8 +674,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Service Is Not Working" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iB3-az-d4Q">
-                                <rect key="frame" x="50" y="385" width="293" height="54.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unlock the power of your journey. Turn on location services and let the world inspire you " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iB3-az-d4Q">
+                                <rect key="frame" x="20" y="385" width="353" height="82.333333333333314"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -701,6 +701,9 @@
                                 <color key="tintColor" name="AccentColour2"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Lodge Garment" cornerStyle="small"/>
+                                <connections>
+                                    <segue destination="axi-oB-0wD" kind="show" identifier="quickAddGarment" id="scu-7L-Ejk"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="smx-33-sy9">
                                 <rect key="frame" x="50" y="205" width="150" height="150"/>
@@ -710,28 +713,42 @@
                                     <constraint firstAttribute="width" constant="150" id="zyC-i3-CdD"/>
                                 </constraints>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smiley" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="a72-bE-Icw">
+                                <rect key="frame" x="0.0" y="206" width="393" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="129.33000000000001" id="o6J-pe-aYv"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OSd-Yn-g6P"/>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="iB3-az-d4Q" firstAttribute="top" secondItem="smx-33-sy9" secondAttribute="bottom" constant="30" id="3La-gP-LB0"/>
                             <constraint firstItem="OSd-Yn-g6P" firstAttribute="trailing" secondItem="ceu-CL-wbo" secondAttribute="trailing" constant="30" id="3XP-6o-sRL"/>
+                            <constraint firstItem="a72-bE-Icw" firstAttribute="trailing" secondItem="OSd-Yn-g6P" secondAttribute="trailing" id="3m2-ZP-Udf"/>
                             <constraint firstItem="zg3-vC-YAg" firstAttribute="leading" secondItem="OSd-Yn-g6P" secondAttribute="leading" constant="20" id="67a-1A-sjQ"/>
                             <constraint firstItem="OSd-Yn-g6P" firstAttribute="bottom" secondItem="zg3-vC-YAg" secondAttribute="bottom" constant="50" id="6Cz-pf-uM7"/>
-                            <constraint firstItem="OSd-Yn-g6P" firstAttribute="trailing" secondItem="iB3-az-d4Q" secondAttribute="trailing" constant="50" id="G8y-93-B1V"/>
+                            <constraint firstItem="a72-bE-Icw" firstAttribute="leading" secondItem="OSd-Yn-g6P" secondAttribute="leading" id="9Nz-Sm-Dkv"/>
+                            <constraint firstAttribute="trailing" secondItem="iB3-az-d4Q" secondAttribute="trailing" constant="20" id="I9V-tE-PYx"/>
+                            <constraint firstItem="iB3-az-d4Q" firstAttribute="leading" secondItem="OSd-Yn-g6P" secondAttribute="leading" constant="20" id="SRF-es-viB"/>
+                            <constraint firstItem="a72-bE-Icw" firstAttribute="top" secondItem="OSd-Yn-g6P" secondAttribute="top" constant="50" id="Wxp-Gb-28l"/>
                             <constraint firstItem="OSd-Yn-g6P" firstAttribute="trailing" secondItem="tzm-fh-hEu" secondAttribute="trailing" constant="20" id="XUV-sG-5np"/>
                             <constraint firstItem="smx-33-sy9" firstAttribute="leading" secondItem="OSd-Yn-g6P" secondAttribute="leading" constant="50" id="g6L-00-umg"/>
-                            <constraint firstItem="iB3-az-d4Q" firstAttribute="leading" secondItem="OSd-Yn-g6P" secondAttribute="leading" constant="50" id="jKt-Cb-4ja"/>
                             <constraint firstItem="ceu-CL-wbo" firstAttribute="leading" secondItem="smx-33-sy9" secondAttribute="trailing" constant="20" id="llk-19-ZYO"/>
                             <constraint firstItem="smx-33-sy9" firstAttribute="top" secondItem="OSd-Yn-g6P" secondAttribute="top" constant="50" id="naH-G1-Rd9"/>
                             <constraint firstItem="ceu-CL-wbo" firstAttribute="centerY" secondItem="smx-33-sy9" secondAttribute="centerY" id="qdA-fw-av1"/>
                             <constraint firstItem="OSd-Yn-g6P" firstAttribute="bottom" secondItem="tzm-fh-hEu" secondAttribute="bottom" constant="50" id="t5p-Xe-Xkd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Welcome, User" id="oXK-X0-x79">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape" catalog="system" id="Dbe-Y4-tHa"/>
+                    <navigationItem key="navigationItem" title="Home" id="oXK-X0-x79">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape" catalog="system" id="Dbe-Y4-tHa">
+                            <connections>
+                                <segue destination="4iw-1a-42X" kind="show" identifier="ack" id="obA-Oa-gpq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="smileView" destination="a72-bE-Icw" id="xPg-Ro-g2u"/>
                         <outlet property="tempLabel" destination="ceu-CL-wbo" id="5uO-0g-QUe"/>
                         <outlet property="textLabel" destination="iB3-az-d4Q" id="Gjc-kP-Fn7"/>
                         <outlet property="weatherIcon" destination="smx-33-sy9" id="Wr6-Br-0BI"/>
@@ -911,6 +928,33 @@
             </objects>
             <point key="canvasLocation" x="5146" y="1823"/>
         </scene>
+        <!--Acknowledgements-->
+        <scene sceneID="PqD-PQ-ZNj">
+            <objects>
+                <viewController id="4iw-1a-42X" customClass="AcknowledgementsViewController" customModule="BarugahDrip2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MVs-8M-SfM">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U8h-DU-mU4">
+                                <rect key="frame" x="16" y="168" width="361" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XXq-2M-Bhe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Acknowledgements" id="oB0-9Y-aHW"/>
+                    <connections>
+                        <outlet property="textOutlet" destination="U8h-DU-mU4" id="Mvl-ia-aQI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="07d-oj-Usf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1496.9465648854962" y="1807.7464788732395"/>
+        </scene>
         <!--view garment details-->
         <scene sceneID="ls4-Cl-iLr">
             <objects>
@@ -1044,7 +1088,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hmv-bv-FAR"/>
+        <segue reference="scu-7L-Ejk"/>
+        <segue reference="Exh-bk-Blm"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chart.bar" catalog="system" width="128" height="89"/>
@@ -1058,6 +1103,7 @@
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="rectangle.split.2x1" catalog="system" width="128" height="93"/>
         <image name="rectangle.split.2x1.fill" catalog="system" width="128" height="93"/>
+        <image name="smiley" catalog="system" width="128" height="123"/>
         <image name="trash" catalog="system" width="117" height="128"/>
         <image name="tshirt" catalog="system" width="128" height="98"/>
         <image name="tshirt.fill" catalog="system" width="128" height="98"/>

@@ -8,26 +8,19 @@
 import UIKit
 
 class GarmentsTableViewController: UITableViewController, DatabaseListener {
-    let CELL_ID = "garmentOutfitCell"
+    let CELL_ID = "garmentOutfitCell" // Cell Identifier
+    var listenerType: ListenerType = .outfit // Listener type
+    var garmentsToShow = [Garment]() // Garments that make up the Outfit
+    var imageList = [UIImage]() // image list of garments
+    var imagePathList = [String]() // image pathList of garment
+    weak var databaseController: DatabaseProtocol? // reference to database
     
-    var listenerType: ListenerType = .outfit
-    
-    var garmentsToShow = [Garment]()
-    
-    var imageList = [UIImage]()
-    
-    var imagePathList = [String]()
-
-    weak var databaseController: DatabaseProtocol?
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // connect database controller
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         databaseController = appDelegate?.databaseController
-        
-        
         
         tableView.reloadData()
     }
@@ -44,55 +37,19 @@ class GarmentsTableViewController: UITableViewController, DatabaseListener {
         return garmentsToShow.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        /**
+         assign cell to garment information
+         */
         
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID, for: indexPath) as! GarmentOutfitTableViewCell
-        
         let garment = garmentsToShow[indexPath.row]
-        
         cell.Brand.text = garment.brand
         cell.name.text = garment.name
         cell.garmentImageView.image = imageList[indexPath.row]
 
         return cell
     }
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     func onGarmentChange(change: DatabaseChange, garments: [Garment]) {
         //nothing
@@ -103,6 +60,11 @@ class GarmentsTableViewController: UITableViewController, DatabaseListener {
     }
     
     func onOutfitGarmentsChange(change: DatabaseChange, garments: [Garment]) {
+        /**
+         Method is called when there are changes in Garments for this outfit
+         */
+        
+        // get garments from database
         garmentsToShow = garments
         tableView.reloadData()
     }
@@ -111,31 +73,21 @@ class GarmentsTableViewController: UITableViewController, DatabaseListener {
         //nothing
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     override func viewWillAppear(_ animated: Bool) {
+        /**
+         Method is called when view appears
+         */
         super.viewWillAppear(animated)
-        
+        // add listener
         databaseController?.addListener(listener: self)
-        
+        // Get images
         do{
             
             for data in garmentsToShow {
                 let filename = data.image!
-                
                 if imagePathList.contains(filename){
-                    print("Image Already loaded. Skipping image")
                     continue
                 }
-                
                 if let image = loadImageData(filename: filename) {
                     imageList.append(image)
                     imagePathList.append(filename)
@@ -145,9 +97,12 @@ class GarmentsTableViewController: UITableViewController, DatabaseListener {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        
+        /**
+         Method is called when view closes
+         */
         super.viewWillDisappear(animated)
+        
+        // remove listener
         databaseController?.removeListener(listener: self)
     }
-
 }
