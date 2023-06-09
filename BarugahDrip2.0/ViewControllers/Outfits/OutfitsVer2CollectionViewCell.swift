@@ -8,10 +8,11 @@
 import UIKit
 
 class OutfitsVer2CollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView! // image of outfit
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        //round corners
         self.layer.cornerRadius = 10.0
         self.layer.masksToBounds = true
     }

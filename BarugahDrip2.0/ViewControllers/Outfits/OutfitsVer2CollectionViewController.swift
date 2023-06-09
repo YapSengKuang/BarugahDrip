@@ -8,23 +8,25 @@
 import UIKit
 
 class OutfitsVer2CollectionViewController: UICollectionViewController, DatabaseListener {
-    var listenerType: ListenerType = .outfits
-    weak var databaseController: DatabaseProtocol?
+    var listenerType: ListenerType = .outfits // listener type
+    weak var databaseController: DatabaseProtocol? // database reference
     var indicator = UIActivityIndicatorView()
-    let CELL_IMAGE = "outfitCell"
-    var imageList = [UIImage]()
-    var imagePathList = [String]()
-    var allOutfits = [Outfit]()
-    var outfitToDelete: Outfit?
+    let CELL_IMAGE = "outfitCell" // cell identifier
+    var imageList = [UIImage]() // outfit image list
+    var imagePathList = [String]() // pathlist of outfit image
+    var allOutfits = [Outfit]() // list of outfits
+    var outfitToDelete: Outfit? // outfit to delete
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // set database controller
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         databaseController = appDelegate?.databaseController
         
-        collectionView.backgroundColor = .systemBackground
+        // set collectionview layout
         collectionView.setCollectionViewLayout(generateLayout(), animated: false)
+        
         // Add a loading indicator view
         indicator.style = UIActivityIndicatorView.Style.large
         indicator.translatesAutoresizingMaskIntoConstraints = false
@@ -40,13 +42,13 @@ class OutfitsVer2CollectionViewController: UICollectionViewController, DatabaseL
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        // add listener
         databaseController?.addListener(listener: self)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        
         super.viewWillDisappear(animated)
+        // remove listener when view closes
         databaseController?.removeListener(listener: self)
     }
     
@@ -59,24 +61,21 @@ class OutfitsVer2CollectionViewController: UICollectionViewController, DatabaseL
                 self.indicator.stopAnimating()
             }
             
+            // get image and image path for each outfit
             for data in allOutfits {
                 let filename = data.image!
                 
                 if imagePathList.contains(filename){
-//                    print("Image Already loaded. Skipping image")
                     continue
                 }
                 
                 DispatchQueue.main.async {
                     if let image = self.loadImageData(filename: filename) {
-                        
                         self.imageList.append(image)
                         self.imagePathList.append(filename)
                         self.collectionView.reloadSections([0])
                     }
                 }
-                
-                
             }
         }
     }
@@ -87,7 +86,6 @@ class OutfitsVer2CollectionViewController: UICollectionViewController, DatabaseL
           */
         
         // Get index of item to delete
-        
         var index: Int?
         var counter = 0
         for i in allOutfits{
@@ -97,21 +95,25 @@ class OutfitsVer2CollectionViewController: UICollectionViewController, DatabaseL
             counter+=1
         }
         
+        // remove in image list and path list
         imageList.remove(at: index!)
         imagePathList.remove(at: index!)
+        
+        // remove from database
         databaseController?.deleteOutfit(outfit: outfit)
         databaseController?.cleanup()
-        collectionView.reloadData()
-        print("has been deleted")
         
+        // reload collectionview
+        collectionView.reloadData()
     }
 
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showOutfit"{
+            // set controller outfit var to be selected outfit
+            
             if let cell = sender as? OutfitsVer2CollectionViewCell,
                let indexPath = collectionView.indexPath(for: cell){
                 let controller = segue.destination as! SoloOutfitViewController
@@ -120,33 +122,37 @@ class OutfitsVer2CollectionViewController: UICollectionViewController, DatabaseL
                 controller.outfitsViewController = self
                 controller.hidesBottomBarWhenPushed = true
             }
-            
         }
+        
         if segue.identifier == "pickGarmentSegue"{
+            // hide bottom bar
             let controller = segue.destination as! PickGarmentCollectionViewController
             controller.hidesBottomBarWhenPushed = true
-            
         }
     }
  
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+        /**
+         return the number of sections
+         */
         return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
+        /**
+         return the number of items
+         */
         return imageList.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // TODO: Implement
-        
+        /**
+         Configure each item in collection view with image
+         */
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CELL_IMAGE, for: indexPath) as! OutfitsVer2CollectionViewCell
-        cell.backgroundColor = .secondarySystemFill
         cell.imageView.image = imageList[indexPath.item]
         return cell
     }
@@ -156,7 +162,10 @@ class OutfitsVer2CollectionViewController: UICollectionViewController, DatabaseL
     }
     
     func onOutfitsChange(change: DatabaseChange, outfits: [Outfit]) {
+        // set all outfits from database
         allOutfits = outfits
+        
+        // get images
         indicator.startAnimating()
         Task{
             await getImages()
@@ -170,6 +179,4 @@ class OutfitsVer2CollectionViewController: UICollectionViewController, DatabaseL
     func onWearOutfitChange(change: DatabaseChange, wears: [WearInfo]) {
         // nothing
     }
-    
-
 }

@@ -8,15 +8,13 @@
 import UIKit
 
 class GarmentVer2CollectionViewController: UICollectionViewController, DatabaseListener{
-    var listenerType: ListenerType = .garment
-    weak var databaseController: DatabaseProtocol?
-    
+    var listenerType: ListenerType = .garment // listener type
+    weak var databaseController: DatabaseProtocol? // database reference
     var indicator = UIActivityIndicatorView()
-    
-    let CELL_IMAGE = "imageCell"
-    var imageList = [UIImage]()
-    var imagePathList = [String]()
-    var allGarments = [Garment]()
+    let CELL_IMAGE = "imageCell" // cell identifier
+    var imageList = [UIImage]() // image list of garment
+    var imagePathList = [String]() // image path list of garment
+    var allGarments = [Garment]() // list of garments
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,17 +31,18 @@ class GarmentVer2CollectionViewController: UICollectionViewController, DatabaseL
                                                 view.safeAreaLayoutGuide.centerYAnchor)
         ])
 
+        // connect database controller
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         databaseController = appDelegate?.databaseController
         
-        collectionView.backgroundColor = .systemBackground
+        // set collection view layout
         collectionView.setCollectionViewLayout(generateLayout(), animated: false)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
+        // add listener
         databaseController?.addListener(listener: self)
     }
     
@@ -56,11 +55,11 @@ class GarmentVer2CollectionViewController: UICollectionViewController, DatabaseL
                 self.indicator.stopAnimating()
             }
             
+            // get image for each garment
             for data in allGarments {
                 let filename = data.image!
                 
                 if imagePathList.contains(filename){
-                    //                    print("Image Already loaded. Skipping image")
                     continue
                 }
                 
@@ -77,44 +76,58 @@ class GarmentVer2CollectionViewController: UICollectionViewController, DatabaseL
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        
         super.viewWillDisappear(animated)
+        
+        // remove listener when view closes
         databaseController?.removeListener(listener: self)
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        /**
+         Method for when item is selected in collection view
+         */
         collectionView.deselectItem(at: indexPath, animated: true)
-        print("tapped \(indexPath.item)")
-        
     }
 
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+        /**
+         return the number of sections
+         */
         return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
+        /**
+         return the number of items
+         */
         return imageList.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        /**
+         Configure each item in collectionview with garmentimage
+         */
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CELL_IMAGE, for: indexPath) as! GarmentsVer2CollectionViewCell
-        cell.backgroundColor = .secondarySystemFill
         cell.imageView.image = imageList[indexPath.item]
         return cell
     }
     
     func onGarmentChange(change: DatabaseChange, garments: [Garment]) {
+        /**
+         Method is for when there is a change in garments
+         */
+        
+        // set all garments
         allGarments = garments
+        
+        // get images
         indicator.startAnimating()
         Task{
             await getImages()
         }
-        
     }
     
     func onOutfitsChange(change: DatabaseChange, outfits: [Outfit]) {
@@ -145,13 +158,16 @@ class GarmentVer2CollectionViewController: UICollectionViewController, DatabaseL
             counter+=1
         }
         
+        // remove image at index
         imageList.remove(at: index!)
         imagePathList.remove(at: index!)
+        
+        // delete from database
         databaseController?.deleteGarment(garment: garment)
         databaseController?.cleanup()
-        collectionView.reloadData()
-        print("has been deleted")
         
+        // reload collection view
+        collectionView.reloadData()
     }
     
     // MARK: - Navigation
@@ -160,26 +176,19 @@ class GarmentVer2CollectionViewController: UICollectionViewController, DatabaseL
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showGarment"{
             if let cell = sender as? GarmentsVer2CollectionViewCell,
+               // set controller garment to selected garment and hide bottom bar
                let indexPath = collectionView.indexPath(for: cell){
                 let controller = segue.destination as! SoloGarmentViewController
                 controller.selectedGarment = allGarments[indexPath.item]
                 controller.outfitsViewController = self
                 controller.hidesBottomBarWhenPushed = true
             }
-            
         }
-        
         if segue.identifier == "createGarmentSegue"{
-
+            // hide bottom bar
             let controller = segue.destination as! AddGarmentPhotoVer2ViewController
-            
             controller.hidesBottomBarWhenPushed = true
-            
-            
         }
     }
-    
-    
-    
 }
 

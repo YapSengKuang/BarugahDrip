@@ -8,28 +8,20 @@
 import UIKit
 
 class AddGarmentPhotoVer2ViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    @IBOutlet weak var imageView: UIImageView!
-    weak var databaseController: DatabaseProtocol?
+    @IBOutlet weak var imageView: UIImageView! // garment photo
+    weak var databaseController: DatabaseProtocol? // database reference
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
+        // set database controller
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         databaseController = appDelegate?.databaseController
-        
-        
-        
-        
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        // Allows for user to dismiss keyboard when pressing return
-        textField.resignFirstResponder()
-        return true
     }
     
     @IBAction func pickPhotoButton(_ sender: Any) {
+        /**
+         Button allows for users to pick action for picking images
+         */
         let controller = UIImagePickerController()
         controller.allowsEditing = false
         controller.delegate = self
@@ -66,6 +58,11 @@ class AddGarmentPhotoVer2ViewController: UIViewController,UIImagePickerControlle
     // MARK: - UIImagePickerControllerDelegate
         
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        /**
+         Method responsible for picking image
+         */
+        
+        // set imageview to picked image
         if let pickedImage = info[.originalImage] as? UIImage {
             imageView.image = pickedImage
         }
@@ -73,16 +70,25 @@ class AddGarmentPhotoVer2ViewController: UIViewController,UIImagePickerControlle
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        /**
+         Method responsible for dismissing when users cancel
+         */
         dismiss(animated: true, completion: nil)
     }
 
     @IBAction func nextButton(_ sender: Any) {
+        /**
+         Button responsible for moving on to the next view
+         */
+        
+        // error handling
         guard let _ = imageView.image else {
             displayMessage(title: "Error", message: "Cannot save until an image has been selected!")
             return
         }
-        self.performSegue(withIdentifier: "addGarmentDetails", sender: self)
         
+        // segue to next view
+        self.performSegue(withIdentifier: "addGarmentDetails", sender: self)
     }
         
     // MARK: - Navigation
@@ -90,6 +96,7 @@ class AddGarmentPhotoVer2ViewController: UIViewController,UIImagePickerControlle
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addGarmentDetails"{
+            // set destination image to image in image view
             let destination = segue.destination as! AddGarmentVer2ViewController
             destination.garmentImage = self.imageView.image
         }

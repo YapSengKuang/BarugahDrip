@@ -7,31 +7,29 @@
 
 import UIKit
 
-class PickGarmentCollectionViewController: UICollectionViewController, DatabaseListener {
-    var listenerType: ListenerType = .garment
-    weak var databaseController: DatabaseProtocol?
-    
+class PickGarmentCollectionViewController: UICollectionViewController{
+    weak var databaseController: DatabaseProtocol? // database reference
     var indicator = UIActivityIndicatorView()
-    
-    let CELL_IMAGE = "pickGarmentCell"
-    var imageList = [UIImage]()
-    var imagePathList = [String]()
-    var allGarments = [Garment]()
-    var selectedGarments = [Garment]()
+    let CELL_IMAGE = "pickGarmentCell" // cell identifier
+    var imageList = [UIImage]() // image list of garments
+    var imagePathList = [String]() // image path list of garments
+    var allGarments = [Garment]() // list of garments
+    var selectedGarments = [Garment]() // list of selected garments by user
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-
+        // set database controller
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         databaseController = appDelegate?.databaseController
         
-        collectionView.backgroundColor = .systemBackground
+        // set layout of collection view
         collectionView.setCollectionViewLayout(generateLayout(), animated: false)
         
+        // allow for multiple selection
         collectionView.allowsMultipleSelection = true
         
+        // set spinner
         indicator.style = UIActivityIndicatorView.Style.large
         indicator.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(indicator)
@@ -43,43 +41,39 @@ class PickGarmentCollectionViewController: UICollectionViewController, DatabaseL
                                                 view.safeAreaLayoutGuide.centerYAnchor)
         ])
         
+        // get garments for users to select
         indicator.startAnimating()
         Task{
             await requestGarments()
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        databaseController?.addListener(listener: self)
-        
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        
-        super.viewWillDisappear(animated)
-        databaseController?.removeListener(listener: self)
-    }
-    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //collectionView.deselectItem(at: indexPath, animated: true)f
-        //let cell = collectionView.cellForItem(at: indexPath).
+        /**
+         Method is for when users select an item
+         */
+        
+        // set cell isSelected to be true to change checkmark icon
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CELL_IMAGE, for: indexPath) as! PickGarmentCollectionViewCell
-        
         cell.isSelected = true
-        
     }
     
     override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        /**
+         Method is for when users deselect an item
+         */
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CELL_IMAGE, for: indexPath) as! PickGarmentCollectionViewCell
         
+        // set cell isSelected to be false to change checkmark icon
         collectionView.deselectItem(at: indexPath, animated: true)
         cell.isSelected = false
         
     }
     
     func requestGarments()async{
+        /**
+         Method to request all garments and call getImages
+         */
         allGarments = databaseController!.fetchAllGarments()
         await getImages()
     }
@@ -93,11 +87,11 @@ class PickGarmentCollectionViewController: UICollectionViewController, DatabaseL
                 self.indicator.stopAnimating()
             }
             
+            // get image from each garment
             for data in allGarments {
                 let filename = data.image!
                 
                 if imagePathList.contains(filename){
-//                    print("Image Already loaded. Skipping image")
                     continue
                 }
                 
@@ -109,8 +103,6 @@ class PickGarmentCollectionViewController: UICollectionViewController, DatabaseL
                         self.collectionView.reloadSections([0])
                     }
                 }
-                
-                
             }
         }
     }
@@ -118,42 +110,40 @@ class PickGarmentCollectionViewController: UICollectionViewController, DatabaseL
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+        /**
+         Return the number of sections
+         */
         return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
+        /**
+         Return the number of items
+        */
         return imageList.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        /**
+        Configure cell at index path
+         */
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CELL_IMAGE, for: indexPath) as! PickGarmentCollectionViewCell
         
+        // set image to garment image
         cell.imageView.image = imageList[indexPath.item]
         return cell
     }
     
-    func onGarmentChange(change: DatabaseChange, garments: [Garment]) {
-        //nothing
-    }
-    
-    func onOutfitsChange(change: DatabaseChange, outfits: [Outfit]) {
-        //nothing
-    }
-    
-    func onOutfitGarmentsChange(change: DatabaseChange, garments: [Garment]) {
-        //nothing
-    }
-    
-    func onWearOutfitChange(change: DatabaseChange, wears: [WearInfo]) {
-        // nothing
-    }
-    
-    
     @IBAction func nextButton(_ sender: Any) {
+        /**
+         Button allows for users to move to the next view
+         */
+        
+        // check if users have selected at least one item
         if (collectionView.indexPathsForSelectedItems?.count != 0){
+            
+            // segue to next view
             performSegue(withIdentifier: "addOutfitPhoto", sender: self)
         }else{
             displayMessage(title: "Error", message: "Please add at least 1 garment.")
@@ -165,6 +155,8 @@ class PickGarmentCollectionViewController: UICollectionViewController, DatabaseL
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addOutfitPhoto"{
+            
+            // set selected garments in destination to local selected garments
             let destination = segue.destination as!AddPhotoOutfitViewController
             for index in collectionView.indexPathsForSelectedItems!{
                 selectedGarments.append(allGarments[index.item])

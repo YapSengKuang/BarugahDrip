@@ -9,10 +9,13 @@ import UIKit
 
 class PickGarmentCollectionViewCell: UICollectionViewCell{
     
-    @IBOutlet weak var checkmarkImageView: UIImageView!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var checkmarkImageView: UIImageView! // check mark image
+    @IBOutlet weak var imageView: UIImageView! // image of garment
     
     override var isSelected: Bool{
+        /**
+         Responsible for toggling the checkmarks
+         */
         didSet{
             toggleSelected()
         }
@@ -20,12 +23,15 @@ class PickGarmentCollectionViewCell: UICollectionViewCell{
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        // round corners
         self.layer.cornerRadius = 10.0
         self.layer.masksToBounds = true
         toggleSelected()
     }
     
     func toggleSelected(){
+        
+        // change item based on isSelected
         if isSelected{
             self.checkmarkImageView.image = UIImage(systemName: "checkmark.square.fill")
         }else{

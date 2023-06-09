@@ -9,9 +9,9 @@ import SwiftUI
 import Charts
 
 struct WearCountStruc: Identifiable {
-    var month: String
-    var wears: Int
-    var id = UUID()
+    var month: String // month
+    var wears: Int // number of wears per month
+    var id = UUID() // id of column
 }
 
 struct ChartUIView: View {
@@ -29,10 +29,9 @@ struct ChartUIView: View {
             .init(month: "Oct", wears: 0),
             .init(month: "Nov", wears: 0),
             .init(month: "Dec", wears: 0)
-    ]
+    ] // filler data, that is present if there is no data set
     var body: some View {
         Chart(data) { mediaData in
-            
             BarMark(x: .value("Months", mediaData.month),
                     y: .value("Number of Wears", mediaData.wears))
         }

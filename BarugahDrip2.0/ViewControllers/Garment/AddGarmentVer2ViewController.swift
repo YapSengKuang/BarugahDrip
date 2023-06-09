@@ -8,44 +8,48 @@
 import UIKit
 
 class AddGarmentVer2ViewController: UIViewController, UITextFieldDelegate {
-    @IBOutlet weak var imageView: UIImageView!
-    
-    @IBOutlet weak var garmentNameOutlet: UITextField!
-    
-    @IBOutlet weak var garmentBrandOutlet: UITextField!
-    
-    
-    @IBOutlet weak var garmentSizeOutlet: UITextField!
-    
-    
-    @IBOutlet weak var garmentPriceOutlet: UITextField!
-    
-    
-    weak var databaseController: DatabaseProtocol?
-        
-    var garmentImage: UIImage?
+    @IBOutlet weak var imageView: UIImageView! // image view of garment
+    @IBOutlet weak var garmentNameOutlet: UITextField! // text field of garment name
+    @IBOutlet weak var garmentBrandOutlet: UITextField! // text field of brand name
+    @IBOutlet weak var garmentSizeOutlet: UITextField! // text field of size
+    @IBOutlet weak var garmentPriceOutlet: UITextField! // text field of price
+    weak var databaseController: DatabaseProtocol? // database reference
+    var garmentImage: UIImage? // image of garment
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // set delegate to self to dismiss keyboard
         garmentNameOutlet.delegate = self
         garmentBrandOutlet.delegate = self
         garmentSizeOutlet.delegate = self
         
+        // hide keyboard when tapped around
         self.hideKeyboardWhenTappedAround()
+        
+        // set database controller
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         databaseController = appDelegate?.databaseController
         
+        // set image view to garment image
         imageView.image = garmentImage
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
+        /**
+         Method to allow for users to dismiss keyboard
+         */
         // Allows for user to dismiss keyboard when pressing return
         textField.resignFirstResponder()
         return true
     }
         
     @IBAction func addGarmentButton(_ sender: Any) {
+        /**
+         Button to add garment to coredata
+         */
+        
+        // error handling
         guard let name = garmentNameOutlet.text, name != "" else {
             return
         }
@@ -66,6 +70,8 @@ class AddGarmentVer2ViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
+        // Compress image
+        
         let timestamp = UInt(Date().timeIntervalSince1970)
         let filename = "\(timestamp).jpg"
         
@@ -73,10 +79,12 @@ class AddGarmentVer2ViewController: UIViewController, UITextFieldDelegate {
             displayMessage(title: "Error", message: "Image data could not be compressed")
             return
         }
+        
         let pathsList = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentDirectory = pathsList[0]
         let imageFile = documentDirectory.appendingPathComponent(filename)
     
+        // add to coredata
         do {
             try data.write(to: imageFile)
             
@@ -86,13 +94,10 @@ class AddGarmentVer2ViewController: UIViewController, UITextFieldDelegate {
             }
             
             databaseController?.cleanup()
-            
         } catch {
             displayMessage(title: "Error", message: "\(error)")
         }
-        
+        // pop to root view
         navigationController?.popToRootViewController(animated: true)
     }
-        
-
 }
