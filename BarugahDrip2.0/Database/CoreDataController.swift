@@ -10,18 +10,17 @@ import UIKit
 import CoreData
 
 class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsControllerDelegate {
-    var currentOutfit: Outfit?
-    var outfitGarmentsFetchedResultsController: NSFetchedResultsController<Garment>?
-    var outfitWearInfoFetchedResultsController: NSFetchedResultsController<WearInfo>?
-    var allOutfitsFetchedResultsController: NSFetchedResultsController<Outfit>?
-    var allGarmentsFetchedResultsController: NSFetchedResultsController<Garment>?
+    var currentOutfit: Outfit? // instance of current outfit
+    var outfitGarmentsFetchedResultsController: NSFetchedResultsController<Garment>? // controller for garments from an outfit
+    var outfitWearInfoFetchedResultsController: NSFetchedResultsController<WearInfo>? // controller for wear from an outfit
+    var allOutfitsFetchedResultsController: NSFetchedResultsController<Outfit>? // controller for all outfits
+    var allGarmentsFetchedResultsController: NSFetchedResultsController<Garment>? // controller for all garments
     var listeners = MulticastDelegate<DatabaseListener>()
-    var persistentContainer: NSPersistentContainer
+    var persistentContainer: NSPersistentContainer // coredata
     
     override init() {
         // Initialise persistentContainer
         persistentContainer = NSPersistentContainer(name: "BarugahDrip2_0")
-        
         
         // Load Core data and provide closure for error handling
         
@@ -30,10 +29,7 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
                 fatalError("Failed to load Core Data Stack with error: \(error)")
             }
         }
-        
         super.init()
-        
-        
     }
     
     func addGarment(name: String, price: Double, brand: String, size: String, numberOfWears: Int, datePurchased: Date, image: String) -> Garment {
@@ -386,15 +382,6 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
                 
             }
         }
-    }
-    
-    func addDefaultGarments(){
-        let _ = addGarment(name: "Boxy Tee", price: 900.00, brand: "Nike", size: "S", numberOfWears: 0, datePurchased: Date(), image: "1685069003.jpg")
-        let _ = addGarment(name: "Hoodie", price: 1500.00, brand: "Adidas", size: "M", numberOfWears: 2, datePurchased: Date(), image: "1685069003.jpg")
-        let _ = addGarment(name: "Jeans", price: 1200.00, brand: "Levi's", size: "30", numberOfWears: 5, datePurchased: Date(), image: "1685069003.jpg")
-        
-        
-        cleanup()
     }
 }
 

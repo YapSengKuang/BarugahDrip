@@ -16,13 +16,13 @@ extension Outfit {
         return NSFetchRequest<Outfit>(entityName: "Outfit")
     }
 
-    @NSManaged public var image: String?
-    @NSManaged public var name: String?
-    @NSManaged public var numberOfWears: Int32
-    @NSManaged public var price: Double
-    @NSManaged public var dateCreated: Date?
-    @NSManaged public var garments: NSSet?
-    @NSManaged public var wears: NSSet?
+    @NSManaged public var image: String? // image of outfit
+    @NSManaged public var name: String? // name of outfit
+    @NSManaged public var numberOfWears: Int32 // number of wears on this outfit
+    @NSManaged public var price: Double // total price of outfit
+    @NSManaged public var dateCreated: Date? // date created
+    @NSManaged public var garments: NSSet? // garments list
+    @NSManaged public var wears: NSSet? // wears list
 }
 
 // MARK: Generated accessors for garments

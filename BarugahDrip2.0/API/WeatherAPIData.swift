@@ -11,30 +11,38 @@ class WeatherAPIData: NSObject, Decodable {
     /**
      Getting Weather Information using WeatherAPI.com
      */
-    var name: String? //
-    var temp_c: Int?
-    var text: String?
-    var code: Int?
-    var icon: String?
-    var long: Double?
-    var lat: Double?
+    var name: String? // location name
+    var temp_c: Int? // temp in celcius
+    var text: String? // description of weather
+    var code: Int? // code for weather
+    var icon: String? // image path
+    var long: Double? // longitude
+    var lat: Double? // latitude
     
     private enum RootKeys: String, CodingKey{
+        /**
+         Root keys for API JSON
+         */
         case current
         case location
     }
     
     private enum WeatherAPIKeys: String, CodingKey{
+        /**
+         Keys for WeatherAPI JSON
+         */
         case name
         case temp_c
         case text
         case condition
         case lon
         case lat
-
     }
     
     private enum ConditionKeys: String, CodingKey{
+        /**
+         Keys for Condition
+         */
         case text
         case code
         case icon
