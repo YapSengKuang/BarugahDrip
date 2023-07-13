@@ -39,8 +39,15 @@ class AddGarmentVer2ViewController: UIViewController, UITextFieldDelegate {
         /**
          Method to allow for users to dismiss keyboard
          */
-        // Allows for user to dismiss keyboard when pressing return
-        textField.resignFirstResponder()
+        
+        let nextTag = textField.tag + 1
+
+        if let nextResponder = textField.superview?.viewWithTag(nextTag) {
+            nextResponder.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+
         return true
     }
         

@@ -497,11 +497,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BarugahDrip2.0/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BarugahDrip;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This application requires the camera to take photos for storage in the application\n";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This application requires the use of the location to access local weather";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This application requires the use of the photo library to get photos on the simulator";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -524,11 +527,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BarugahDrip2.0/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BarugahDrip;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This application requires the camera to take photos for storage in the application\n";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This application requires the use of the location to access local weather";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This application requires the use of the photo library to get photos on the simulator";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
