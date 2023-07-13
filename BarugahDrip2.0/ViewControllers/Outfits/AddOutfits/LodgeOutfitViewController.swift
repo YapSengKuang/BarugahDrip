@@ -8,12 +8,14 @@
 import UIKit
 
 class LodgeOutfitViewController: UIViewController, UITextFieldDelegate {
+    @IBOutlet weak var outfitImage: UIImageView!
     @IBOutlet weak var datePicker: UIDatePicker! // date of lodge
     weak var databaseController: DatabaseProtocol? // database reference
     var outfitToLodge: Outfit? // outfit to lodge
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        outfitImage.image = loadImageData(filename: (outfitToLodge?.image!)!)
         
         // hide keyboard if tapped around
         self.hideKeyboardWhenTappedAround()

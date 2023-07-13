@@ -536,6 +536,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="hsp-3w-z3M" id="1SZ-er-60D"/>
+                        <outlet property="outfitImage" destination="ac6-fX-iNv" id="DOM-t6-oAv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AcS-Yd-0Ny" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1145,7 +1146,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="scu-7L-Ejk"/>
-        <segue reference="Exh-bk-Blm"/>
+        <segue reference="qBp-R8-Jkw"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chart.bar" catalog="system" width="128" height="89"/>
