@@ -2,7 +2,7 @@
 //  Garment+CoreDataProperties.swift
 //  BarugahDrip2.0
 //
-//  Created by Eskay Yap on 9/6/2023.
+//  Created by Eskay Yap on 14/7/2023.
 //
 //
 
@@ -16,14 +16,14 @@ extension Garment {
         return NSFetchRequest<Garment>(entityName: "Garment")
     }
 
-    @NSManaged public var brand: String? // brand of garment
-    @NSManaged public var dateBought: Date? // date bought
-    @NSManaged public var image: String? // image of garment
-    @NSManaged public var name: String? // name of garment
-    @NSManaged public var numberOfWears: Int32 // number of wears
-    @NSManaged public var price: Double // price of garment
-    @NSManaged public var size: String? // size of garment
-    @NSManaged public var outfits: NSSet? // outfits garment is connected to
+    @NSManaged public var brand: String?
+    @NSManaged public var dateBought: Date?
+    @NSManaged public var image: String?
+    @NSManaged public var name: String?
+    @NSManaged public var numberOfWears: Int32
+    @NSManaged public var price: Double
+    @NSManaged public var size: String?
+    @NSManaged public var outfits: NSSet?
 
 }
 
@@ -42,10 +42,9 @@ extension Garment {
     @objc(removeOutfits:)
     @NSManaged public func removeFromOutfits(_ values: NSSet)
     
-    public func incrementWears() {
+    public func incrementWears(){
         numberOfWears += 1
     }
-
 }
 
 extension Garment : Identifiable {

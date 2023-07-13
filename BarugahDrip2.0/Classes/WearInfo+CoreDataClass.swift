@@ -2,7 +2,7 @@
 //  WearInfo+CoreDataClass.swift
 //  BarugahDrip2.0
 //
-//  Created by Eskay Yap on 9/6/2023.
+//  Created by Eskay Yap on 14/7/2023.
 //
 //
 

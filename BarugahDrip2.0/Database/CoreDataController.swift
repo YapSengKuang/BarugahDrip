@@ -77,14 +77,12 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         persistentContainer.viewContext.delete(outfit)
     }
     
-    func addWear(date: Date, tempCelcuis: Int, event: String) -> WearInfo {
+    func addWear(date: Date) -> WearInfo {
         /**
          Creates WearInfo to CoreData, given date, tempCelcuis and event
          */
         let wearInfo = NSEntityDescription.insertNewObject(forEntityName: "WearInfo", into: persistentContainer.viewContext) as! WearInfo
         wearInfo.date = date
-        wearInfo.event = event
-        wearInfo.tempCelcuis = Int32(tempCelcuis)
         
         return wearInfo
     }

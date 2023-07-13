@@ -8,8 +8,6 @@
 import UIKit
 
 class LodgeOutfitViewController: UIViewController, UITextFieldDelegate {
-    @IBOutlet weak var occasionOutlet: UITextField! // Text Field for occasion
-    @IBOutlet weak var tempOutlet: UITextField! // Tempurature for outfit
     @IBOutlet weak var datePicker: UIDatePicker! // date of lodge
     weak var databaseController: DatabaseProtocol? // database reference
     var outfitToLodge: Outfit? // outfit to lodge
@@ -20,9 +18,6 @@ class LodgeOutfitViewController: UIViewController, UITextFieldDelegate {
         // hide keyboard if tapped around
         self.hideKeyboardWhenTappedAround()
         
-        // set delegate to self for return to dismiss
-        occasionOutlet.delegate = self
-
         // connect database controller
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         databaseController = appDelegate?.databaseController
@@ -32,17 +27,9 @@ class LodgeOutfitViewController: UIViewController, UITextFieldDelegate {
         /**
          Button allows for users to lodge outfit in coredata and go back to root view
          */
-        
-        // Error handling
-        guard let temp = Int(tempOutlet.text!) else {
-            return
-        }
-        guard let occasion = occasionOutlet.text, occasion != "" else {
-            return
-        }
     
         // create wear info
-        let wearInfo = (databaseController?.addWear(date: datePicker.date, tempCelcuis: temp, event: occasion))!
+        let wearInfo = (databaseController?.addWear(date: datePicker.date))!
         
         // add wear info to outfit
         let _ = databaseController?.addWearToOutfit(outfit: outfitToLodge!, wearInfo: wearInfo)

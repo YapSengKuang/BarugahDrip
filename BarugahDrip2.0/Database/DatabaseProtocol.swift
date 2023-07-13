@@ -55,7 +55,7 @@ protocol DatabaseProtocol: AnyObject {
     func addOutfit(price: Double, wears: Int, outfitName: String, image: String) -> Outfit
     func deleteOutfit(outfit: Outfit)
     
-    func addWear(date: Date, tempCelcuis: Int, event: String) -> WearInfo
+    func addWear(date: Date) -> WearInfo
     func deleteWear(wearInfo: WearInfo)
     
     func addGarmentToOutfit(garment: Garment, outfit: Outfit) -> Bool

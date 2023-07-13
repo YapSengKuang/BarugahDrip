@@ -21,8 +21,6 @@
     </entity>
     <entity name="WearInfo" representedClassName=".WearInfo" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="event" optional="YES" attributeType="String"/>
-        <attribute name="tempCelcuis" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="outfit" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Outfit" inverseName="wears" inverseEntity="Outfit"/>
     </entity>
 </model>

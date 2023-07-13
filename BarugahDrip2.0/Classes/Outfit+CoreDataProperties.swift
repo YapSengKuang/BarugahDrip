@@ -2,7 +2,7 @@
 //  Outfit+CoreDataProperties.swift
 //  BarugahDrip2.0
 //
-//  Created by Eskay Yap on 9/6/2023.
+//  Created by Eskay Yap on 14/7/2023.
 //
 //
 
@@ -16,13 +16,14 @@ extension Outfit {
         return NSFetchRequest<Outfit>(entityName: "Outfit")
     }
 
-    @NSManaged public var image: String? // image of outfit
-    @NSManaged public var name: String? // name of outfit
-    @NSManaged public var numberOfWears: Int32 // number of wears on this outfit
-    @NSManaged public var price: Double // total price of outfit
-    @NSManaged public var dateCreated: Date? // date created
-    @NSManaged public var garments: NSSet? // garments list
-    @NSManaged public var wears: NSSet? // wears list
+    @NSManaged public var dateCreated: Date?
+    @NSManaged public var image: String?
+    @NSManaged public var name: String?
+    @NSManaged public var numberOfWears: Int32
+    @NSManaged public var price: Double
+    @NSManaged public var garments: NSSet?
+    @NSManaged public var wears: NSSet?
+
 }
 
 // MARK: Generated accessors for garments
