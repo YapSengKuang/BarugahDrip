@@ -12,10 +12,10 @@ class GarmentInfoViewController: UIViewController, UISheetPresentationController
         presentationController as! UISheetPresentationController
     }
     var selectedGarment: Garment? // garment to get info out of
-    @IBOutlet weak var priceLabel: UIButton! // price label of garment
-    @IBOutlet weak var pricePerWearLabel: UIButton! // price per wear label of garment
-    @IBOutlet weak var sizeLabel: UIButton! // size label of garment
-    @IBOutlet weak var wearsLabel: UIButton! // number of wears of garment
+    @IBOutlet weak var priceLabel: UILabel! // price label of garment
+    @IBOutlet weak var pricePerWearLabel: UILabel! // price per wear label of garment
+    @IBOutlet weak var sizeLabel: UILabel! // size label of garment
+    @IBOutlet weak var wearsLabel: UILabel! // number of wears of garment
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,18 +29,16 @@ class GarmentInfoViewController: UIViewController, UISheetPresentationController
             .medium()]
         
         // load garment info
-        
-        priceLabel.setTitle("$"+String(format: "%.2f", selectedGarment!.price), for: .normal)
-        sizeLabel.setTitle(selectedGarment?.size, for: .normal)
-        wearsLabel.setTitle(String(selectedGarment!.numberOfWears), for: .normal)
+        priceLabel.text = "$"+String(format: "%.2f", selectedGarment!.price)
+        sizeLabel.text = selectedGarment?.size
+        wearsLabel.text = String(selectedGarment!.numberOfWears)
         
         if Double(selectedGarment!.numberOfWears) > 0{
             let pricePerWear = selectedGarment!.price/Double(selectedGarment!.numberOfWears)
         
-            
-            pricePerWearLabel.setTitle("$"+String(format: "%.2f", pricePerWear), for: .normal)
+            pricePerWearLabel.text = "$"+String(format: "%.2f", pricePerWear)
         }else{
-            pricePerWearLabel.setTitle("$"+String(format: "%.2f", selectedGarment!.price), for: .normal)
+            pricePerWearLabel.text = "$"+String(format: "%.2f", selectedGarment!.price)
         }
     }
 }

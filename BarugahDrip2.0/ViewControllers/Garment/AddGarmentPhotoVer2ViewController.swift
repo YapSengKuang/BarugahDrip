@@ -88,7 +88,7 @@ class AddGarmentPhotoVer2ViewController: UIViewController,UIImagePickerControlle
         }
         
         // segue to next view
-        self.performSegue(withIdentifier: "addGarmentDetails", sender: self)
+        self.performSegue(withIdentifier: "addGarmentNameSegue", sender: self)
     }
         
     // MARK: - Navigation
@@ -100,8 +100,10 @@ class AddGarmentPhotoVer2ViewController: UIViewController,UIImagePickerControlle
             let destination = segue.destination as! AddGarmentVer2ViewController
             destination.garmentImage = self.imageView.image
         }
+        
+        if segue.identifier == "addGarmentNameSegue"{
+            let destination = segue.destination as! AddGarmentNameViewController
+            destination.garmentImage = self.imageView.image
+        }
     }
-    
-    
-
 }

@@ -47,6 +47,10 @@
 		A7F9D7E42A60426C0094696F /* WearInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F9D7DE2A60426C0094696F /* WearInfo+CoreDataProperties.swift */; };
 		A7F9D7E52A60426C0094696F /* Garment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F9D7DF2A60426C0094696F /* Garment+CoreDataClass.swift */; };
 		A7F9D7E62A60426C0094696F /* Garment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F9D7E02A60426C0094696F /* Garment+CoreDataProperties.swift */; };
+		A7F9D7EB2A6429700094696F /* AddGarmentNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F9D7EA2A6429700094696F /* AddGarmentNameViewController.swift */; };
+		A7F9D7ED2A642DC20094696F /* AddGarmentBrandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F9D7EC2A642DC20094696F /* AddGarmentBrandViewController.swift */; };
+		A7F9D7EF2A642DD00094696F /* AddGarmentPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F9D7EE2A642DD00094696F /* AddGarmentPriceViewController.swift */; };
+		A7F9D7F12A642DE90094696F /* AddGarmentSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F9D7F02A642DE90094696F /* AddGarmentSizeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +96,10 @@
 		A7F9D7DE2A60426C0094696F /* WearInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WearInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A7F9D7DF2A60426C0094696F /* Garment+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Garment+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A7F9D7E02A60426C0094696F /* Garment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Garment+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A7F9D7EA2A6429700094696F /* AddGarmentNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGarmentNameViewController.swift; sourceTree = "<group>"; };
+		A7F9D7EC2A642DC20094696F /* AddGarmentBrandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGarmentBrandViewController.swift; sourceTree = "<group>"; };
+		A7F9D7EE2A642DD00094696F /* AddGarmentPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGarmentPriceViewController.swift; sourceTree = "<group>"; };
+		A7F9D7F02A642DE90094696F /* AddGarmentSizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGarmentSizeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +227,7 @@
 		A77FD9622A0DD9570013E2F5 /* Garment */ = {
 			isa = PBXGroup;
 			children = (
+				A7F9D7E72A6428C40094696F /* AddGarment */,
 				A76B48BB2A1485B400A213FC /* GarmentsVer2CollectionViewCell.swift */,
 				A76B48BD2A1485CD00A213FC /* AddGarmentPhotoVer2ViewController.swift */,
 				A76B48BF2A1485DC00A213FC /* AddGarmentVer2ViewController.swift */,
@@ -239,6 +248,17 @@
 				A7BB9FE92A2063640095502A /* GarmentOutfitTableViewCell.swift */,
 			);
 			path = ViewOutfit;
+			sourceTree = "<group>";
+		};
+		A7F9D7E72A6428C40094696F /* AddGarment */ = {
+			isa = PBXGroup;
+			children = (
+				A7F9D7EA2A6429700094696F /* AddGarmentNameViewController.swift */,
+				A7F9D7EC2A642DC20094696F /* AddGarmentBrandViewController.swift */,
+				A7F9D7EE2A642DD00094696F /* AddGarmentPriceViewController.swift */,
+				A7F9D7F02A642DE90094696F /* AddGarmentSizeViewController.swift */,
+			);
+			path = AddGarment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +336,7 @@
 				A7BB9FEA2A2063640095502A /* GarmentOutfitTableViewCell.swift in Sources */,
 				A76B48CC2A15D2FD00A213FC /* OutfitsVer2CollectionViewCell.swift in Sources */,
 				A76B48CF2A17053200A213FC /* AddPhotoOutfitViewController.swift in Sources */,
+				A7F9D7EB2A6429700094696F /* AddGarmentNameViewController.swift in Sources */,
 				A748D2F82A323B0E00E188F0 /* QuickLodgeOutfitCollectionViewController.swift in Sources */,
 				A7F9D7E62A60426C0094696F /* Garment+CoreDataProperties.swift in Sources */,
 				A70991252A0B3B700053943D /* tabBarViewController.swift in Sources */,
@@ -326,10 +347,13 @@
 				A70991232A0B3B580053943D /* MainMenuViewController.swift in Sources */,
 				A76B48C82A14964900A213FC /* SoloGarmentViewController.swift in Sources */,
 				A748D2FB2A323CAA00E188F0 /* QuickAddOutfitCollectionViewCell.swift in Sources */,
+				A7F9D7EF2A642DD00094696F /* AddGarmentPriceViewController.swift in Sources */,
 				A70990E82A0B35080053943D /* BarugahDrip2_0.xcdatamodeld in Sources */,
 				A748D2EA2A321E5F00E188F0 /* GarmentInfoViewController.swift in Sources */,
+				A7F9D7F12A642DE90094696F /* AddGarmentSizeViewController.swift in Sources */,
 				A7A8E5F92A172532005F735E /* SoloOutfitViewController.swift in Sources */,
 				A76B48CA2A15D2CC00A213FC /* OutfitsVer2CollectionViewController.swift in Sources */,
+				A7F9D7ED2A642DC20094696F /* AddGarmentBrandViewController.swift in Sources */,
 				A76B48D32A17056800A213FC /* AddOutfitViewController.swift in Sources */,
 				A76B48D12A17054700A213FC /* PickGarmentCollectionViewController.swift in Sources */,
 				A76B48C42A14862B00A213FC /* GarmentVer2CollectionViewController.swift in Sources */,
@@ -495,6 +519,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColour2;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MP779939K2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BarugahDrip2.0/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BarugahDrip;
@@ -525,6 +550,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColour2;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MP779939K2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BarugahDrip2.0/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BarugahDrip;
